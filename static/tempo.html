@@ -1,0 +1,16 @@
+<div id="qui"></div>
+<script>
+    alert(JSON.parse(localStorage.getItem("id")).id);
+
+    let n=1;
+    function fai() {
+        document.querySelector("#qui").innerHTML+=n;
+        n++;
+        if(n<10){
+            setTimeout(fai, 1000);
+        }
+    }
+    const time=setTimeout(fai, 1000);
+    clearTimeout(time);
+
+</script>

@@ -1,22 +1,472 @@
-<!DOCTYPE html>
-<!-- indica la versione 5 di html -->
+<!doctype html>
 <html lang="it">
-<!-- indica l'inizio della sezione HTML -->
 <head>
-    <!-- qui non si può inserire contenuto della pagina -->
-    <meta charset="UTF-8">
-    <!-- indica l'insieme dei caratteri ammissibili all'interno della pagina -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- inizializza la gestione responsive della interfaccia della pagina VINCOLANTE PER L'ACCESSIBILITA' -->
-    <title>FRONTEND</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Indovina Chi - Lobby</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+    />
+    <style>
+        :root {
+            --ink: #0f172a;
+            --primary: #0f766e;
+            --primary-dark: #115e59;
+            --accent: #ea580c;
+            --panel: #ffffffeb;
+        }
+
+        body {
+            font-family: "Barlow", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 12% 14%, #99f6e4aa 0%, transparent 26%),
+                radial-gradient(circle at 88% 16%, #fed7aa99 0%, transparent 25%),
+                linear-gradient(155deg, #f8fafc 0%, #f0fdfa 42%, #fff7ed 100%);
+            min-height: 100vh;
+            animation: entrance 420ms ease-out;
+        }
+
+        @keyframes entrance {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title-font {
+            font-family: "Bungee", cursive;
+            letter-spacing: 1px;
+        }
+
+        .board-panel {
+            background: var(--panel);
+            border: 2px solid #0000001a;
+            border-radius: 18px;
+            box-shadow: 0 14px 32px #0f172a1a;
+            backdrop-filter: blur(2px);
+        }
+
+        .game-item {
+            border-radius: 14px;
+            border: 1px solid #0000001f;
+            transition: transform 140ms ease, box-shadow 140ms ease;
+            cursor: pointer;
+        }
+
+        .game-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px #00000026;
+        }
+
+        .game-private {
+            border-left: 7px solid var(--accent);
+        }
+
+        .game-public {
+            border-left: 7px solid var(--primary);
+        }
+
+        .btn-brand {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .btn-brand:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: #fff;
+        }
+
+        .chip {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid #0f172a26;
+            background: #ffffff;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    ciao
-    <!-- apertura del marcatore a -->
-    <a href="./pages/splash.html">
-        clicca qui per vedere l'animazione
-    </a>
-    <!-- marcatore di chiusura-->
-    
+    <main class="container py-4 py-md-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-3">
+            <div>
+                <h1 class="title-font mb-1">Indovina Chi</h1>
+                <p class="mb-0">Scegli una partita libera o crea una stanza pubblica/privata.</p>
+            </div>
+            <button id="refreshBtn" class="btn btn-outline-dark">Aggiorna partite</button>
+        </div>
+
+        <div class="row g-4">
+            <section class="col-lg-7">
+                <div class="board-panel p-3 p-md-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="h4 mb-0">Partite disponibili</h2>
+                        <span id="totalePartite" class="badge text-bg-dark">0</span>
+                    </div>
+                    <p class="text-muted small">Mostro solo partite con meno di 2 giocatori.</p>
+                    <div id="partite" class="d-grid gap-3"></div>
+                    <p id="vuoto" class="text-muted mb-0 hide">Nessuna partita libera. Crea tu la prossima sfida.</p>
+                </div>
+            </section>
+
+            <section class="col-lg-5">
+                <div class="board-panel p-3 p-md-4">
+                    <h2 class="h4 mb-3">Crea partita</h2>
+                    <form id="createForm" class="d-grid gap-3">
+                        <div>
+                            <label for="inputNome" class="form-label">Nome partita</label>
+                            <input type="text" class="form-control" id="inputNome" placeholder="Es. Duello del Venerdi" required>
+                        </div>
+                        <div>
+                            <label for="ownerPlayerName" class="form-label">Nome primo giocatore</label>
+                            <input type="text" class="form-control" id="ownerPlayerName" placeholder="Es. Marco" required>
+                        </div>
+                        <div>
+                            <label class="form-label d-block">Tipo partita</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="privacy" id="publicGame" value="public" checked>
+                                <label class="form-check-label" for="publicGame">Pubblica</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="privacy" id="privateGame" value="private">
+                                <label class="form-check-label" for="privateGame">Privata</label>
+                            </div>
+                        </div>
+                        <div id="passwordContainer" class="hide">
+                            <label for="passwordInput" class="form-label">Password partita privata</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Inserisci password">
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-brand w-100">Crea</button>
+                            <button type="reset" class="btn btn-outline-secondary w-100">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
+        const STORAGE_KEY = "guesswho_game_meta";
+        const ACTIVE_SESSION_KEY = "guesswho_active_session";
+        const EMPTY_GAME_DELETE_MS = 2 * 60 * 1000;
+
+        const partiteEl = document.getElementById("partite");
+        const totalePartiteEl = document.getElementById("totalePartite");
+        const vuotoEl = document.getElementById("vuoto");
+        const createForm = document.getElementById("createForm");
+        const refreshBtn = document.getElementById("refreshBtn");
+        const privateGameEl = document.getElementById("privateGame");
+        const publicGameEl = document.getElementById("publicGame");
+        const passwordContainer = document.getElementById("passwordContainer");
+        const passwordInput = document.getElementById("passwordInput");
+
+        function headers(isJson) {
+            const h = new Headers();
+            h.append("X-API-Key", API_KEY);
+            if (isJson) {
+                h.append("Content-Type", "application/json");
+            }
+            return h;
+        }
+
+        function readMeta() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+            } catch {
+                return {};
+            }
+        }
+
+        function saveMeta(meta) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(meta));
+        }
+
+        function togglePasswordInput() {
+            const isPrivate = privateGameEl.checked;
+            passwordContainer.classList.toggle("hide", !isPrivate);
+            passwordInput.required = isPrivate;
+        }
+
+        async function getRemotePrivacy(gameId) {
+            try {
+                const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                    method: "GET",
+                    headers: headers(false),
+                    redirect: "follow"
+                });
+                const result = await response.json();
+                if (!response.ok) {
+                    throw new Error(result.error || "Errore recupero privacy partita");
+                }
+
+                const privacyMoves = result.moves.filter((m) => m.data && m.data.type === "privacy");
+                if (privacyMoves.length === 0) {
+                    return null;
+                }
+
+                const latest = privacyMoves[privacyMoves.length - 1].data;
+                return {
+                    isPrivate: Boolean(latest.isPrivate),
+                    password: latest.password || ""
+                };
+            } catch {
+                return null;
+            }
+        }
+
+        async function publishPrivacySettings(gameId, playerId, metadata) {
+            if (!metadata) {
+                return;
+            }
+
+            await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "POST",
+                headers: headers(true),
+                body: JSON.stringify({
+                    playerId,
+                    data: {
+                        type: "privacy",
+                        isPrivate: Boolean(metadata.isPrivate),
+                        password: metadata.isPrivate ? (metadata.password || "") : ""
+                    }
+                }),
+                redirect: "follow"
+            });
+        }
+
+        async function fetchGames() {
+            partiteEl.innerHTML = "";
+            vuotoEl.classList.add("hide");
+
+            try {
+                const response = await fetch(`${BASE_URL}/games`, {
+                    method: "GET",
+                    headers: headers(false),
+                    redirect: "follow"
+                });
+
+                const risultato = await response.json();
+                if (!response.ok) {
+                    throw new Error(risultato.error || "Errore nel recupero partite");
+                }
+
+                const meta = readMeta();
+                const now = Date.now();
+                const cleanedGames = [];
+
+                for (const game of risultato.games) {
+                    if (game.players.length === 0) {
+                        const updatedAtMs = new Date(game.updatedAt || game.createdAt || now).getTime();
+                        if (now - updatedAtMs >= EMPTY_GAME_DELETE_MS) {
+                            try {
+                                await fetch(`${BASE_URL}/games/${game.id}`, {
+                                    method: "DELETE",
+                                    headers: headers(false),
+                                    redirect: "follow"
+                                });
+                                delete meta[game.id];
+                            } catch (error) {
+                                console.error(error);
+                            }
+                            continue;
+                        }
+                    }
+                    cleanedGames.push(game);
+                }
+
+                saveMeta(meta);
+                const disponibili = cleanedGames.filter((g) => g.players.length < 2);
+                const remotePrivacyEntries = await Promise.all(
+                    disponibili.map(async (g) => [g.id, await getRemotePrivacy(g.id)])
+                );
+                const remotePrivacyMap = Object.fromEntries(remotePrivacyEntries);
+                totalePartiteEl.innerText = String(disponibili.length);
+
+                if (disponibili.length === 0) {
+                    vuotoEl.classList.remove("hide");
+                }
+
+                disponibili.forEach((element) => {
+                    const info = remotePrivacyMap[element.id] || meta[element.id] || { isPrivate: false, password: "" };
+                    const game = document.createElement("button");
+                    game.type = "button";
+                    game.className = `game-item ${info.isPrivate ? "game-private" : "game-public"} p-3 text-start bg-white`;
+                    game.innerHTML = `
+                        <div class="d-flex justify-content-between align-items-center gap-2">
+                            <strong>${element.name}</strong>
+                            <span class="badge ${info.isPrivate ? "text-bg-danger" : "text-bg-success"}">${info.isPrivate ? "Privata" : "Pubblica"}</span>
+                        </div>
+                        <div class="mt-1 d-flex gap-2 align-items-center">
+                            <small class="text-muted">Giocatori: ${element.players.length}/2</small>
+                            <span class="chip">Entra</span>
+                        </div>
+                    `;
+                    game.addEventListener("click", () => aggiungiGiocatore(element.id, element.name, info));
+                    partiteEl.appendChild(game);
+                });
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+            }
+        }
+
+        async function creaPartita(event) {
+            event.preventDefault();
+            const nomePartita = document.getElementById("inputNome").value.trim();
+            const nomePrimoGiocatore = document.getElementById("ownerPlayerName").value.trim();
+            const privata = privateGameEl.checked;
+            const password = passwordInput.value.trim();
+
+            if (!nomePartita) {
+                alert("Inserisci il nome della partita.");
+                return;
+            }
+
+            if (!nomePrimoGiocatore) {
+                alert("Inserisci il nome del primo giocatore.");
+                return;
+            }
+
+            if (privata && password.length < 3) {
+                alert("La password deve avere almeno 3 caratteri.");
+                return;
+            }
+
+            try {
+                const createResponse = await fetch(`${BASE_URL}/games`, {
+                    method: "POST",
+                    headers: headers(true),
+                    body: JSON.stringify({ name: nomePartita }),
+                    redirect: "follow"
+                });
+                const createResult = await createResponse.json();
+
+                if (!createResponse.ok) {
+                    throw new Error(createResult.error || "Errore nella creazione partita");
+                }
+
+                const gameId = createResult.game.id;
+                const meta = readMeta();
+                meta[gameId] = {
+                    isPrivate: privata,
+                    password: privata ? password : "",
+                    createdAt: new Date().toISOString()
+                };
+                saveMeta(meta);
+
+                await aggiungiGiocatore(gameId, nomePartita, meta[gameId], nomePrimoGiocatore);
+                createForm.reset();
+                togglePasswordInput();
+                await fetchGames();
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+            }
+        }
+
+        async function aggiungiGiocatore(gameId, gameName, metadata, presetPlayerName) {
+            if (metadata && metadata.isPrivate) {
+                const pass = prompt(`Partita privata: inserisci password per ${gameName}`);
+                if (pass === null) {
+                    return;
+                }
+                if (pass !== metadata.password) {
+                    alert("Password non corretta.");
+                    return;
+                }
+            }
+
+            const nomeGiocatore = (presetPlayerName || prompt(`Nome giocatore da aggiungere a ${gameName}:`) || "").trim();
+            if (!nomeGiocatore) {
+                return;
+            }
+
+            try {
+                const checkResponse = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                    method: "GET",
+                    headers: headers(false),
+                    redirect: "follow"
+                });
+                const checkResult = await checkResponse.json();
+                if (!checkResponse.ok) {
+                    throw new Error(checkResult.error || "Errore nel controllo giocatori");
+                }
+                if (checkResult.count >= 2) {
+                    alert("Questa partita e' gia piena (max 2 giocatori).");
+                    await fetchGames();
+                    return;
+                }
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+                return;
+            }
+
+            const requestOptions = {
+                method: "POST",
+                headers: headers(true),
+                body: JSON.stringify({ name: nomeGiocatore }),
+                redirect: "follow"
+            };
+
+            try {
+                const response = await fetch(`${BASE_URL}/games/${gameId}/players`, requestOptions);
+                const risultato = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(risultato.error || "Errore durante l'aggiunta del giocatore");
+                }
+
+                if (presetPlayerName && metadata) {
+                    await publishPrivacySettings(gameId, risultato.player.id, metadata);
+                }
+
+                alert(`Giocatore aggiunto: ${risultato.player.name}`);
+                sessionStorage.setItem(ACTIVE_SESSION_KEY, JSON.stringify({
+                    gameId,
+                    gameName,
+                    playerId: risultato.player.id,
+                    playerName: risultato.player.name,
+                    updatedAt: new Date().toISOString()
+                }));
+                const target = "pages/splash.html";
+                window.location.href = target;
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+            }
+        }
+
+        privateGameEl.addEventListener("change", togglePasswordInput);
+        publicGameEl.addEventListener("change", togglePasswordInput);
+        createForm.addEventListener("submit", creaPartita);
+        refreshBtn.addEventListener("click", fetchGames);
+
+        togglePasswordInput();
+        fetchGames();
+        setInterval(fetchGames, 10000);
+    </script>
 </body>
 </html>
+
+

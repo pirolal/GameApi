@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovina Chi - Partita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+    />
+    <style>
+        :root {
+            --ink: #0b132b;
+            --bg1: #fef2f2;
+            --bg2: #ecfccb;
+            --card: #ffffff;
+            --off: #334155;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Nunito", sans-serif;
+            color: var(--ink);
+            background: radial-gradient(circle at 10% 10%, #fca5a5a8 0%, transparent 28%),
+                        radial-gradient(circle at 90% 12%, #a5f3fca8 0%, transparent 30%),
+                        linear-gradient(135deg, var(--bg1), var(--bg2));
+        }
+
+        .title {
+            font-family: "Racing Sans One", sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .panel {
+            background: #ffffffde;
+            border: 1px solid #00000014;
+            border-radius: 18px;
+            box-shadow: 0 12px 26px #0000001a;
+        }
+
+        .character-card {
+            border: 2px solid #94a3b8;
+            background: var(--card);
+            border-radius: 12px;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 120ms ease, background-color 120ms ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .character-card.off {
+            background: #cbd5e1;
+            color: var(--off);
+            text-decoration: line-through;
+            border-color: #475569;
+        }
+
+        .character-card.selected-secret {
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3px #bae6fd;
+        }
+
+        .character-thumb {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            border: 1px solid #00000022;
+        }
+
+        .question-list {
+            max-height: 170px;
+            overflow-y: auto;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 8px;
+            background: #ffffff;
+        }
+
+        .question-item {
+            font-size: 0.92rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 6px 0;
+        }
+
+        .question-item:last-child {
+            border-bottom: 0;
+        }
+
+        .result-banner {
+            border-radius: 12px;
+            border: 1px solid #0000001a;
+            padding: 10px;
+            margin-top: 10px;
+            background: #ecfeff;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .hint {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+    <main class="container py-4 py-md-5">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+                <h1 class="title h2 mb-1">Partita in Corso</h1>
+                <p id="gameInfo" class="mb-0">Indovina Chi</p>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="splash.html" class="btn btn-outline-dark">Torna alla lobby</a>
+                <a id="homeBtn" href="../index.html" class="btn btn-outline-danger">Esci alla home</a>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <section class="col-lg-8">
+                <div class="panel p-3 p-md-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="h5 mb-0">Tabellone personaggi</h2>
+                        <span class="hint">Clicca una carta per eliminarla/riattivarla</span>
+                    </div>
+                    <div id="board" class="row row-cols-2 row-cols-md-4 row-cols-xl-6 g-2"></div>
+                </div>
+            </section>
+
+            <section class="col-lg-4">
+                <div class="panel p-3 p-md-4 mb-3">
+                    <h2 class="h5">Fase 1: scegli il personaggio</h2>
+                    <p id="selectionStatus" class="mb-3 text-muted">Scegli la tua immagine segreta cliccando una carta.</p>
+
+                    <h2 class="h5">Fase 2: domande</h2>
+                    <input id="questionInput" type="text" class="form-control mb-2" placeholder="Es. Ha i capelli biondi?">
+                    <button id="saveQuestion" class="btn btn-primary w-100">Invia domanda</button>
+                    <p id="questionView" class="mt-2 mb-2 text-muted">Nessuna domanda ancora</p>
+                    <div id="questionList" class="question-list"></div>
+
+                    <h2 class="h5 mt-3">Tentativo di vittoria</h2>
+                    <select id="guessSelect" class="form-select mb-2"></select>
+                    <button id="guessBtn" class="btn btn-warning w-100">Indovina carta avversaria</button>
+                    <p id="guessFeedback" class="mt-2 mb-0 text-muted">Quando sei pronto, prova a indovinare.</p>
+
+                    <div id="resultBanner" class="result-banner hide">
+                        <p id="resultText" class="mb-2 fw-bold"></p>
+                        <button id="restartBtn" class="btn btn-success w-100">Riapri la lobby</button>
+                    </div>
+                </div>
+                <div class="panel p-3 p-md-4">
+                    <h2 class="h5">Giocatori</h2>
+                    <ul id="playersList" class="list-group"></ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
+        const ACTIVE_SESSION_KEY = "guesswho_active_session";
+        const BOT_NAME = "BOT";
+        const IDLE_TIMEOUT_MS = 30 * 1000;
+
+        function readActiveSession() {
+            try {
+                return JSON.parse(sessionStorage.getItem(ACTIVE_SESSION_KEY) || "{}");
+            } catch {
+                return {};
+            }
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const sessionData = readActiveSession();
+        const gameId = params.get("gameId") || sessionData.gameId || "";
+        const gameName = params.get("gameName") || sessionData.gameName || "Partita";
+        const playerId = params.get("playerId") || sessionData.playerId || "";
+        if (window.location.search) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
+        const boardEl = document.getElementById("board");
+        const playersListEl = document.getElementById("playersList");
+        const questionInput = document.getElementById("questionInput");
+        const questionView = document.getElementById("questionView");
+        const questionList = document.getElementById("questionList");
+        const saveQuestion = document.getElementById("saveQuestion");
+        const selectionStatus = document.getElementById("selectionStatus");
+        const gameInfo = document.getElementById("gameInfo");
+        const homeBtn = document.getElementById("homeBtn");
+        const guessSelect = document.getElementById("guessSelect");
+        const guessBtn = document.getElementById("guessBtn");
+        const guessFeedback = document.getElementById("guessFeedback");
+        const resultBanner = document.getElementById("resultBanner");
+        const resultText = document.getElementById("resultText");
+        const restartBtn = document.getElementById("restartBtn");
+
+        const characters = [
+            "Anna", "Bruno", "Carla", "Diego", "Elisa", "Fabio",
+            "Giada", "Hassan", "Irene", "Jacopo", "Katia", "Luca",
+            "Marta", "Nina", "Omar", "Paola", "Quinto", "Rita",
+            "Sergio", "Tania", "Ugo", "Viola", "Walter", "Zeno"
+        ];
+
+        const characterCards = characters.map((name, index) => ({
+            id: `char-${index + 1}`,
+            name,
+            imageUrl: `https://picsum.photos/seed/${encodeURIComponent(`${gameId || "fallback"}-${name}`)}/240/240`
+        }));
+
+        let playersCache = [];
+        let mySelectedCharacterId = "";
+        let latestMovesCache = [];
+
+        function isBotPlayer(player) {
+            return Boolean(player && typeof player.name === "string" && player.name.toUpperCase().startsWith(BOT_NAME));
+        }
+
+        function headers() {
+            const h = new Headers();
+            h.append("X-API-Key", API_KEY);
+            return h;
+        }
+
+        async function removeCurrentPlayer() {
+            if (!gameId || !playerId) {
+                return;
+            }
+
+            try {
+                await fetch(`${BASE_URL}/games/${gameId}/players/${playerId}`, {
+                    method: "DELETE",
+                    headers: headers(),
+                    redirect: "follow"
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        async function leaveToHome(event) {
+            event.preventDefault();
+            await removeCurrentPlayer();
+            sessionStorage.removeItem(ACTIVE_SESSION_KEY);
+            window.location.href = "../index.html";
+        }
+
+        function restartToLobby() {
+            window.location.href = "splash.html";
+        }
+
+        function renderBoard() {
+            boardEl.innerHTML = "";
+            characterCards.forEach((character) => {
+                const col = document.createElement("div");
+                col.className = "col";
+
+                const card = document.createElement("button");
+                card.type = "button";
+                card.className = "character-card w-100";
+                card.dataset.characterId = character.id;
+                card.innerHTML = `
+                    <img class="character-thumb" src="${character.imageUrl}" alt="${character.name}">
+                    <div>${character.name}</div>
+                `;
+                card.addEventListener("click", () => {
+                    if (!mySelectedCharacterId) {
+                        chooseSecretCharacter(character);
+                        return;
+                    }
+                    card.classList.toggle("off");
+                });
+
+                col.appendChild(card);
+                boardEl.appendChild(col);
+            });
+        }
+
+        async function loadPlayers() {
+            if (!gameId) {
+                return [];
+            }
+
+            const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                method: "GET",
+                headers: headers(),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore caricamento giocatori");
+            }
+
+            playersListEl.innerHTML = "";
+            result.players.forEach((p) => {
+                const li = document.createElement("li");
+                li.className = "list-group-item d-flex justify-content-between align-items-center";
+                li.innerHTML = `<span>${p.name}</span>${p.id === playerId ? "<span class='badge text-bg-primary'>Tu</span>" : ""}`;
+                playersListEl.appendChild(li);
+            });
+
+            if (playerId && !result.players.some((p) => p.id === playerId)) {
+                alert("Non fai piu parte della partita.");
+                sessionStorage.removeItem(ACTIVE_SESSION_KEY);
+                window.location.href = "../index.html";
+                return [];
+            }
+
+            playersCache = result.players;
+            return result.players;
+        }
+
+        async function getMoves() {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "GET",
+                headers: headers(),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore caricamento mosse");
+            }
+            return result.moves || [];
+        }
+
+        async function postMove(data) {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "POST",
+                headers: new Headers({
+                    "X-API-Key": API_KEY,
+                    "Content-Type": "application/json"
+                }),
+                body: JSON.stringify({
+                    playerId,
+                    data
+                }),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore invio mossa");
+            }
+            return result;
+        }
+
+        async function postMoveAsPlayer(customPlayerId, data) {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "POST",
+                headers: new Headers({
+                    "X-API-Key": API_KEY,
+                    "Content-Type": "application/json"
+                }),
+                body: JSON.stringify({
+                    playerId: customPlayerId,
+                    data
+                }),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore invio mossa bot");
+            }
+        }
+
+        function getLatestChoiceMap(moves) {
+            const map = {};
+            moves.filter((m) => m.data && m.data.type === "secret-choice").forEach((m) => {
+                map[m.playerId] = m.data.characterId;
+            });
+            return map;
+        }
+
+        function updateSelectionUi(moves, players) {
+            const choiceMoves = moves.filter((m) => m.data && m.data.type === "secret-choice");
+            const latestChoiceByPlayer = {};
+            choiceMoves.forEach((m) => {
+                latestChoiceByPlayer[m.playerId] = m.data.characterId;
+            });
+
+            mySelectedCharacterId = latestChoiceByPlayer[playerId] || "";
+
+            const selectedCount = players.filter((p) => latestChoiceByPlayer[p.id]).length;
+            const allReady = players.length >= 2 && selectedCount === players.length;
+
+            const boardCards = boardEl.querySelectorAll(".character-card");
+            boardCards.forEach((card) => {
+                card.classList.remove("selected-secret");
+                if (mySelectedCharacterId && card.dataset.characterId === mySelectedCharacterId) {
+                    card.classList.add("selected-secret");
+                }
+            });
+
+            if (!mySelectedCharacterId) {
+                selectionStatus.innerText = "Scegli la tua immagine segreta cliccando una carta.";
+            } else if (!allReady) {
+                selectionStatus.innerText = "Immagine scelta. In attesa che l'altro giocatore scelga la sua.";
+            } else {
+                selectionStatus.innerText = "Entrambi pronti. Ora fatevi le domande.";
+            }
+
+            questionInput.disabled = !allReady;
+            saveQuestion.disabled = !allReady;
+            guessSelect.disabled = !allReady;
+            guessBtn.disabled = !allReady;
+        }
+
+        function renderQuestions(moves) {
+            const questionMoves = moves.filter((m) => m.data && m.data.type === "question");
+            const guessMoves = moves.filter((m) => m.data && m.data.type === "guess");
+            questionList.innerHTML = "";
+
+            if (questionMoves.length === 0) {
+                questionView.innerText = "Nessuna domanda ancora";
+                questionList.innerHTML = "<p class='text-muted mb-0'>Le domande appariranno qui in tempo reale.</p>";
+            } else {
+                questionMoves.forEach((m) => {
+                    const item = document.createElement("div");
+                    item.className = "question-item";
+                    const who = m.data.playerName || "Giocatore";
+                    item.innerHTML = `<strong>${who}</strong>: ${m.data.text || ""}`;
+                    questionList.appendChild(item);
+                });
+
+                const lastQuestion = questionMoves[questionMoves.length - 1];
+                questionView.innerText = `Ultima domanda: ${lastQuestion.data.text || ""}`;
+            }
+
+            guessMoves.forEach((m) => {
+                const item = document.createElement("div");
+                item.className = "question-item";
+                const who = m.data.playerName || "Giocatore";
+                item.innerHTML = `<strong>${who}</strong> ha provato a indovinare: ${m.data.guessedCharacterName || "?"} ${m.data.correct ? "(GIUSTO)" : "(sbagliato)"}`;
+                questionList.appendChild(item);
+            });
+            questionList.scrollTop = questionList.scrollHeight;
+        }
+
+        async function ensureBotForIdleOpponent(players, moves) {
+            if (players.length !== 2 || players.some(isBotPlayer)) {
+                return;
+            }
+
+            const opponent = players.find((p) => p.id !== playerId);
+            if (!opponent) {
+                return;
+            }
+
+            const activityTypes = new Set(["secret-choice", "question", "guess", "chat", "start", "presence"]);
+            const opponentMoves = moves.filter((m) => m.playerId === opponent.id && m.data && activityTypes.has(m.data.type));
+            const lastActivityMs = opponentMoves.length > 0
+                ? new Date(opponentMoves[opponentMoves.length - 1].timestamp).getTime()
+                : new Date(opponent.joinedAt || Date.now()).getTime();
+
+            if (Date.now() - lastActivityMs < IDLE_TIMEOUT_MS) {
+                return;
+            }
+
+            try {
+                await fetch(`${BASE_URL}/games/${gameId}/players/${opponent.id}`, {
+                    method: "DELETE",
+                    headers: headers(),
+                    redirect: "follow"
+                });
+
+                const addResponse = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                    method: "POST",
+                    headers: new Headers({
+                        "X-API-Key": API_KEY,
+                        "Content-Type": "application/json"
+                    }),
+                    body: JSON.stringify({ name: BOT_NAME }),
+                    redirect: "follow"
+                });
+                const addResult = await addResponse.json();
+                if (!addResponse.ok) {
+                    throw new Error(addResult.error || "Errore inserimento bot");
+                }
+
+                await postMoveAsPlayer(addResult.player.id, { type: "bot-joined", reason: "idle-timeout", playerName: BOT_NAME });
+                await postMoveAsPlayer(addResult.player.id, { type: "start", playerName: BOT_NAME });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        async function ensureBotParticipation(players, moves) {
+            const botPlayer = players.find(isBotPlayer);
+            if (!botPlayer) {
+                return;
+            }
+
+            const gameOverMoves = moves.filter((m) => m.data && m.data.type === "game-over");
+            if (gameOverMoves.length > 0) {
+                return;
+            }
+
+            const latestChoiceByPlayer = getLatestChoiceMap(moves);
+            if (!latestChoiceByPlayer[botPlayer.id]) {
+                const randomChar = characterCards[Math.floor(Math.random() * characterCards.length)];
+                await postMoveAsPlayer(botPlayer.id, {
+                    type: "secret-choice",
+                    characterId: randomChar.id,
+                    characterName: randomChar.name,
+                    imageUrl: randomChar.imageUrl,
+                    playerName: BOT_NAME
+                });
+                return;
+            }
+
+            const allReady = players.length >= 2 && players.every((p) => latestChoiceByPlayer[p.id]);
+            if (!allReady) {
+                return;
+            }
+
+            const botQuestionMoves = moves.filter((m) => m.playerId === botPlayer.id && m.data && m.data.type === "question");
+            const lastBotQuestionMs = botQuestionMoves.length > 0
+                ? new Date(botQuestionMoves[botQuestionMoves.length - 1].timestamp).getTime()
+                : 0;
+
+            if (Date.now() - lastBotQuestionMs > 15000) {
+                const botQuestions = [
+                    "Ha gli occhiali?",
+                    "Ha i capelli scuri?",
+                    "E' un personaggio con cappello?",
+                    "Sembra sorridente?"
+                ];
+                const randomQuestion = botQuestions[Math.floor(Math.random() * botQuestions.length)];
+                await postMoveAsPlayer(botPlayer.id, {
+                    type: "question",
+                    text: randomQuestion,
+                    playerName: BOT_NAME
+                });
+            }
+        }
+
+        function renderGameOver(moves, players) {
+            const gameOverMoves = moves.filter((m) => m.data && m.data.type === "game-over");
+            if (gameOverMoves.length === 0) {
+                resultBanner.classList.add("hide");
+                return false;
+            }
+
+            const finalMove = gameOverMoves[gameOverMoves.length - 1];
+            const winnerId = finalMove.data.winnerPlayerId;
+            const winner = players.find((p) => p.id === winnerId);
+            const winnerName = winner ? winner.name : (finalMove.data.winnerName || "Giocatore");
+
+            if (winnerId === playerId) {
+                resultText.innerText = "Hai vinto! Hai indovinato la carta avversaria.";
+            } else {
+                resultText.innerText = `Hai perso! ${winnerName} ha indovinato la carta.`;
+            }
+
+            resultBanner.classList.remove("hide");
+            questionInput.disabled = true;
+            saveQuestion.disabled = true;
+            guessSelect.disabled = true;
+            guessBtn.disabled = true;
+            return true;
+        }
+
+        async function chooseSecretCharacter(character) {
+            if (mySelectedCharacterId) {
+                return;
+            }
+
+            try {
+                await postMove({
+                    type: "secret-choice",
+                    characterId: character.id,
+                    characterName: character.name,
+                    imageUrl: character.imageUrl,
+                    playerName: playersCache.find((p) => p.id === playerId)?.name || "Giocatore"
+                });
+                await refreshGameState();
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+            }
+        }
+
+        async function submitQuestion() {
+            const value = questionInput.value.trim();
+            if (!value) {
+                return;
+            }
+
+            try {
+                await postMove({
+                    type: "question",
+                    text: value,
+                    playerName: playersCache.find((p) => p.id === playerId)?.name || "Giocatore"
+                });
+                questionInput.value = "";
+                await refreshGameState();
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+            }
+        }
+
+        async function submitGuess() {
+            const guessedCharacterId = guessSelect.value;
+            if (!guessedCharacterId) {
+                return;
+            }
+
+            const latestChoiceByPlayer = getLatestChoiceMap(latestMovesCache);
+            const opponents = playersCache.filter((p) => p.id !== playerId);
+            const target = opponents.find((p) => latestChoiceByPlayer[p.id]);
+            if (!target) {
+                guessFeedback.innerText = "Attendi che l'avversario scelga il suo personaggio.";
+                return;
+            }
+
+            const guessedCharacter = characterCards.find((c) => c.id === guessedCharacterId);
+            const correct = guessedCharacterId === latestChoiceByPlayer[target.id];
+
+            try {
+                await postMove({
+                    type: "guess",
+                    guessedCharacterId,
+                    guessedCharacterName: guessedCharacter ? guessedCharacter.name : guessedCharacterId,
+                    targetPlayerId: target.id,
+                    correct,
+                    playerName: playersCache.find((p) => p.id === playerId)?.name || "Giocatore"
+                });
+
+                if (correct) {
+                    await postMove({
+                        type: "game-over",
+                        winnerPlayerId: playerId,
+                        winnerName: playersCache.find((p) => p.id === playerId)?.name || "Giocatore",
+                        loserPlayerId: target.id,
+                        loserName: target.name,
+                        reason: "correct-guess"
+                    });
+                    guessFeedback.innerText = "Hai indovinato la carta corretta!";
+                } else {
+                    guessFeedback.innerText = "Tentativo sbagliato. Continua a fare domande.";
+                }
+
+                await refreshGameState();
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+            }
+        }
+
+        async function refreshGameState() {
+            let players = await loadPlayers();
+            if (players.length === 0) {
+                return;
+            }
+            let moves = await getMoves();
+
+            await ensureBotForIdleOpponent(players, moves);
+            players = await loadPlayers();
+            if (players.length === 0) {
+                return;
+            }
+            moves = await getMoves();
+            await ensureBotParticipation(players, moves);
+            players = await loadPlayers();
+            if (players.length === 0) {
+                return;
+            }
+            moves = await getMoves();
+
+            latestMovesCache = moves;
+            updateSelectionUi(moves, players);
+            renderQuestions(moves);
+            renderGameOver(moves, players);
+        }
+
+        async function init() {
+            gameInfo.innerText = `${gameName}${gameId ? ` - ID: ${gameId}` : ""}`;
+            renderBoard();
+            guessSelect.innerHTML = characterCards.map((c) => `<option value="${c.id}">${c.name}</option>`).join("");
+            questionInput.disabled = true;
+            saveQuestion.disabled = true;
+            guessSelect.disabled = true;
+            guessBtn.disabled = true;
+            saveQuestion.addEventListener("click", submitQuestion);
+            guessBtn.addEventListener("click", submitGuess);
+
+            try {
+                await refreshGameState();
+                setInterval(refreshGameState, 2500);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        homeBtn.addEventListener("click", leaveToHome);
+        restartBtn.addEventListener("click", restartToLobby);
+        init();
+    </script>
+</body>
+</html>

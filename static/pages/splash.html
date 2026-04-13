@@ -1,15 +1,504 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="background-color:rgb(148, 217, 172)">
+    <title>Lobby Partita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+    />
+    <style>
+        :root {
+            --ink: #0f172a;
+            --brand: #0f766e;
+            --brand-dark: #115e59;
+            --success: #15803d;
+        }
 
-animazione
-<a href="../index.html">
-    <img src="../img/undo.ico" />
-</a>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Manrope", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 13% 14%, #99f6e4a8 0%, transparent 24%),
+                radial-gradient(circle at 88% 14%, #fed7aaa3 0%, transparent 26%),
+                linear-gradient(145deg, #f8fafc 0%, #f0fdfa 48%, #fff7ed 100%);
+        }
+
+        .title {
+            font-family: "Alfa Slab One", serif;
+            letter-spacing: 1px;
+        }
+
+        .glass {
+            background: #fffffff2;
+            border: 1px solid #00000014;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px #0f172a1a;
+        }
+
+        .chat-box {
+            height: 320px;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+        }
+
+        .chat-message {
+            margin-bottom: 8px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            background: #f8fafc;
+            border-left: 4px solid var(--brand);
+        }
+
+        .btn-brand {
+            background-color: var(--brand);
+            border-color: var(--brand);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .btn-brand:hover {
+            background-color: var(--brand-dark);
+            border-color: var(--brand-dark);
+            color: #fff;
+        }
+
+        .btn-start {
+            background-color: var(--success);
+            border-color: var(--success);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .btn-start:hover {
+            background-color: #166534;
+            border-color: #166534;
+            color: #fff;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .waiting-pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #e2e8f0;
+            color: #334155;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main class="container py-4 py-md-5">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <div>
+                <h1 class="title h2 mb-1">Sala di Attesa</h1>
+                <p class="mb-0" id="gameTitle">Partita</p>
+            </div>
+            <a id="homeLink" href="../index.html" class="btn btn-outline-dark">Torna alla home</a>
+        </div>
+
+        <div class="row g-4">
+            <section class="col-lg-4">
+                <div class="glass p-3 p-md-4 h-100">
+                    <h2 class="h5">Giocatori</h2>
+                    <ul id="playersList" class="list-group mb-3"></ul>
+                    <p id="waitingLabel" class="mb-3"><span class="waiting-pill">In attesa del secondo giocatore...</span></p>
+                    <button id="startBtn" type="button" class="btn btn-start w-100" disabled>Start partita</button>
+                </div>
+            </section>
+
+            <section class="col-lg-8">
+                <div class="glass p-3 p-md-4 h-100 d-flex flex-column">
+                    <h2 class="h5">Chat di gruppo</h2>
+                    <div id="chatBox" class="chat-box mb-3"></div>
+                    <form id="chatForm" class="d-flex gap-2 mt-auto">
+                        <input id="chatInput" type="text" class="form-control" placeholder="Scrivi un messaggio..." required>
+                        <button type="submit" class="btn btn-brand">Invia</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
+        const ACTIVE_SESSION_KEY = "guesswho_active_session";
+        const BOT_NAME = "BOT";
+        const SOLO_WAIT_MS = 2 * 60 * 1000;
+
+        function readActiveSession() {
+            try {
+                return JSON.parse(sessionStorage.getItem(ACTIVE_SESSION_KEY) || "{}");
+            } catch {
+                return {};
+            }
+        }
+
+        function saveActiveSession(data) {
+            sessionStorage.setItem(ACTIVE_SESSION_KEY, JSON.stringify(data));
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const sessionData = readActiveSession();
+        const gameId = params.get("gameId") || sessionData.gameId || "";
+        const gameName = params.get("gameName") || sessionData.gameName || "Partita senza nome";
+        let playerId = params.get("playerId") || sessionData.playerId || "";
+        let playerName = params.get("playerName") || sessionData.playerName || "";
+        if (window.location.search) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        let gameAlreadyOpened = false;
+        let startRequested = false;
+
+        const gameTitle = document.getElementById("gameTitle");
+        const playersList = document.getElementById("playersList");
+        const waitingLabel = document.getElementById("waitingLabel");
+        const startBtn = document.getElementById("startBtn");
+        const chatBox = document.getElementById("chatBox");
+        const chatForm = document.getElementById("chatForm");
+        const chatInput = document.getElementById("chatInput");
+        const homeLink = document.getElementById("homeLink");
+
+        function headers(isJson) {
+            const h = new Headers();
+            h.append("X-API-Key", API_KEY);
+            if (isJson) {
+                h.append("Content-Type", "application/json");
+            }
+            return h;
+        }
+
+        function isBotPlayer(player) {
+            return Boolean(player && typeof player.name === "string" && player.name.toUpperCase().startsWith(BOT_NAME));
+        }
+
+        async function postMoveAsPlayer(customPlayerId, data) {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "POST",
+                headers: headers(true),
+                body: JSON.stringify({
+                    playerId: customPlayerId,
+                    data
+                }),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore invio mossa");
+            }
+        }
+
+        async function addBotToGame() {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                method: "POST",
+                headers: headers(true),
+                body: JSON.stringify({ name: BOT_NAME }),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore inserimento bot");
+            }
+            return result.player;
+        }
+
+        async function removePlayerFromGame(targetPlayerId) {
+            await fetch(`${BASE_URL}/games/${gameId}/players/${targetPlayerId}`, {
+                method: "DELETE",
+                headers: headers(false),
+                redirect: "follow"
+            });
+        }
+
+        async function ensureBotForSoloPlayer(players, moves) {
+            const timerMoves = moves.filter((m) => m.data && m.data.type === "solo-timer");
+            const resetMoves = moves.filter((m) => m.data && m.data.type === "solo-reset");
+            const latestTimer = timerMoves[timerMoves.length - 1] || null;
+            const latestReset = resetMoves[resetMoves.length - 1] || null;
+            const timerActive = latestTimer && (!latestReset || new Date(latestTimer.timestamp) > new Date(latestReset.timestamp));
+
+            if (players.length === 1 && isBotPlayer(players[0])) {
+                try {
+                    await removePlayerFromGame(players[0].id);
+                } catch (error) {
+                    console.error(error);
+                }
+                if (timerActive) {
+                    await postMove({ type: "solo-reset" });
+                }
+                return;
+            }
+
+            if (players.length !== 1) {
+                if (timerActive) {
+                    await postMove({ type: "solo-reset" });
+                }
+                return;
+            }
+
+            const soloPlayer = players[0];
+            if (!timerActive || latestTimer.data.playerId !== soloPlayer.id) {
+                await postMove({ type: "solo-timer", playerId: soloPlayer.id, startedAt: new Date().toISOString() });
+                return;
+            }
+
+            const startedAt = new Date(latestTimer.data.startedAt || latestTimer.timestamp).getTime();
+            if (Date.now() - startedAt < SOLO_WAIT_MS) {
+                return;
+            }
+
+            const bot = await addBotToGame();
+            await postMoveAsPlayer(bot.id, { type: "bot-joined", reason: "solo-timeout", playerName: BOT_NAME });
+            await postMoveAsPlayer(bot.id, { type: "start", playerName: BOT_NAME });
+            await postMove({ type: "solo-reset" });
+        }
+
+        function requireGameId() {
+            if (!gameId) {
+                alert("Game ID mancante. Apri la lobby dalla home.");
+                window.location.href = "../index.html";
+                return false;
+            }
+            return true;
+        }
+
+        async function leaveCurrentGame() {
+            if (!gameId || !playerId) {
+                return;
+            }
+
+            try {
+                await fetch(`${BASE_URL}/games/${gameId}/players/${playerId}`, {
+                    method: "DELETE",
+                    headers: headers(false),
+                    redirect: "follow"
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        async function leaveToHome(event) {
+            event.preventDefault();
+            await leaveCurrentGame();
+            sessionStorage.removeItem(ACTIVE_SESSION_KEY);
+            window.location.href = "../index.html";
+        }
+
+        function openGameWindow() {
+            if (gameAlreadyOpened) {
+                return;
+            }
+            gameAlreadyOpened = true;
+            saveActiveSession({
+                gameId,
+                gameName,
+                playerId,
+                playerName,
+                updatedAt: new Date().toISOString()
+            });
+            const target = "game.html";
+            window.location.href = target;
+        }
+
+        function appendMessage(msg, sideInfo) {
+            const line = document.createElement("div");
+            line.className = "chat-message";
+            line.innerHTML = `<strong>${sideInfo}</strong><br>${msg}`;
+            chatBox.appendChild(line);
+        }
+
+        async function loadPlayers() {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                method: "GET",
+                headers: headers(false),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore nel recupero giocatori");
+            }
+
+            playersList.innerHTML = "";
+            result.players.forEach((p) => {
+                const li = document.createElement("li");
+                li.className = "list-group-item d-flex justify-content-between align-items-center";
+                li.innerHTML = `<span>${p.name}</span>${p.id === playerId ? "<span class='badge text-bg-primary'>Tu</span>" : ""}`;
+                playersList.appendChild(li);
+            });
+
+            if (!playerId && result.players.length > 0) {
+                playerId = result.players[0].id;
+                playerName = result.players[0].name;
+                saveActiveSession({
+                    gameId,
+                    gameName,
+                    playerId,
+                    playerName,
+                    updatedAt: new Date().toISOString()
+                });
+            }
+
+            if (playerId && !result.players.some((p) => p.id === playerId)) {
+                alert("Non fai piu parte della partita.");
+                sessionStorage.removeItem(ACTIVE_SESSION_KEY);
+                window.location.href = "../index.html";
+                return [];
+            }
+
+            const canStart = result.players.length >= 2;
+            if (!canStart) {
+                startRequested = false;
+                startBtn.disabled = true;
+                startBtn.innerText = "Start partita";
+                waitingLabel.classList.remove("hide");
+                waitingLabel.innerHTML = "<span class='waiting-pill'>In attesa del secondo giocatore...</span>";
+            }
+
+            return result.players;
+        }
+
+        async function loadChatAndSignals(players) {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "GET",
+                headers: headers(false),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore nel recupero chat");
+            }
+
+            await ensureBotForSoloPlayer(players, result.moves);
+
+            const chatMoves = result.moves.filter((m) => m.data && m.data.type === "chat");
+            const startMoves = result.moves.filter((m) => m.data && m.data.type === "start");
+            const startedPlayerIds = new Set(startMoves.map((m) => m.playerId));
+
+            chatBox.innerHTML = "";
+            chatMoves.forEach((m) => {
+                appendMessage(m.data.text || "", `${m.data.playerName || "Giocatore"}`);
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const canStart = players.length >= 2;
+            if (playerId && startedPlayerIds.has(playerId)) {
+                startRequested = true;
+            }
+
+            if (canStart) {
+                const allStarted = players.every((p) => startedPlayerIds.has(p.id));
+                if (allStarted && !gameAlreadyOpened) {
+                    openGameWindow();
+                    return;
+                }
+
+                if (startRequested) {
+                    startBtn.disabled = true;
+                    startBtn.innerText = "In attesa dell'altro...";
+                    waitingLabel.classList.remove("hide");
+                    waitingLabel.innerHTML = "<span class='waiting-pill'>Hai premuto Start. In attesa dell'altro giocatore...</span>";
+                } else {
+                    startBtn.disabled = false;
+                    startBtn.innerText = "Start partita";
+                    waitingLabel.classList.remove("hide");
+                    waitingLabel.innerHTML = "<span class='waiting-pill'>Entrambi i giocatori devono premere Start.</span>";
+                }
+            }
+
+        }
+
+        async function postMove(data) {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "POST",
+                headers: headers(true),
+                body: JSON.stringify({
+                    playerId,
+                    data
+                }),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore invio mossa");
+            }
+        }
+
+        async function sendChat(event) {
+            event.preventDefault();
+            const text = chatInput.value.trim();
+            if (!text) {
+                return;
+            }
+            await postMove({
+                type: "chat",
+                text,
+                playerName: playerName || "Giocatore"
+            });
+            chatInput.value = "";
+            const players = await loadPlayers();
+            await loadChatAndSignals(players);
+        }
+
+        async function startGame() {
+            if (startRequested) {
+                return;
+            }
+
+            await postMove({
+                type: "start",
+                playerName: playerName || "Giocatore"
+            });
+            startRequested = true;
+            startBtn.disabled = true;
+            startBtn.innerText = "In attesa dell'altro...";
+            waitingLabel.classList.remove("hide");
+            waitingLabel.innerHTML = "<span class='waiting-pill'>Hai premuto Start. In attesa dell'altro giocatore...</span>";
+            const players = await loadPlayers();
+            await loadChatAndSignals(players);
+        }
+
+        async function refreshLobby() {
+            try {
+                const players = await loadPlayers();
+                await loadChatAndSignals(players);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        gameTitle.innerText = `${gameName} - ID: ${gameId || "N/A"}`;
+        if (gameId) {
+            saveActiveSession({
+                gameId,
+                gameName,
+                playerId,
+                playerName,
+                updatedAt: new Date().toISOString()
+            });
+        }
+        chatForm.addEventListener("submit", sendChat);
+        startBtn.addEventListener("click", startGame);
+        homeLink.addEventListener("click", leaveToHome);
+
+        if (requireGameId()) {
+            refreshLobby();
+            setInterval(refreshLobby, 3500);
+        }
+    </script>
 </body>
 </html>

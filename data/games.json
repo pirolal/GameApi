@@ -1,68 +1,1043 @@
 [
   {
-    "id": "b4585647-e1dc-49e8-a2d3-dc3f46f76f21",
-    "name": "Chess Game 1",
-    "ownerId": "de8bcf93-1025-4892-bd26-57bacb92b71f",
-    "players": [
-      {
-        "id": "f74cd081-0bca-4624-9ddb-8aff13d14ea4",
-        "name": "pippo",
-        "joinedAt": "2026-02-24T16:08:46.309Z"
-      },
-      {
-        "id": "9a523b52-1d93-4cdf-82d5-b8d9dbc6d23b",
-        "name": "pippo",
-        "joinedAt": "2026-02-24T16:09:03.438Z"
-      }
-    ],
-    "moves": [
-      {
-        "id": "22072b02-9845-4d6d-9a7f-b84bce2b3416",
-        "playerId": "9a523b52-1d93-4cdf-82d5-b8d9dbc6d23b",
-        "data": {
-          "mossa": "e4"
-        },
-        "timestamp": "2026-02-24T16:37:15.462Z"
-      },
-      {
-        "id": "a53ca1e9-771f-42d8-a671-c55e0bdae2f5",
-        "playerId": "f74cd081-0bca-4624-9ddb-8aff13d14ea4",
-        "data": {
-          "mossa": "e5"
-        },
-        "timestamp": "2026-02-24T16:37:50.601Z"
-      }
-    ],
-    "status": "active",
-    "createdAt": "2026-02-24T16:05:42.329Z",
-    "updatedAt": "2026-02-24T16:37:50.601Z"
-  },
-  {
-    "id": "6c68884e-531a-4923-9719-115414c3a1f0",
-    "name": "Chess game",
+    "id": "b9987fdc-85f6-43e2-ba85-e75d5204f89a",
+    "name": "partita1",
     "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
     "players": [
       {
-        "id": "8f23b638-c05e-46fc-b5d7-88a280e920a0",
-        "name": "luca",
-        "joinedAt": "2026-03-16T16:01:55.311Z"
+        "id": "7906db09-70d5-4bcc-9118-755531b4637a",
+        "name": "BOT",
+        "joinedAt": "2026-03-30T13:46:25.461Z"
       },
       {
-        "id": "9acfa944-bec0-478a-915d-83f1e6c74398",
-        "name": "melissa",
-        "joinedAt": "2026-03-16T16:02:03.196Z"
+        "id": "bd2d3695-fc13-44c5-91c1-cf1df794a7ed",
+        "name": "meli",
+        "joinedAt": "2026-04-13T09:44:09.994Z"
       }
     ],
     "moves": [
       {
-        "id": "0340eb40-e9d0-4cd0-9827-a3088288a2a5",
-        "playerId": "8f23b638-c05e-46fc-b5d7-88a280e920a0",
-        "data": {},
-        "timestamp": "2026-03-16T16:28:04.307Z"
+        "id": "4e7fa2ba-5c12-49d6-8247-d1bc20d1ea8b",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-03-30T13:45:13.129Z"
+      },
+      {
+        "id": "625b3a73-accf-4e82-b744-7053b3d936a0",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+          "startedAt": "2026-03-30T13:45:15.597Z"
+        },
+        "timestamp": "2026-03-30T13:45:14.767Z"
+      },
+      {
+        "id": "15b3b636-7d2a-4a3f-928e-ced01731c7f5",
+        "playerId": "881e00a4-133e-438a-8944-0dee279a784b",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-03-30T13:45:24.014Z"
+      },
+      {
+        "id": "17eda4fc-a473-4615-83f2-322cea292653",
+        "playerId": "881e00a4-133e-438a-8944-0dee279a784b",
+        "data": {
+          "type": "chat",
+          "text": "ciao marco",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-03-30T13:45:30.516Z"
+      },
+      {
+        "id": "a7f0c1c3-6297-472e-9a9b-46a9947c7e9f",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "chat",
+          "text": "ciao luca",
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-03-30T13:45:34.834Z"
+      },
+      {
+        "id": "05d53b7c-c720-45d2-8ae5-299211d69134",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "chat",
+          "text": "iniaziamo?",
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-03-30T13:45:37.970Z"
+      },
+      {
+        "id": "b01eb173-91eb-46cf-97f0-be2f1a6ef92a",
+        "playerId": "881e00a4-133e-438a-8944-0dee279a784b",
+        "data": {
+          "type": "chat",
+          "text": "si",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-03-30T13:45:42.995Z"
+      },
+      {
+        "id": "4cccc35b-e0ca-4730-9577-ab2cd429df51",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "start",
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-03-30T13:45:44.901Z"
+      },
+      {
+        "id": "63483689-1ed1-4248-a822-40daa36b4483",
+        "playerId": "881e00a4-133e-438a-8944-0dee279a784b",
+        "data": {
+          "type": "start",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-03-30T13:45:48.535Z"
+      },
+      {
+        "id": "a087ff6c-db1f-4766-9470-fde31fa5ffc6",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-3",
+          "characterName": "Carla",
+          "imageUrl": "https://picsum.photos/seed/b9987fdc-85f6-43e2-ba85-e75d5204f89a-Carla/240/240",
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-03-30T13:45:52.572Z"
+      },
+      {
+        "id": "892f8b16-5a9b-424d-8ec9-768329cbce19",
+        "playerId": "881e00a4-133e-438a-8944-0dee279a784b",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-6",
+          "characterName": "Fabio",
+          "imageUrl": "https://picsum.photos/seed/b9987fdc-85f6-43e2-ba85-e75d5204f89a-Fabio/240/240",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-03-30T13:45:55.952Z"
+      },
+      {
+        "id": "aabfa7ec-db3d-4d3b-88e8-53d40082102d",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-1",
+          "guessedCharacterName": "Anna",
+          "targetPlayerId": "881e00a4-133e-438a-8944-0dee279a784b",
+          "correct": false,
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-03-30T13:46:08.678Z"
+      },
+      {
+        "id": "c6c85c68-b03d-4ca3-9715-50de1ae8dcba",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-6",
+          "guessedCharacterName": "Fabio",
+          "targetPlayerId": "881e00a4-133e-438a-8944-0dee279a784b",
+          "correct": true,
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-03-30T13:46:14.887Z"
+      },
+      {
+        "id": "f167b3db-0d5f-48b8-aba3-73e39bc1dd8a",
+        "playerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+        "data": {
+          "type": "game-over",
+          "winnerPlayerId": "dec26a37-febf-4d47-9962-31abae94cc17",
+          "winnerName": "Marco",
+          "loserPlayerId": "881e00a4-133e-438a-8944-0dee279a784b",
+          "loserName": "Luca",
+          "reason": "correct-guess"
+        },
+        "timestamp": "2026-03-30T13:46:14.938Z"
+      },
+      {
+        "id": "383dd5f1-806e-4bdd-bb33-a19bd78161ad",
+        "playerId": "7906db09-70d5-4bcc-9118-755531b4637a",
+        "data": {
+          "type": "bot-joined",
+          "reason": "idle-timeout",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-03-30T13:46:25.510Z"
+      },
+      {
+        "id": "b0748fff-4439-4035-aa52-9a0f488d8fec",
+        "playerId": "7906db09-70d5-4bcc-9118-755531b4637a",
+        "data": {
+          "type": "start",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-03-30T13:46:25.550Z"
+      },
+      {
+        "id": "2c4c6045-c49f-4194-8ea6-487716734dec",
+        "playerId": "a3e01d72-783d-4543-a3a4-f3232fe2ab4a",
+        "data": {
+          "type": "chat",
+          "text": "ma crazy",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:33:12.689Z"
+      },
+      {
+        "id": "23a906f8-855d-4294-a6d4-75ca23c55fea",
+        "playerId": "bd2d3695-fc13-44c5-91c1-cf1df794a7ed",
+        "data": {
+          "type": "start",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:44:13.758Z"
       }
     ],
     "status": "active",
-    "createdAt": "2026-03-16T15:53:52.538Z",
-    "updatedAt": "2026-03-16T16:28:04.307Z"
+    "createdAt": "2026-03-30T13:45:12.970Z",
+    "updatedAt": "2026-04-13T09:44:13.758Z"
+  },
+  {
+    "id": "ef39a4b3-2704-4d92-9477-2d36de2a5d85",
+    "name": "partita di prova",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+        "name": "BOT",
+        "joinedAt": "2026-04-13T09:35:29.368Z"
+      },
+      {
+        "id": "2ef49674-5020-4898-b530-dff3e2653fcd",
+        "name": "meli",
+        "joinedAt": "2026-04-13T10:19:47.443Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "5b8237c8-f1f6-4bfa-96f3-2b1b9e333644",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-13T09:33:46.514Z"
+      },
+      {
+        "id": "d1532cd7-09a6-4730-83d1-e45cf5294a8e",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+          "startedAt": "2026-04-13T09:33:48.354Z"
+        },
+        "timestamp": "2026-04-13T09:33:48.158Z"
+      },
+      {
+        "id": "d0ee37b6-3844-474e-943c-60519af8fe47",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-13T09:34:09.183Z"
+      },
+      {
+        "id": "d3a89844-f11c-4c17-865a-a826ee28e960",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "chat",
+          "text": "stra gasa",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:17.780Z"
+      },
+      {
+        "id": "b03304ee-3723-4891-8300-f95e89aecacb",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "chat",
+          "text": "fino a qua va",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:34:19.903Z"
+      },
+      {
+        "id": "b85e0ba4-6b10-433b-a7cd-f86db6f61d1d",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "start",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:21.910Z"
+      },
+      {
+        "id": "c8264d9d-4a7c-4b4c-bf86-0915e5c829f9",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "chat",
+          "text": "è da sisteare",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:34:25.670Z"
+      },
+      {
+        "id": "769da8df-47a7-454d-8bb1-122a87741d35",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "chat",
+          "text": "sistemare",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:34:30.487Z"
+      },
+      {
+        "id": "8aed62ca-ba16-4eff-a4a0-3cd5572cee59",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "start",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:34:33.480Z"
+      },
+      {
+        "id": "5cd67899-a183-4053-b395-19ca8241bc8e",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "chat",
+          "text": "mega trap",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:35.477Z"
+      },
+      {
+        "id": "de57589f-619d-4846-9659-16bd57c61a0f",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-3",
+          "characterName": "Carla",
+          "imageUrl": "https://picsum.photos/seed/ef39a4b3-2704-4d92-9477-2d36de2a5d85-Carla/240/240",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:34:47.017Z"
+      },
+      {
+        "id": "81591d2f-fca9-45e4-b1cc-d1cf03e93171",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-15",
+          "characterName": "Omar",
+          "imageUrl": "https://picsum.photos/seed/ef39a4b3-2704-4d92-9477-2d36de2a5d85-Omar/240/240",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:48.949Z"
+      },
+      {
+        "id": "93102fab-cee4-4357-a02b-3307dbb9d6fb",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-15",
+          "characterName": "Omar",
+          "imageUrl": "https://picsum.photos/seed/ef39a4b3-2704-4d92-9477-2d36de2a5d85-Omar/240/240",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:49.911Z"
+      },
+      {
+        "id": "4de1533a-5bd5-472b-b77c-5fb045dfe291",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-1",
+          "guessedCharacterName": "Anna",
+          "targetPlayerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+          "correct": false,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:57.608Z"
+      },
+      {
+        "id": "828cd24e-9232-4cf2-843e-69b4191b6b78",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-1",
+          "guessedCharacterName": "Anna",
+          "targetPlayerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+          "correct": false,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:57.951Z"
+      },
+      {
+        "id": "7598a46e-60d6-43a2-943a-689dbd136457",
+        "playerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-1",
+          "guessedCharacterName": "Anna",
+          "targetPlayerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+          "correct": false,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T09:34:58.214Z"
+      },
+      {
+        "id": "88ee8327-5b15-4da2-aafa-51e1897cc515",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-1",
+          "guessedCharacterName": "Anna",
+          "targetPlayerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:08.614Z"
+      },
+      {
+        "id": "1c4fc2b9-5c8d-43e8-9d0f-154ecb392de7",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-18",
+          "guessedCharacterName": "Rita",
+          "targetPlayerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:13.368Z"
+      },
+      {
+        "id": "1abc3a19-9b1e-4518-b5e1-91dd6bfce820",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "261fada4-de17-4abe-a364-6cb4ef0ce9b9",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:17.393Z"
+      },
+      {
+        "id": "6ec57a66-0619-47ca-84d3-71706f01bcd1",
+        "playerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+        "data": {
+          "type": "bot-joined",
+          "reason": "idle-timeout",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T09:35:29.422Z"
+      },
+      {
+        "id": "e2251f59-67c5-474f-b0f5-46013fe00645",
+        "playerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+        "data": {
+          "type": "start",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T09:35:29.476Z"
+      },
+      {
+        "id": "2c5f6df9-5808-4d89-82fa-966c8b37232c",
+        "playerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-8",
+          "characterName": "Hassan",
+          "imageUrl": "https://picsum.photos/seed/ef39a4b3-2704-4d92-9477-2d36de2a5d85-Hassan/240/240",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T09:35:29.622Z"
+      },
+      {
+        "id": "30986919-f696-44f2-8878-963ed60619a2",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "question",
+          "text": "eqwwet43123 34",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:30.520Z"
+      },
+      {
+        "id": "903bd4d9-c5af-47fa-a80f-1daff7aea861",
+        "playerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T09:35:30.757Z"
+      },
+      {
+        "id": "034bc600-2a6d-411d-be36-7c047ac32dea",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:41.865Z"
+      },
+      {
+        "id": "d24a8806-89dd-4724-a079-d47963bf596a",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:42.349Z"
+      },
+      {
+        "id": "c6286e2b-98ff-44b4-a6e7-9a6929e8aa94",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:42.561Z"
+      },
+      {
+        "id": "cb006226-98ba-429f-96e1-c11c7cb09cb4",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:42.735Z"
+      },
+      {
+        "id": "e632acf3-7e3f-4442-8553-c420fa949e15",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:42.876Z"
+      },
+      {
+        "id": "701d69b4-8a3e-4e3c-959a-cd574a7dddbe",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:43.581Z"
+      },
+      {
+        "id": "54c46ff7-1506-4399-aee5-672fcd91ad12",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:43.757Z"
+      },
+      {
+        "id": "c0046d01-ff3a-45ce-99aa-863c455e471e",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:43.930Z"
+      },
+      {
+        "id": "97b60bb0-914e-434b-a1e4-a248433891d7",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:44.306Z"
+      },
+      {
+        "id": "26a5f749-a76f-4e89-bf6a-57153fa24124",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:44.309Z"
+      },
+      {
+        "id": "ba77a57b-3267-4f49-8f29-81bdab954b14",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:44.487Z"
+      },
+      {
+        "id": "1350fb86-1ed0-4295-bd0d-e6c8a7da69d5",
+        "playerId": "6bf6d348-8410-4238-9b3c-af55a3a477e3",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-12",
+          "guessedCharacterName": "Luca",
+          "targetPlayerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+          "correct": false,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T09:35:44.813Z"
+      },
+      {
+        "id": "0da2b184-504c-49da-832d-2086e85c277e",
+        "playerId": "f45eee3f-1bf9-4a9d-80ba-e410adb8efad",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T09:35:46.910Z"
+      },
+      {
+        "id": "1daa8bb0-df13-4f08-931c-417c3889e875",
+        "playerId": "2ef49674-5020-4898-b530-dff3e2653fcd",
+        "data": {
+          "type": "start",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T10:20:24.882Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-13T09:33:46.334Z",
+    "updatedAt": "2026-04-13T10:20:24.882Z"
+  },
+  {
+    "id": "7a9a2ca9-ee2a-46b2-b88b-d7c0da729d03",
+    "name": "meli vs luks",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "name": "meli",
+        "joinedAt": "2026-04-13T10:32:16.027Z"
+      },
+      {
+        "id": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "name": "BOT",
+        "joinedAt": "2026-04-13T10:33:22.338Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "75668b84-76f8-4df6-a389-0996e8d30ba4",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-13T10:32:16.240Z"
+      },
+      {
+        "id": "ab6e89eb-6ae5-4c75-94aa-e5213de71774",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+          "startedAt": "2026-04-13T10:32:18.026Z"
+        },
+        "timestamp": "2026-04-13T10:32:19.035Z"
+      },
+      {
+        "id": "0b48da2e-2d12-42f2-8577-e2434211e35b",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-13T10:32:33.086Z"
+      },
+      {
+        "id": "24f98bd9-412e-44f6-9290-e2d28468dec7",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "chat",
+          "text": "Ciao luks",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T10:32:37.496Z"
+      },
+      {
+        "id": "03712a10-4adf-483f-9421-f2f8fd085458",
+        "playerId": "bc6ab7d0-48c2-4f29-abe3-67dbc4048fd0",
+        "data": {
+          "type": "chat",
+          "text": "ciao",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T10:32:44.211Z"
+      },
+      {
+        "id": "a6b4760d-84a2-4163-83ec-ed5852c8677e",
+        "playerId": "bc6ab7d0-48c2-4f29-abe3-67dbc4048fd0",
+        "data": {
+          "type": "start",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-13T10:32:50.715Z"
+      },
+      {
+        "id": "b0019c5a-333a-4832-9a50-a04bfcfa73f7",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "start",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T10:32:51.402Z"
+      },
+      {
+        "id": "6172c90b-9290-4c8b-9c7a-1eb5f49e0510",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "bot-joined",
+          "reason": "idle-timeout",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:33:22.397Z"
+      },
+      {
+        "id": "3b1b4c55-b5ff-4a38-be11-2ae359a2e2e7",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "start",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:33:22.451Z"
+      },
+      {
+        "id": "e6331177-99a1-416f-bc75-ec4e191b55b3",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-1",
+          "characterName": "Anna",
+          "imageUrl": "https://picsum.photos/seed/7a9a2ca9-ee2a-46b2-b88b-d7c0da729d03-Anna/240/240",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:33:22.732Z"
+      },
+      {
+        "id": "bdd030f4-ebea-4c40-89f2-6ca1ba6b45d9",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-10",
+          "characterName": "Jacopo",
+          "imageUrl": "https://picsum.photos/seed/7a9a2ca9-ee2a-46b2-b88b-d7c0da729d03-Jacopo/240/240",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T10:33:36.964Z"
+      },
+      {
+        "id": "d8c5c850-36c0-4577-bb1c-e76581ae1fe8",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:33:37.457Z"
+      },
+      {
+        "id": "3b88c483-d1c8-4913-a434-24e6a878aab7",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "E' un personaggio con cappello?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:33:37.588Z"
+      },
+      {
+        "id": "59075e79-52f0-41fe-9b13-88e9d1984b4f",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "E' un personaggio con cappello?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:33:55.000Z"
+      },
+      {
+        "id": "a1076bb6-ac0d-4f7a-804d-ba7a904ec581",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "E' un personaggio con cappello?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:34:12.396Z"
+      },
+      {
+        "id": "7968eabb-b327-49a5-9ded-616c982a7699",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:34:30.009Z"
+      },
+      {
+        "id": "5d775a43-433a-4c8d-a11f-4263c793aaa3",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:34:47.520Z"
+      },
+      {
+        "id": "a1249f2d-1f69-4d27-8db5-1953465c9d1c",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha gli occhiali?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:35:05.052Z"
+      },
+      {
+        "id": "51da6f89-7565-4d5a-995b-8faa48215d95",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:35:22.434Z"
+      },
+      {
+        "id": "1d3c1a71-2fac-44f9-9fb0-1396097791d0",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha gli occhiali?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:35:40.054Z"
+      },
+      {
+        "id": "c6e51e41-2324-4a4a-98af-f8fcc56c785d",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "E' un personaggio con cappello?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:35:57.514Z"
+      },
+      {
+        "id": "8cab2bba-a9d3-4018-926f-cf8717c1e006",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:36:14.966Z"
+      },
+      {
+        "id": "51d30bb0-f7cc-498e-af00-e7b60ec63460",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Sembra sorridente?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:36:32.589Z"
+      },
+      {
+        "id": "21e01be4-4caa-4afe-b9f0-67de3c2b7c41",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha gli occhiali?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:36:51.624Z"
+      },
+      {
+        "id": "dd8a87ae-2cca-41ef-ae83-7d600c31f389",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha gli occhiali?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:37:08.012Z"
+      },
+      {
+        "id": "581afaca-595f-49bb-ab69-111aac19695c",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "question",
+          "text": "si",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T10:37:25.385Z"
+      },
+      {
+        "id": "5a61a888-a1aa-4787-9e30-2edd0d7dd17b",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Sembra sorridente?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:37:25.421Z"
+      },
+      {
+        "id": "f664ae0d-8b22-4054-b667-e32ad08eedff",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "question",
+          "text": "no",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T10:37:32.142Z"
+      },
+      {
+        "id": "aa958d88-c112-4e70-be11-e6dbe9ebe420",
+        "playerId": "5d93a571-e9b3-49d7-8382-fdbc90eedea4",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-1",
+          "guessedCharacterName": "Anna",
+          "targetPlayerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+          "correct": true,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-13T10:37:38.127Z"
+      },
+      {
+        "id": "e0cf5242-eabd-4ce3-8b9b-e22d704142b2",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "E' un personaggio con cappello?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:43:25.049Z"
+      },
+      {
+        "id": "ed73695f-d756-405c-b5da-1a56d0e7dc4e",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Sembra sorridente?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:44:24.897Z"
+      },
+      {
+        "id": "dd47a26c-d0e3-4487-80df-438404948929",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha gli occhiali?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:45:24.938Z"
+      },
+      {
+        "id": "9247eedb-f3a4-46a3-92f2-01583a5223cd",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha i capelli scuri?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:46:24.478Z"
+      },
+      {
+        "id": "1648be0e-ee8a-4aa5-a0a5-c530be9ee34f",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "E' un personaggio con cappello?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:47:25.147Z"
+      },
+      {
+        "id": "f00157c8-70e0-4d84-976b-11dcbd0f4550",
+        "playerId": "135db3e2-6359-44e4-aaf8-88c661584d8f",
+        "data": {
+          "type": "question",
+          "text": "Ha gli occhiali?",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-13T10:48:24.699Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-13T10:32:14.763Z",
+    "updatedAt": "2026-04-13T10:48:24.699Z"
   }
 ]
