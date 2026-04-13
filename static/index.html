@@ -11,98 +11,9 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
         crossorigin="anonymous"
     />
-    <style>
-        :root {
-            --ink: #0f172a;
-            --primary: #0f766e;
-            --primary-dark: #115e59;
-            --accent: #ea580c;
-            --panel: #ffffffeb;
-        }
-
-        body {
-            font-family: "Barlow", sans-serif;
-            color: var(--ink);
-            background:
-                radial-gradient(circle at 12% 14%, #99f6e4aa 0%, transparent 26%),
-                radial-gradient(circle at 88% 16%, #fed7aa99 0%, transparent 25%),
-                linear-gradient(155deg, #f8fafc 0%, #f0fdfa 42%, #fff7ed 100%);
-            min-height: 100vh;
-            animation: entrance 420ms ease-out;
-        }
-
-        @keyframes entrance {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .title-font {
-            font-family: "Bungee", cursive;
-            letter-spacing: 1px;
-        }
-
-        .board-panel {
-            background: var(--panel);
-            border: 2px solid #0000001a;
-            border-radius: 18px;
-            box-shadow: 0 14px 32px #0f172a1a;
-            backdrop-filter: blur(2px);
-        }
-
-        .game-item {
-            border-radius: 14px;
-            border: 1px solid #0000001f;
-            transition: transform 140ms ease, box-shadow 140ms ease;
-            cursor: pointer;
-        }
-
-        .game-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px #00000026;
-        }
-
-        .game-private {
-            border-left: 7px solid var(--accent);
-        }
-
-        .game-public {
-            border-left: 7px solid var(--primary);
-        }
-
-        .btn-brand {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .btn-brand:hover {
-            background-color: var(--primary-dark);
-            border-color: var(--primary-dark);
-            color: #fff;
-        }
-
-        .chip {
-            display: inline-block;
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border-radius: 999px;
-            border: 1px solid #0f172a26;
-            background: #ffffff;
-        }
-
-        .hide {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="stile.css" />
 </head>
-<body>
+<body class="lobby-page">
     <main class="container py-4 py-md-5">
         <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-3">
             <div>
@@ -449,7 +360,7 @@
                     playerName: risultato.player.name,
                     updatedAt: new Date().toISOString()
                 }));
-                const target = "pages/splash.html";
+                const target = "splash.html";
                 window.location.href = target;
             } catch (error) {
                 console.error(error);

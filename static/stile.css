@@ -1,0 +1,268 @@
+<<<<<<< HEAD
+=======
+.hide {
+    display: none;
+}
+
+@keyframes entrance {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.lobby-page {
+    --ink: #0f172a;
+    --primary: #0f766e;
+    --primary-dark: #115e59;
+    --accent: #ea580c;
+    --panel: #ffffffeb;
+
+    font-family: "Barlow", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 12% 14%, #99f6e4aa 0%, transparent 26%),
+        radial-gradient(circle at 88% 16%, #fed7aa99 0%, transparent 25%),
+        linear-gradient(155deg, #f8fafc 0%, #f0fdfa 42%, #fff7ed 100%);
+    min-height: 100vh;
+    animation: entrance 420ms ease-out;
+}
+
+body.lobby-page .title-font {
+    font-family: "Bungee", cursive;
+    letter-spacing: 1px;
+}
+
+body.lobby-page .board-panel {
+    background: var(--panel);
+    border: 2px solid #0000001a;
+    border-radius: 18px;
+    box-shadow: 0 14px 32px #0f172a1a;
+    backdrop-filter: blur(2px);
+}
+
+body.lobby-page .game-item {
+    border-radius: 14px;
+    border: 1px solid #0000001f;
+    transition: transform 140ms ease, box-shadow 140ms ease;
+    cursor: pointer;
+}
+
+body.lobby-page .game-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #00000026;
+}
+
+body.lobby-page .game-private {
+    border-left: 7px solid var(--accent);
+}
+
+body.lobby-page .game-public {
+    border-left: 7px solid var(--primary);
+}
+
+body.lobby-page .btn-brand {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+body.lobby-page .btn-brand:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #fff;
+}
+
+body.lobby-page .chip {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #0f172a26;
+    background: #ffffff;
+}
+
+body.splash-page {
+    --ink: #0f172a;
+    --brand: #0f766e;
+    --brand-dark: #115e59;
+    --success: #15803d;
+
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Manrope", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 13% 14%, #99f6e4a8 0%, transparent 24%),
+        radial-gradient(circle at 88% 14%, #fed7aaa3 0%, transparent 26%),
+        linear-gradient(145deg, #f8fafc 0%, #f0fdfa 48%, #fff7ed 100%);
+}
+
+body.splash-page .title {
+    font-family: "Alfa Slab One", serif;
+    letter-spacing: 1px;
+}
+
+body.splash-page .glass {
+    background: #fffffff2;
+    border: 1px solid #00000014;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px #0f172a1a;
+}
+
+body.splash-page .chat-box {
+    height: 320px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+}
+
+body.splash-page .chat-message {
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border-left: 4px solid var(--brand);
+}
+
+body.splash-page .btn-brand {
+    background-color: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+    font-weight: 700;
+}
+
+body.splash-page .btn-brand:hover {
+    background-color: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: #fff;
+}
+
+body.splash-page .btn-start {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: #fff;
+    font-weight: 700;
+}
+
+body.splash-page .btn-start:hover {
+    background-color: #166534;
+    border-color: #166534;
+    color: #fff;
+}
+
+body.splash-page .waiting-pill {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+body.game-page {
+    --ink: #0b132b;
+    --bg1: #fef2f2;
+    --bg2: #ecfccb;
+    --card: #ffffff;
+    --off: #334155;
+
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Nunito", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 10% 10%, #fca5a5a8 0%, transparent 28%),
+        radial-gradient(circle at 90% 12%, #a5f3fca8 0%, transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+}
+
+body.game-page .title {
+    font-family: "Racing Sans One", sans-serif;
+    letter-spacing: 1px;
+}
+
+body.game-page .panel {
+    background: #ffffffde;
+    border: 1px solid #00000014;
+    border-radius: 18px;
+    box-shadow: 0 12px 26px #0000001a;
+}
+
+body.game-page .character-card {
+    border: 2px solid #94a3b8;
+    background: var(--card);
+    border-radius: 12px;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 120ms ease, background-color 120ms ease;
+}
+
+body.game-page .character-card:hover {
+    transform: translateY(-2px);
+}
+
+body.game-page .character-card.off {
+    background: #cbd5e1;
+    color: var(--off);
+    text-decoration: line-through;
+    border-color: #475569;
+}
+
+body.game-page .character-card.selected-secret {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px #bae6fd;
+}
+
+body.game-page .character-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    border: 1px solid #00000022;
+}
+
+body.game-page .question-list {
+    max-height: 170px;
+    overflow-y: auto;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 8px;
+    background: #ffffff;
+}
+
+body.game-page .question-item {
+    font-size: 0.92rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 6px 0;
+}
+
+body.game-page .question-item:last-child {
+    border-bottom: 0;
+}
+
+body.game-page .result-banner {
+    border-radius: 12px;
+    border: 1px solid #0000001a;
+    padding: 10px;
+    margin-top: 10px;
+    background: #ecfeff;
+}
+
+body.game-page .hint {
+    font-size: 0.9rem;
+    color: #475569;
+}
+>>>>>>> 4c2cedf (update stile)

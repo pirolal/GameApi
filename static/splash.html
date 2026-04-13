@@ -11,103 +11,16 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
         crossorigin="anonymous"
     />
-    <style>
-        :root {
-            --ink: #0f172a;
-            --brand: #0f766e;
-            --brand-dark: #115e59;
-            --success: #15803d;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: "Manrope", sans-serif;
-            color: var(--ink);
-            background:
-                radial-gradient(circle at 13% 14%, #99f6e4a8 0%, transparent 24%),
-                radial-gradient(circle at 88% 14%, #fed7aaa3 0%, transparent 26%),
-                linear-gradient(145deg, #f8fafc 0%, #f0fdfa 48%, #fff7ed 100%);
-        }
-
-        .title {
-            font-family: "Alfa Slab One", serif;
-            letter-spacing: 1px;
-        }
-
-        .glass {
-            background: #fffffff2;
-            border: 1px solid #00000014;
-            border-radius: 18px;
-            box-shadow: 0 12px 30px #0f172a1a;
-        }
-
-        .chat-box {
-            height: 320px;
-            overflow-y: auto;
-            background: #fff;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            padding: 12px;
-        }
-
-        .chat-message {
-            margin-bottom: 8px;
-            padding: 8px 10px;
-            border-radius: 10px;
-            background: #f8fafc;
-            border-left: 4px solid var(--brand);
-        }
-
-        .btn-brand {
-            background-color: var(--brand);
-            border-color: var(--brand);
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .btn-brand:hover {
-            background-color: var(--brand-dark);
-            border-color: var(--brand-dark);
-            color: #fff;
-        }
-
-        .btn-start {
-            background-color: var(--success);
-            border-color: var(--success);
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .btn-start:hover {
-            background-color: #166534;
-            border-color: #166534;
-            color: #fff;
-        }
-
-        .hide {
-            display: none;
-        }
-
-        .waiting-pill {
-            display: inline-block;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: #e2e8f0;
-            color: #334155;
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-    </style>
+    <link rel="stylesheet" href="stile.css" />
 </head>
-<body>
+<body class="splash-page">
     <main class="container py-4 py-md-5">
         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
             <div>
                 <h1 class="title h2 mb-1">Sala di Attesa</h1>
                 <p class="mb-0" id="gameTitle">Partita</p>
             </div>
-            <a id="homeLink" href="../index.html" class="btn btn-outline-dark">Torna alla home</a>
+            <a id="homeLink" href="index.html" class="btn btn-outline-dark">Torna alla home</a>
         </div>
 
         <div class="row g-4">
@@ -270,7 +183,7 @@
         function requireGameId() {
             if (!gameId) {
                 alert("Game ID mancante. Apri la lobby dalla home.");
-                window.location.href = "../index.html";
+                window.location.href = "index.html";
                 return false;
             }
             return true;
@@ -296,7 +209,7 @@
             event.preventDefault();
             await leaveCurrentGame();
             sessionStorage.removeItem(ACTIVE_SESSION_KEY);
-            window.location.href = "../index.html";
+            window.location.href = "index.html";
         }
 
         function openGameWindow() {
@@ -356,7 +269,7 @@
             if (playerId && !result.players.some((p) => p.id === playerId)) {
                 alert("Non fai piu parte della partita.");
                 sessionStorage.removeItem(ACTIVE_SESSION_KEY);
-                window.location.href = "../index.html";
+                window.location.href = "index.html";
                 return [];
             }
 
