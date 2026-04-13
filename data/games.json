@@ -36,5 +36,33 @@
     "status": "active",
     "createdAt": "2026-02-24T16:05:42.329Z",
     "updatedAt": "2026-02-24T16:37:50.601Z"
+  },
+  {
+    "id": "6c68884e-531a-4923-9719-115414c3a1f0",
+    "name": "Chess game",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "8f23b638-c05e-46fc-b5d7-88a280e920a0",
+        "name": "luca",
+        "joinedAt": "2026-03-16T16:01:55.311Z"
+      },
+      {
+        "id": "9acfa944-bec0-478a-915d-83f1e6c74398",
+        "name": "melissa",
+        "joinedAt": "2026-03-16T16:02:03.196Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "0340eb40-e9d0-4cd0-9827-a3088288a2a5",
+        "playerId": "8f23b638-c05e-46fc-b5d7-88a280e920a0",
+        "data": {},
+        "timestamp": "2026-03-16T16:28:04.307Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-03-16T15:53:52.538Z",
+    "updatedAt": "2026-03-16T16:28:04.307Z"
   }
 ]
