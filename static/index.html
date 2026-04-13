@@ -128,6 +128,9 @@
             const isPrivate = privateGameEl.checked;
             passwordContainer.classList.toggle("hide", !isPrivate);
             passwordInput.required = isPrivate;
+            if (!isPrivate) {
+                passwordInput.value = "";
+            }
         }
 
         function normalizeCategory(category) {
@@ -423,6 +426,9 @@
 
         privateGameEl.addEventListener("change", togglePasswordInput);
         publicGameEl.addEventListener("change", togglePasswordInput);
+        createForm.addEventListener("reset", () => {
+            setTimeout(togglePasswordInput, 0);
+        });
         createForm.addEventListener("submit", creaPartita);
         refreshBtn.addEventListener("click", fetchGames);
 
