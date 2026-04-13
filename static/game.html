@@ -71,7 +71,7 @@
         const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const BOT_NAME = "BOT";
-        const IDLE_TIMEOUT_MS = 30 * 1000;
+        const SOLO_WAIT_MS = 60 * 1000;
 
         function readActiveSession() {
             try {
@@ -85,6 +85,7 @@
         const sessionData = readActiveSession();
         const gameId = params.get("gameId") || sessionData.gameId || "";
         const gameName = params.get("gameName") || sessionData.gameName || "Partita";
+        const gameCategory = sessionData.gameCategory || "persone";
         const playerId = params.get("playerId") || sessionData.playerId || "";
         if (window.location.search) {
             window.history.replaceState({}, document.title, window.location.pathname);
@@ -106,12 +107,30 @@
         const resultText = document.getElementById("resultText");
         const restartBtn = document.getElementById("restartBtn");
 
-        const characters = [
-            "Anna", "Bruno", "Carla", "Diego", "Elisa", "Fabio",
-            "Giada", "Hassan", "Irene", "Jacopo", "Katia", "Luca",
-            "Marta", "Nina", "Omar", "Paola", "Quinto", "Rita",
-            "Sergio", "Tania", "Ugo", "Viola", "Walter", "Zeno"
-        ];
+        const categoryCharacters = {
+            simpson: [
+                "Homer", "Marge", "Bart", "Lisa", "Maggie", "Ned",
+                "Milhouse", "Krusty", "Apu", "Burns", "Moe", "Skinner"
+            ],
+            persone: [
+                "Anna", "Bruno", "Carla", "Diego", "Elisa", "Fabio",
+                "Giada", "Hassan", "Irene", "Jacopo", "Katia", "Luca"
+            ],
+            griffin: [
+                "Peter", "Lois", "Stewie", "Brian", "Chris", "Meg",
+                "Quagmire", "Joe", "Cleveland", "Herbert", "Bonnie", "Consuela"
+            ],
+            animali: [
+                "Leone", "Tigre", "Elefante", "Giraffa", "Panda", "Lupo",
+                "Volpe", "Cane", "Gatto", "Aquila", "Delfino", "Koala"
+            ],
+            macchine: [
+                "Ferrari", "Lambo", "Porsche", "Tesla", "Fiat", "BMW",
+                "Audi", "Jeep", "Mini", "Maserati", "Volvo", "Toyota"
+            ]
+        };
+
+        const characters = categoryCharacters[gameCategory] || categoryCharacters.persone;
 
         const characterCards = characters.map((name, index) => ({
             id: `char-${index + 1}`,
@@ -149,9 +168,57 @@
             }
         }
 
+        async function addBotToGame() {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                method: "POST",
+                headers: new Headers({
+                    "X-API-Key": API_KEY,
+                    "Content-Type": "application/json"
+                }),
+                body: JSON.stringify({ name: BOT_NAME }),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || "Errore inserimento bot");
+            }
+            return result.player;
+        }
+
+        async function tryDeleteGameIfOnlyBot(players) {
+            if (players.length === 1 && isBotPlayer(players[0])) {
+                try {
+                    await fetch(`${BASE_URL}/games/${gameId}`, {
+                        method: "DELETE",
+                        headers: headers(),
+                        redirect: "follow"
+                    });
+                } catch (error) {
+                    console.error(error);
+                }
+                sessionStorage.removeItem(ACTIVE_SESSION_KEY);
+                window.location.href = "index.html";
+                return true;
+            }
+            return false;
+        }
+
         async function leaveToHome(event) {
             event.preventDefault();
             await removeCurrentPlayer();
+            try {
+                const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                    method: "GET",
+                    headers: headers(),
+                    redirect: "follow"
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    await tryDeleteGameIfOnlyBot(result.players || []);
+                }
+            } catch (error) {
+                console.error(error);
+            }
             sessionStorage.removeItem(ACTIVE_SESSION_KEY);
             window.location.href = "index.html";
         }
@@ -273,6 +340,44 @@
             }
         }
 
+        async function ensureBotForSoloPlayer(players, moves) {
+            if (await tryDeleteGameIfOnlyBot(players)) {
+                return;
+            }
+
+            const timerMoves = moves.filter((m) => m.data && m.data.type === "solo-timer");
+            const resetMoves = moves.filter((m) => m.data && m.data.type === "solo-reset");
+            const latestTimer = timerMoves[timerMoves.length - 1] || null;
+            const latestReset = resetMoves[resetMoves.length - 1] || null;
+            const timerActive = latestTimer && (!latestReset || new Date(latestTimer.timestamp) > new Date(latestReset.timestamp));
+
+            const humanPlayers = players.filter((p) => !isBotPlayer(p));
+            const hasBot = players.some(isBotPlayer);
+
+            if (humanPlayers.length !== 1 || hasBot) {
+                if (timerActive) {
+                    await postMove({ type: "solo-reset" });
+                }
+                return;
+            }
+
+            const soloPlayer = humanPlayers[0];
+            if (!timerActive || latestTimer.data.playerId !== soloPlayer.id) {
+                await postMove({ type: "solo-timer", playerId: soloPlayer.id, startedAt: new Date().toISOString() });
+                return;
+            }
+
+            const startedAt = new Date(latestTimer.data.startedAt || latestTimer.timestamp).getTime();
+            if (Date.now() - startedAt < SOLO_WAIT_MS) {
+                return;
+            }
+
+            const bot = await addBotToGame();
+            await postMoveAsPlayer(bot.id, { type: "bot-joined", reason: "solo-timeout", playerName: BOT_NAME });
+            await postMoveAsPlayer(bot.id, { type: "start", playerName: BOT_NAME });
+            await postMove({ type: "solo-reset" });
+        }
+
         function getLatestChoiceMap(moves) {
             const map = {};
             moves.filter((m) => m.data && m.data.type === "secret-choice").forEach((m) => {
@@ -344,54 +449,6 @@
                 questionList.appendChild(item);
             });
             questionList.scrollTop = questionList.scrollHeight;
-        }
-
-        async function ensureBotForIdleOpponent(players, moves) {
-            if (players.length !== 2 || players.some(isBotPlayer)) {
-                return;
-            }
-
-            const opponent = players.find((p) => p.id !== playerId);
-            if (!opponent) {
-                return;
-            }
-
-            const activityTypes = new Set(["secret-choice", "question", "guess", "chat", "start", "presence"]);
-            const opponentMoves = moves.filter((m) => m.playerId === opponent.id && m.data && activityTypes.has(m.data.type));
-            const lastActivityMs = opponentMoves.length > 0
-                ? new Date(opponentMoves[opponentMoves.length - 1].timestamp).getTime()
-                : new Date(opponent.joinedAt || Date.now()).getTime();
-
-            if (Date.now() - lastActivityMs < IDLE_TIMEOUT_MS) {
-                return;
-            }
-
-            try {
-                await fetch(`${BASE_URL}/games/${gameId}/players/${opponent.id}`, {
-                    method: "DELETE",
-                    headers: headers(),
-                    redirect: "follow"
-                });
-
-                const addResponse = await fetch(`${BASE_URL}/games/${gameId}/players`, {
-                    method: "POST",
-                    headers: new Headers({
-                        "X-API-Key": API_KEY,
-                        "Content-Type": "application/json"
-                    }),
-                    body: JSON.stringify({ name: BOT_NAME }),
-                    redirect: "follow"
-                });
-                const addResult = await addResponse.json();
-                if (!addResponse.ok) {
-                    throw new Error(addResult.error || "Errore inserimento bot");
-                }
-
-                await postMoveAsPlayer(addResult.player.id, { type: "bot-joined", reason: "idle-timeout", playerName: BOT_NAME });
-                await postMoveAsPlayer(addResult.player.id, { type: "start", playerName: BOT_NAME });
-            } catch (error) {
-                console.error(error);
-            }
         }
 
         async function ensureBotParticipation(players, moves) {
@@ -565,7 +622,7 @@
             }
             let moves = await getMoves();
 
-            await ensureBotForIdleOpponent(players, moves);
+            await ensureBotForSoloPlayer(players, moves);
             players = await loadPlayers();
             if (players.length === 0) {
                 return;
@@ -585,7 +642,7 @@
         }
 
         async function init() {
-            gameInfo.innerText = `${gameName}${gameId ? ` - ID: ${gameId}` : ""}`;
+            gameInfo.innerText = `${gameName} (${gameCategory})${gameId ? ` - ID: ${gameId}` : ""}`;
             renderBoard();
             guessSelect.innerHTML = characterCards.map((c) => `<option value="${c.id}">${c.name}</option>`).join("");
             questionInput.disabled = true;

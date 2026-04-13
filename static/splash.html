@@ -51,7 +51,7 @@
         const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const BOT_NAME = "BOT";
-        const SOLO_WAIT_MS = 2 * 60 * 1000;
+        const SOLO_WAIT_MS = 60 * 1000;
 
         function readActiveSession() {
             try {
@@ -69,6 +69,7 @@
         const sessionData = readActiveSession();
         const gameId = params.get("gameId") || sessionData.gameId || "";
         const gameName = params.get("gameName") || sessionData.gameName || "Partita senza nome";
+        const gameCategory = sessionData.gameCategory || "persone";
         let playerId = params.get("playerId") || sessionData.playerId || "";
         let playerName = params.get("playerName") || sessionData.playerName || "";
         if (window.location.search) {
@@ -137,6 +138,24 @@
             });
         }
 
+        async function tryDeleteGameIfOnlyBot(players) {
+            if (players.length === 1 && isBotPlayer(players[0])) {
+                try {
+                    await fetch(`${BASE_URL}/games/${gameId}`, {
+                        method: "DELETE",
+                        headers: headers(false),
+                        redirect: "follow"
+                    });
+                } catch (error) {
+                    console.error(error);
+                }
+                sessionStorage.removeItem(ACTIVE_SESSION_KEY);
+                window.location.href = "index.html";
+                return true;
+            }
+            return false;
+        }
+
         async function ensureBotForSoloPlayer(players, moves) {
             const timerMoves = moves.filter((m) => m.data && m.data.type === "solo-timer");
             const resetMoves = moves.filter((m) => m.data && m.data.type === "solo-reset");
@@ -144,15 +163,7 @@
             const latestReset = resetMoves[resetMoves.length - 1] || null;
             const timerActive = latestTimer && (!latestReset || new Date(latestTimer.timestamp) > new Date(latestReset.timestamp));
 
-            if (players.length === 1 && isBotPlayer(players[0])) {
-                try {
-                    await removePlayerFromGame(players[0].id);
-                } catch (error) {
-                    console.error(error);
-                }
-                if (timerActive) {
-                    await postMove({ type: "solo-reset" });
-                }
+            if (await tryDeleteGameIfOnlyBot(players)) {
                 return;
             }
 
@@ -203,6 +214,20 @@
             } catch (error) {
                 console.error(error);
             }
+
+            try {
+                const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                    method: "GET",
+                    headers: headers(false),
+                    redirect: "follow"
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    await tryDeleteGameIfOnlyBot(result.players || []);
+                }
+            } catch (error) {
+                console.error(error);
+            }
         }
 
         async function leaveToHome(event) {
@@ -220,6 +245,7 @@
             saveActiveSession({
                 gameId,
                 gameName,
+                gameCategory,
                 playerId,
                 playerName,
                 updatedAt: new Date().toISOString()
@@ -260,6 +286,7 @@
                 saveActiveSession({
                     gameId,
                     gameName,
+                    gameCategory,
                     playerId,
                     playerName,
                     updatedAt: new Date().toISOString()
@@ -394,11 +421,12 @@
             }
         }
 
-        gameTitle.innerText = `${gameName} - ID: ${gameId || "N/A"}`;
+        gameTitle.innerText = `${gameName} (${gameCategory}) - ID: ${gameId || "N/A"}`;
         if (gameId) {
             saveActiveSession({
                 gameId,
                 gameName,
+                gameCategory,
                 playerId,
                 playerName,
                 updatedAt: new Date().toISOString()

@@ -49,6 +49,16 @@
                             <input type="text" class="form-control" id="ownerPlayerName" placeholder="Es. Marco" required>
                         </div>
                         <div>
+                            <label for="categorySelect" class="form-label">Categoria</label>
+                            <select class="form-select" id="categorySelect" required>
+                                <option value="simpson">Simpson</option>
+                                <option value="persone">Persone</option>
+                                <option value="griffin">Griffin</option>
+                                <option value="animali">Animali</option>
+                                <option value="macchine">Macchine</option>
+                            </select>
+                        </div>
+                        <div>
                             <label class="form-label d-block">Tipo partita</label>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="privacy" id="publicGame" value="public" checked>
@@ -80,6 +90,7 @@
         const STORAGE_KEY = "guesswho_game_meta";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const EMPTY_GAME_DELETE_MS = 2 * 60 * 1000;
+        const CATEGORIES = ["simpson", "persone", "griffin", "animali", "macchine"];
 
         const partiteEl = document.getElementById("partite");
         const totalePartiteEl = document.getElementById("totalePartite");
@@ -90,6 +101,7 @@
         const publicGameEl = document.getElementById("publicGame");
         const passwordContainer = document.getElementById("passwordContainer");
         const passwordInput = document.getElementById("passwordInput");
+        const categorySelect = document.getElementById("categorySelect");
 
         function headers(isJson) {
             const h = new Headers();
@@ -118,7 +130,15 @@
             passwordInput.required = isPrivate;
         }
 
-        async function getRemotePrivacy(gameId) {
+        function normalizeCategory(category) {
+            return CATEGORIES.includes(category) ? category : "persone";
+        }
+
+        function categoryLabel(category) {
+            return normalizeCategory(category).charAt(0).toUpperCase() + normalizeCategory(category).slice(1);
+        }
+
+        async function getRemoteGameSettings(gameId) {
             try {
                 const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
                     method: "GET",
@@ -131,14 +151,14 @@
                 }
 
                 const privacyMoves = result.moves.filter((m) => m.data && m.data.type === "privacy");
-                if (privacyMoves.length === 0) {
-                    return null;
-                }
+                const categoryMoves = result.moves.filter((m) => m.data && m.data.type === "category");
+                const latestPrivacy = privacyMoves.length > 0 ? privacyMoves[privacyMoves.length - 1].data : null;
+                const latestCategory = categoryMoves.length > 0 ? categoryMoves[categoryMoves.length - 1].data : null;
 
-                const latest = privacyMoves[privacyMoves.length - 1].data;
                 return {
-                    isPrivate: Boolean(latest.isPrivate),
-                    password: latest.password || ""
+                    isPrivate: Boolean(latestPrivacy && latestPrivacy.isPrivate),
+                    password: latestPrivacy ? (latestPrivacy.password || "") : "",
+                    category: normalizeCategory(latestCategory && latestCategory.value)
                 };
             } catch {
                 return null;
@@ -159,6 +179,25 @@
                         type: "privacy",
                         isPrivate: Boolean(metadata.isPrivate),
                         password: metadata.isPrivate ? (metadata.password || "") : ""
+                    }
+                }),
+                redirect: "follow"
+            });
+        }
+
+        async function publishCategorySettings(gameId, playerId, metadata) {
+            if (!metadata) {
+                return;
+            }
+
+            await fetch(`${BASE_URL}/games/${gameId}/moves`, {
+                method: "POST",
+                headers: headers(true),
+                body: JSON.stringify({
+                    playerId,
+                    data: {
+                        type: "category",
+                        value: normalizeCategory(metadata.category)
                     }
                 }),
                 redirect: "follow"
@@ -207,10 +246,10 @@
 
                 saveMeta(meta);
                 const disponibili = cleanedGames.filter((g) => g.players.length < 2);
-                const remotePrivacyEntries = await Promise.all(
-                    disponibili.map(async (g) => [g.id, await getRemotePrivacy(g.id)])
+                const remoteSettingsEntries = await Promise.all(
+                    disponibili.map(async (g) => [g.id, await getRemoteGameSettings(g.id)])
                 );
-                const remotePrivacyMap = Object.fromEntries(remotePrivacyEntries);
+                const remoteSettingsMap = Object.fromEntries(remoteSettingsEntries);
                 totalePartiteEl.innerText = String(disponibili.length);
 
                 if (disponibili.length === 0) {
@@ -218,7 +257,11 @@
                 }
 
                 disponibili.forEach((element) => {
-                    const info = remotePrivacyMap[element.id] || meta[element.id] || { isPrivate: false, password: "" };
+                    const info = remoteSettingsMap[element.id] || meta[element.id] || {
+                        isPrivate: false,
+                        password: "",
+                        category: "persone"
+                    };
                     const game = document.createElement("button");
                     game.type = "button";
                     game.className = `game-item ${info.isPrivate ? "game-private" : "game-public"} p-3 text-start bg-white`;
@@ -229,6 +272,7 @@
                         </div>
                         <div class="mt-1 d-flex gap-2 align-items-center">
                             <small class="text-muted">Giocatori: ${element.players.length}/2</small>
+                            <small class="text-muted">Categoria: ${categoryLabel(info.category)}</small>
                             <span class="chip">Entra</span>
                         </div>
                     `;
@@ -247,6 +291,7 @@
             const nomePrimoGiocatore = document.getElementById("ownerPlayerName").value.trim();
             const privata = privateGameEl.checked;
             const password = passwordInput.value.trim();
+            const categoria = normalizeCategory(categorySelect.value);
 
             if (!nomePartita) {
                 alert("Inserisci il nome della partita.");
@@ -260,6 +305,11 @@
 
             if (privata && password.length < 3) {
                 alert("La password deve avere almeno 3 caratteri.");
+                return;
+            }
+
+            if (!CATEGORIES.includes(categoria)) {
+                alert("Categoria non valida.");
                 return;
             }
 
@@ -281,6 +331,7 @@
                 meta[gameId] = {
                     isPrivate: privata,
                     password: privata ? password : "",
+                    category: categoria,
                     createdAt: new Date().toISOString()
                 };
                 saveMeta(meta);
@@ -350,12 +401,14 @@
 
                 if (presetPlayerName && metadata) {
                     await publishPrivacySettings(gameId, risultato.player.id, metadata);
+                    await publishCategorySettings(gameId, risultato.player.id, metadata);
                 }
 
                 alert(`Giocatore aggiunto: ${risultato.player.name}`);
                 sessionStorage.setItem(ACTIVE_SESSION_KEY, JSON.stringify({
                     gameId,
                     gameName,
+                    gameCategory: normalizeCategory(metadata && metadata.category),
                     playerId: risultato.player.id,
                     playerName: risultato.player.name,
                     updatedAt: new Date().toISOString()
