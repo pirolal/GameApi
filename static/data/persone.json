@@ -1,0 +1,190 @@
+{
+	"categoria": "Persone",
+	"configurazione": {
+		"totale_personaggi": 24,
+		"caratteristiche_per_personaggio": 35
+	},
+	"domande": [
+		{ "testo": "Porta gli occhiali?", "attributo": "porta_occhiali" },
+		{ "testo": "Ha la barba?", "attributo": "ha_barba" },
+		{ "testo": "Ha i baffi?", "attributo": "ha_baffi" },
+		{ "testo": "Ha i capelli lunghi?", "attributo": "capelli_lunghi" },
+		{ "testo": "Ha i capelli corti?", "attributo": "capelli_corti" },
+		{ "testo": "Ha i capelli neri?", "attributo": "capelli_neri" },
+		{ "testo": "Ha i capelli biondi?", "attributo": "capelli_biondi" },
+		{ "testo": "Ha i capelli castani?", "attributo": "capelli_castani" },
+		{ "testo": "Ha i capelli rossi?", "attributo": "capelli_rossi" },
+		{ "testo": "Ha i capelli grigi?", "attributo": "capelli_grigi" },
+		{ "testo": "Indossa un cappello?", "attributo": "indossa_cappello" },
+		{ "testo": "Indossa qualcosa di rosso?", "attributo": "indossa_rosso" },
+		{ "testo": "Indossa qualcosa di blu?", "attributo": "indossa_blu" },
+		{ "testo": "Indossa qualcosa di verde?", "attributo": "indossa_verde" },
+		{ "testo": "Indossa qualcosa di bianco?", "attributo": "indossa_bianco" },
+		{ "testo": "Porta orecchini?", "attributo": "ha_orecchini" },
+		{ "testo": "Porta una collana?", "attributo": "ha_collana" },
+		{ "testo": "E' donna?", "attributo": "è_donna" },
+		{ "testo": "E' uomo?", "attributo": "è_uomo" },
+		{ "testo": "E' bambino/a?", "attributo": "è_bambino" },
+		{ "testo": "E' anziano/a?", "attributo": "è_anziano" },
+		{ "testo": "Sorride spesso?", "attributo": "ha_sorriso" },
+		{ "testo": "Ha occhi chiari?", "attributo": "ha_occhi_chiari" },
+		{ "testo": "Ha la pelle scura?", "attributo": "ha_pelle_scura" },
+		{ "testo": "Ha la pelle chiara?", "attributo": "ha_pelle_chiara" },
+		{ "testo": "Porta lenti?", "attributo": "ha_lenti" },
+		{ "testo": "Usa la cravatta?", "attributo": "ha_cravatta" },
+		{ "testo": "Indossa una giacca?", "attributo": "indossa_giacca" },
+		{ "testo": "Indossa una maglietta?", "attributo": "indossa_maglietta" },
+		{ "testo": "Indossa una felpa?", "attributo": "ha_felpa" },
+		{ "testo": "Porta uno zaino?", "attributo": "ha_zaino" },
+		{ "testo": "Fa sport?", "attributo": "fa_sport" },
+		{ "testo": "Ha tatuaggi?", "attributo": "ha_tatuaggi" },
+		{ "testo": "Ha la coda di cavallo?", "attributo": "ha_coda_cavallo" },
+		{ "testo": "Vive in citta'?", "attributo": "vive_in_città" }
+	],
+	"personaggi": [
+		{
+			"id": 1,
+			"nome": "Anna",
+			"immagine": "https://picsum.photos/seed/persone-anna/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": false, "capelli_biondi": true, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": true, "indossa_blu": false, "indossa_verde": false, "indossa_bianco": true, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": false, "ha_zaino": false, "fa_sport": true, "ha_tatuaggi": false, "ha_coda_cavallo": true, "vive_in_città": true }
+		},
+		{
+			"id": 2,
+			"nome": "Bruno",
+			"immagine": "https://picsum.photos/seed/persone-bruno/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": true, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": true, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": true, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 3,
+			"nome": "Carla",
+			"immagine": "https://picsum.photos/seed/persone-carla/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": true, "indossa_bianco": false, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": false, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": false, "ha_felpa": true, "ha_zaino": true, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 4,
+			"nome": "Diego",
+			"immagine": "https://picsum.photos/seed/persone-diego/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": false, "ha_baffi": true, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": true, "indossa_blu": false, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": true, "ha_pelle_chiara": false, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": true, "ha_zaino": false, "fa_sport": true, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 5,
+			"nome": "Elisa",
+			"immagine": "https://picsum.photos/seed/persone-elisa/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": true, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": true, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 6,
+			"nome": "Fabio",
+			"immagine": "https://picsum.photos/seed/persone-fabio/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": true, "ha_baffi": true, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": true, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": false, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": true, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 7,
+			"nome": "Giada",
+			"immagine": "https://picsum.photos/seed/persone-giada/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": true, "indossa_blu": false, "indossa_verde": true, "indossa_bianco": false, "ha_orecchini": true, "ha_collana": false, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": false, "ha_zaino": true, "fa_sport": true, "ha_tatuaggi": false, "ha_coda_cavallo": true, "vive_in_città": true }
+		},
+		{
+			"id": 8,
+			"nome": "Hassan",
+			"immagine": "https://picsum.photos/seed/persone-hassan/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": true, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": true, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": true, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": true, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": true, "ha_pelle_chiara": false, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": true, "ha_zaino": false, "fa_sport": true, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 9,
+			"nome": "Irene",
+			"immagine": "https://picsum.photos/seed/persone-irene/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": true, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": false, "indossa_verde": true, "indossa_bianco": true, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": false, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 10,
+			"nome": "Jacopo",
+			"immagine": "https://picsum.photos/seed/persone-jacopo/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": true, "indossa_rosso": true, "indossa_blu": false, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": true, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": true, "ha_zaino": true, "fa_sport": true, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 11,
+			"nome": "Katia",
+			"immagine": "https://picsum.photos/seed/persone-katia/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": true, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": true, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": true, "ha_collana": false, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": false, "ha_zaino": false, "fa_sport": true, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 12,
+			"nome": "Luca",
+			"immagine": "https://picsum.photos/seed/persone-luca/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": true, "ha_baffi": true, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": true, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": true, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 13,
+			"nome": "Marta",
+			"immagine": "https://picsum.photos/seed/persone-marta/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": true, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": false, "indossa_verde": true, "indossa_bianco": true, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": false, "ha_occhi_chiari": false, "ha_pelle_scura": true, "ha_pelle_chiara": false, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": true, "ha_tatuaggi": false, "ha_coda_cavallo": true, "vive_in_città": true }
+		},
+		{
+			"id": 14,
+			"nome": "Nicolò",
+			"immagine": "https://picsum.photos/seed/persone-nicolo/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": true, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": true, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": true, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": true, "ha_zaino": true, "fa_sport": true, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 15,
+			"nome": "Olga",
+			"immagine": "https://picsum.photos/seed/persone-olga/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": true, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": true, "ha_orecchini": true, "ha_collana": false, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": true, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 16,
+			"nome": "Paolo",
+			"immagine": "https://picsum.photos/seed/persone-paolo/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": true, "ha_baffi": true, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": true, "indossa_cappello": false, "indossa_rosso": true, "indossa_blu": false, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": true, "ha_sorriso": false, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": true, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 17,
+			"nome": "Rita",
+			"immagine": "https://picsum.photos/seed/persone-rita/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": true, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": true, "indossa_blu": false, "indossa_verde": true, "indossa_bianco": false, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 18,
+			"nome": "Samir",
+			"immagine": "https://picsum.photos/seed/persone-samir/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": true, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": true, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": true, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": true, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": true, "ha_pelle_chiara": false, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": true, "ha_zaino": true, "fa_sport": true, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 19,
+			"nome": "Teresa",
+			"immagine": "https://picsum.photos/seed/persone-teresa/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": true, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": true, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": false, "indossa_verde": true, "indossa_bianco": true, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": true, "ha_sorriso": true, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": false }
+		},
+		{
+			"id": 20,
+			"nome": "Umberto",
+			"immagine": "https://picsum.photos/seed/persone-umberto/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": true, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": true, "indossa_cappello": true, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": true, "ha_sorriso": false, "ha_occhi_chiari": false, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": false, "ha_cravatta": true, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": false, "ha_coda_cavallo": false, "vive_in_città": false }
+		},
+		{
+			"id": 21,
+			"nome": "Valentina",
+			"immagine": "https://picsum.photos/seed/persone-valentina/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": true, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": true, "indossa_rosso": true, "indossa_blu": false, "indossa_verde": false, "indossa_bianco": true, "ha_orecchini": true, "ha_collana": true, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": true, "ha_pelle_chiara": false, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": false, "ha_zaino": true, "fa_sport": true, "ha_tatuaggi": true, "ha_coda_cavallo": true, "vive_in_città": true }
+		},
+		{
+			"id": 22,
+			"nome": "Walter",
+			"immagine": "https://picsum.photos/seed/persone-walter/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": true, "ha_baffi": true, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": false, "capelli_biondi": false, "capelli_castani": true, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": false, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": true, "indossa_giacca": true, "indossa_maglietta": false, "ha_felpa": false, "ha_zaino": false, "fa_sport": false, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		},
+		{
+			"id": 23,
+			"nome": "Xenia",
+			"immagine": "https://picsum.photos/seed/persone-xenia/240/240",
+			"attributi": { "porta_occhiali": true, "ha_barba": false, "ha_baffi": false, "capelli_lunghi": true, "capelli_corti": false, "capelli_neri": false, "capelli_biondi": true, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": false, "indossa_rosso": true, "indossa_blu": true, "indossa_verde": false, "indossa_bianco": false, "ha_orecchini": true, "ha_collana": false, "è_donna": true, "è_uomo": false, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": true, "ha_pelle_scura": false, "ha_pelle_chiara": true, "ha_lenti": true, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": true, "ha_zaino": true, "fa_sport": true, "ha_tatuaggi": false, "ha_coda_cavallo": true, "vive_in_città": true }
+		},
+		{
+			"id": 24,
+			"nome": "Yuri",
+			"immagine": "https://picsum.photos/seed/persone-yuri/240/240",
+			"attributi": { "porta_occhiali": false, "ha_barba": true, "ha_baffi": false, "capelli_lunghi": false, "capelli_corti": true, "capelli_neri": true, "capelli_biondi": false, "capelli_castani": false, "capelli_rossi": false, "capelli_grigi": false, "indossa_cappello": true, "indossa_rosso": false, "indossa_blu": true, "indossa_verde": true, "indossa_bianco": false, "ha_orecchini": false, "ha_collana": false, "è_donna": false, "è_uomo": true, "è_bambino": false, "è_anziano": false, "ha_sorriso": true, "ha_occhi_chiari": false, "ha_pelle_scura": true, "ha_pelle_chiara": false, "ha_lenti": false, "ha_cravatta": false, "indossa_giacca": false, "indossa_maglietta": true, "ha_felpa": true, "ha_zaino": true, "fa_sport": true, "ha_tatuaggi": true, "ha_coda_cavallo": false, "vive_in_città": true }
+		}
+	]
+}

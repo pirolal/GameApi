@@ -1,0 +1,361 @@
+{
+  "categoria": "Macchine",
+  "configurazione": {
+    "totale_personaggi": 24,
+    "caratteristiche_per_personaggio": 35
+  },
+  "domande": [
+    { "testo": "L'auto è di un marchio italiano?", "attributo": "è_italiana" },
+    { "testo": "L'auto è di un marchio tedesco?", "attributo": "è_tedesca" },
+    { "testo": "L'auto è di un marchio americano?", "attributo": "è_americana" },
+    { "testo": "L'auto è giapponese?", "attributo": "è_giapponese" },
+    { "testo": "È considerata una Hypercar?", "attributo": "è_una_hypercar" },
+    { "testo": "È un SUV o un fuoristrada?", "attributo": "è_un_suv" },
+    { "testo": "Il motore è in posizione centrale?", "attributo": "motore_centrale" },
+    { "testo": "Ha la trazione integrale (4x4)?", "attributo": "trazione_integrale" },
+    { "testo": "Il motore è sovralimentato con Turbo?", "attributo": "ha_il_turbo" },
+    { "testo": "È un'auto ibrida?", "attributo": "è_ibrida" },
+    { "testo": "Ha un motore V12?", "attributo": "ha_il_v12" },
+    { "testo": "Ha un motore V8?", "attributo": "ha_il_v8" },
+    { "testo": "La potenza supera i 1000 CV?", "attributo": "ha_più_di_1000cv" },
+    { "testo": "Ha il cambio manuale?", "attributo": "cambio_manuale" },
+    { "testo": "Ha le porte che si aprono verso l'alto (farfalla/forbice/ali)?", "attributo": "porte_a_farfalla" },
+    { "testo": "È un'auto storica (prodotta prima del 2000)?", "attributo": "è_storica" },
+    { "testo": "È una Ferrari?", "attributo": "marchio_ferrari" },
+    { "testo": "È una Lamborghini?", "attributo": "marchio_lamborghini" },
+    { "testo": "È una Porsche?", "attributo": "marchio_porsche" },
+    { "testo": "È una McLaren?", "attributo": "marchio_mclaren" },
+    { "testo": "È una Mercedes?", "attributo": "marchio_mercedes" },
+    { "testo": "È un'auto nata prettamente per la pista?", "attributo": "è_da_pista" },
+    { "testo": "Può superare i 300 km/h?", "attributo": "velocità_sopra_300kmh" },
+    { "testo": "Ha solo due posti?", "attributo": "ha_due_posti" },
+    { "testo": "Ha quattro o più posti?", "attributo": "ha_quattro_posti" },
+    { "testo": "Ha la carrozzeria o componenti in carbonio a vista?", "attributo": "carrozzeria_carbonio" },
+    { "testo": "È un'auto cabrio o con tetto rimovibile?", "attributo": "è_cabrio" },
+    { "testo": "Ha uno spoiler o un'ala posteriore evidente?", "attributo": "ha_ala_fissa" },
+    { "testo": "Ha i freni in carboceramica?", "attributo": "freni_carboceramica" },
+    { "testo": "È un'auto da Rally o derivata dai Rally?", "attributo": "è_da_rally" },
+    { "testo": "Il colore principale è il rosso?", "attributo": "è_rossa" },
+    { "testo": "Il colore principale è il giallo?", "attributo": "è_gialla" },
+    { "testo": "È apparsa in film famosi (es. Fast & Furious o James Bond)?", "attributo": "fast_and_furious" },
+    { "testo": "Ha gli scarichi centrali o posizionati in alto?", "attributo": "scarichi_centrali" },
+    { "testo": "È un'auto a trazione posteriore?", "attributo": "trazione_posteriore" }
+  ],
+
+
+
+"personaggi": [
+    {
+      "id": 1, "nome": "Ferrari LaFerrari", "immagine": "img/macchine/laferrari.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_rossa": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_integrale": false,
+        "ha_il_turbo": false, "è_ibrida": true, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_a_farfalla": true, "ha_lo_spoiler_attivo": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_ferrari": true, "marchio_lamborghini": false, "marchio_porsche": false, "è_da_pista": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "è_una_hypercar": true,
+        "ha_il_v12": true, "ha_il_v8": false, "ha_il_v6": false, "è_elettrica": false, "è_un_icona_moderna": true
+      }
+    },
+    {
+      "id": 2, "nome": "Lamborghini Aventador", "immagine": "img/macchine/aventador.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_gialla": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_integrale": true,
+        "ha_il_turbo": false, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_a_forbice": true, "ha_lo_spoiler_attivo": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_ferrari": false, "marchio_lamborghini": true, "marchio_porsche": false, "è_da_pista": false, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "è_una_hypercar": false,
+        "ha_il_v12": true, "ha_il_v8": false, "ha_il_v6": false, "è_elettrica": false, "design_spigoloso": true
+      }
+    },
+    {
+      "id": 3, "nome": "Bugatti Chiron", "immagine": "img/macchine/chiron.jpg",
+      "attributi": {
+        "è_italiana": false, "è_francese": true, "è_tedesca": false, "è_americana": false, "è_blu": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_integrale": true,
+        "ha_quattro_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": true, "cambio_automatico": true,
+        "porte_a_farfalla": false, "ha_lo_spoiler_attivo": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_bugatti": true, "marchio_ferrari": false, "marchio_mclaren": false, "è_da_pista": false, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_400kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "è_una_hypercar": true,
+        "ha_il_w16": true, "ha_il_v12": false, "ha_il_v8": false, "è_molto_pesante": true, "è_esclusiva": true
+      }
+    },
+    {
+      "id": 4, "nome": "Porsche 911 GT3 RS", "immagine": "img/macchine/gt3rs.jpg",
+      "attributi": {
+        "è_italiana": false, "è_tedesca": true, "è_americana": false, "è_giapponese": false, "è_verde": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_posteriore": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": false, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_standard": true, "ha_un_ala_gigante": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_porsche": true, "marchio_audi": false, "marchio_bmw": false, "è_da_pista": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "motore_aspirato": true, "freni_carboceramica": true, "rollbar_interno": true,
+        "ha_6_cilindri_boxer": true, "ha_il_v8": false, "ha_il_v12": false, "presa_aria_cofano": true, "leggera": true
+      }
+    },
+    {
+      "id": 5, "nome": "McLaren P1", "immagine": "img/macchine/p1.jpg",
+      "attributi": {
+        "è_inglese": true, "è_italiana": false, "è_tedesca": false, "è_americana": false, "è_arancione": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": true, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_a_diedro": true, "ha_lo_spoiler_attivo": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_mclaren": true, "marchio_ferrari": false, "marchio_lamborghini": false, "è_da_pista": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "è_una_hypercar": true,
+        "ha_il_v8": true, "ha_il_v12": false, "tecnologia_f1": true, "scarico_alto": true, "assetto_variabile": true
+      }
+    },
+    {
+      "id": 6, "nome": "Ferrari F40", "immagine": "img/macchine/f40.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_rossa": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_400cv": true, "ha_più_di_1000cv": false, "cambio_manuale": true,
+        "porte_standard": true, "ha_ala_fissa": true, "è_cabrio": false, "è_storica": true, "ha_fari_a_scomparsa": true,
+        "marchio_ferrari": true, "marchio_lamborghini": false, "marchio_porsche": false, "è_spartana": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "senza_abs": true, "senza_servosterzo": true, "leggenda": true,
+        "ha_il_v8": true, "ha_il_v12": false, "finestrini_plexiglass": true, "prodotta_anni_80": true, "ultima_di_enzo": true
+      }
+    },
+    {
+      "id": 7, "nome": "Nissan GT-R Nismo", "immagine": "img/macchine/gtr.jpg",
+      "attributi": {
+        "è_italiana": false, "è_tedesca": false, "è_americana": false, "è_giapponese": true, "è_grigia": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": false, "motore_anteriore": true, "trazione_integrale": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_standard": true, "ha_ala_fissa": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_nissan": true, "marchio_toyota": false, "marchio_honda": false, "detta_godzilla": true, "ha_due_posti": false,
+        "ha_quattro_posti": true, "velocità_sopra_300kmh": true, "tecnologica": true, "freni_brembo": true, "assetto_nismo": true,
+        "ha_il_v6": true, "ha_il_v8": false, "scarico_titanio": true, "launch_control": true, "uso_quotidiano": true
+      }
+    },
+    {
+      "id": 8, "nome": "Audi R8 V10", "immagine": "img/macchine/r8.jpg",
+      "attributi": {
+        "è_italiana": false, "è_tedesca": true, "è_americana": false, "è_giapponese": false, "è_bianca": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_integrale": true,
+        "ha_il_turbo": false, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_standard": true, "ha_sideblades": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_audi": true, "marchio_bmw": false, "marchio_mercedes": false, "motore_lamborghini": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "fari_laser": true, "virtual_cockpit": true, "quattro_ruote_motrici": true,
+        "ha_il_v10": true, "ha_il_v8": false, "trazione_quattro": true, "daily_supercar": true, "telaio_alluminio": true
+      }
+    },
+    {
+      "id": 9, "nome": "Ford GT", "immagine": "img/macchine/fordgt.jpg",
+      "attributi": {
+        "è_italiana": false, "è_tedesca": false, "è_americana": true, "è_giapponese": false, "è_azzurra": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_ad_ala": true, "ha_spoiler_attivo": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_ford": true, "marchio_chevrolet": false, "marchio_dodge": false, "vincitrice_le_mans": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "aerodinamica_estrema": true, "scarichi_centrali": true, "heritage": true,
+        "ha_il_v6_ecoboost": true, "ha_il_v8": false, "carrozzeria_stretta": true, "volante_corsa": true, "limited_edition": true
+      }
+    },
+    {
+      "id": 10, "nome": "Pagani Huayra", "immagine": "img/macchine/huayra.jpg",
+      "attributi": {
+        "è_italiana": true, "è_argentina": true, "è_tedesca": false, "è_americana": false, "colore_carbonio": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_ali_di_gabbiano": true, "ha_flap_attivi": true, "è_cabrio": false, "è_storica": false, "interni_lusso": true,
+        "marchio_pagani": true, "marchio_ferrari": false, "motore_mercedes_amg": true, "fatta_a_mano": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "pezzo_da_collezione": true, "quattro_scarichi": true, "è_un_opera_d_arte": true,
+        "ha_il_v12": true, "ha_il_v8": false, "carbo_titanio": true, "costo_milionario": true, "specchietti_foglia": true
+      }
+    },
+    {
+      "id": 11, "nome": "Aston Martin DBS", "immagine": "img/macchine/dbs.jpg",
+      "attributi": {
+        "è_inglese": true, "è_italiana": false, "è_tedesca": false, "è_americana": false, "è_nera": true,
+        "è_una_supercar": false, "è_una_gran_turismo": true, "è_un_suv": false, "motore_centrale": false, "motore_anteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_700cv": true, "cambio_automatico": true,
+        "porte_standard": true, "eleganza": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_aston_martin": true, "marchio_jaguar": false, "auto_di_james_bond": true, "suono_cupo": true, "ha_due_posti": false,
+        "ha_quattro_posti": true, "velocità_sopra_300kmh": true, "interni_pelle": true, "calandra_grande": true, "finiture_carbonio": true,
+        "ha_il_v12": true, "ha_il_v8": false, "trazione_posteriore": true, "molto_costosa": true, "british_style": true
+      }
+    },
+    {
+      "id": 12, "nome": "Koenigsegg Jesko", "immagine": "img/macchine/jesko.jpg",
+      "attributi": {
+        "è_svedese": true, "è_italiana": false, "è_tedesca": false, "è_americana": false, "è_bianca": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_1000cv": true, "ha_più_di_1500cv": true, "cambio_multidisco": true,
+        "porte_diedrali": true, "ha_ala_enorme": true, "è_cabrio": true, "è_storica": false, "ha_fari_led": true,
+        "marchio_koenigsegg": true, "tecnologia_estrema": true, "record_velocità": true, "è_da_pista": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_450kmh": true, "cerchi_carbonio": true, "carburante_e85": true, "è_una_hypercar": true,
+        "ha_il_v8": true, "ha_il_v12": false, "tetto_rimovibile": true, "strumentazione_digitale": true, "rara": true
+      }
+    },
+    {
+      "id": 13,
+      "nome": "Lamborghini Huracán STO",
+      "immagine": "img/macchine/huracan.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_azzurra": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": false, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_standard": true, "ha_ala_fissa": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_lamborghini": true, "marchio_ferrari": false, "è_da_pista": true, "ha_due_posti": true, "ha_quattro_posti": false,
+        "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "motore_aspirato": true, "ha_il_v10": true,
+        "ha_il_v8": false, "ha_il_v12": false, "presa_aria_tetto": true, "cofango": true, "leggera": true
+      }
+    },
+    {
+      "id": 14,
+      "nome": "Mercedes-AMG ONE",
+      "immagine": "img/macchine/amgone.jpg",
+      "attributi": {
+        "è_tedesca": true, "è_italiana": false, "è_americana": false, "è_giapponese": false, "è_grigia": true,
+        "è_una_supercar": false, "è_una_hypercar": true, "è_un_suv": false, "motore_centrale": true, "trazione_integrale": true,
+        "ha_il_turbo": true, "è_ibrida": true, "ha_più_di_500cv": true, "ha_più_di_1000cv": true, "cambio_automatico": true,
+        "porte_a_farfalla": true, "ha_ala_mobile": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_mercedes": true, "motore_f1": true, "volante_f1": true, "è_da_pista": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "pinna_aerodinamica": true,
+        "ha_il_v6": true, "ha_il_v8": false, "ha_il_v12": false, "cerchi_magnesio": true, "stradale": true
+      }
+    },
+    {
+      "id": 15,
+      "nome": "Porsche 918 Spyder",
+      "immagine": "img/macchine/918.jpg",
+      "attributi": {
+        "è_tedesca": true, "è_italiana": false, "è_americana": false, "è_giapponese": false, "è_grigia": true,
+        "è_una_supercar": false, "è_una_hypercar": true, "è_un_suv": false, "motore_centrale": true, "trazione_integrale": true,
+        "ha_il_turbo": false, "è_ibrida": true, "ha_più_di_500cv": true, "ha_più_di_800cv": true, "cambio_automatico": true,
+        "porte_standard": true, "ha_spoiler_attivo": true, "è_cabrio": true, "è_storica": false, "ha_fari_led": true,
+        "marchio_porsche": true, "scarichi_superiori": true, "tetto_targa": true, "è_da_pista": false, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "plug_in": true,
+        "ha_il_v8": true, "ha_il_v12": false, "ha_il_v6": false, "quattro_ruote_sterzanti": true, "veloce": true
+      }
+    },
+    {
+      "id": 16,
+      "nome": "Ferrari 488 Pista",
+      "immagine": "img/macchine/488pista.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_rossa": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_700cv": true, "cambio_automatico": true,
+        "porte_standard": true, "ha_s_duct": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_ferrari": true, "strisce_centrali": true, "aerodinamica_f1": true, "è_da_pista": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "cambio_veloce": true,
+        "ha_il_v8": true, "ha_il_v12": false, "ha_il_v6": false, "cerchi_carbonio_opzionali": true, "suono_turbo": true
+      }
+    },
+    {
+      "id": 17,
+      "nome": "Lamborghini Urus",
+      "immagine": "img/macchine/urus.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_gialla": true,
+        "è_una_supercar": false, "è_un_suv": true, "motore_anteriore": true, "motore_centrale": false, "trazione_integrale": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_600cv": true, "cambio_automatico": true,
+        "porte_standard": true, "cinque_porte": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_lamborghini": true, "assetto_rialzato": true, "suv_più_veloce": true, "uso_famiglia": true, "ha_due_posti": false,
+        "ha_cinque_posti": true, "velocità_sopra_300kmh": true, "carrozzeria_acciaio_alluminio": true, "freni_carboceramica": true, "cerchi_grandi": true,
+        "ha_il_v8": true, "ha_il_v12": false, "ha_il_v6": false, "scarichi_quattro": true, "è_veloce": true
+      }
+    },
+    {
+      "id": 18,
+      "nome": "McLaren 720S",
+      "immagine": "img/macchine/720s.jpg",
+      "attributi": {
+        "è_inglese": true, "è_italiana": false, "è_tedesca": false, "è_americana": false, "è_arancione": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_700cv": true, "cambio_automatico": true,
+        "porte_a_diedro": true, "fari_a_orbita": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_mclaren": true, "quadro_strumenti_retrattile": true, "molto_leggera": true, "spoiler_freno_aerodinamico": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_carbonio": true, "freni_carboceramica": true, "design_futuristico": true,
+        "ha_il_v8": true, "ha_il_v12": false, "ha_il_v6": false, "prodotta_in_uk": true, "è_molto_veloce": true
+      }
+    },
+    {
+      "id": 19,
+      "nome": "Chevrolet Corvette Z06",
+      "immagine": "img/macchine/corvette.jpg",
+      "attributi": {
+        "è_americana": true, "è_italiana": false, "è_tedesca": false, "è_giapponese": false, "è_gialla": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": false, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_600cv": true, "cambio_automatico": true,
+        "porte_standard": true, "flat_plane_crank": true, "è_cabrio": false, "è_storica": false, "ha_fari_led": true,
+        "marchio_chevrolet": true, "muscolo_americano": true, "scarichi_centrali": true, "economica_rispetto_a_ferrari": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_300kmh": true, "carrozzeria_composito": true, "freni_brembo": true, "suono_acuto": true,
+        "ha_il_v8": true, "ha_il_v12": false, "ha_il_v6": false, "fari_affilati": true, "tetto_rimovibile": true
+      }
+    },
+    {
+      "id": 20,
+      "nome": "Shelby Cobra",
+      "immagine": "img/macchine/cobra.jpg",
+      "attributi": {
+        "è_americana": true, "è_inglese": true, "è_italiana": false, "è_tedesca": false, "è_blu": true,
+        "è_una_supercar": false, "è_un_suv": false, "motore_anteriore": true, "motore_centrale": false, "trazione_posteriore": true,
+        "ha_il_turbo": false, "è_ibrida": false, "ha_più_di_400cv": true, "ha_più_di_500cv": false, "cambio_manuale": true,
+        "porte_standard": true, "strisce_bianche": true, "è_cabrio": true, "è_storica": true, "è_senza_tetto": true,
+        "marchio_shelby": true, "tubi_di_scappamento_laterali": true, "leggera": true, "icona_anni_60": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_200kmh": true, "carrozzeria_alluminio": true, "freni_disco": true, "carroll_shelby": true,
+        "ha_il_v8": true, "ha_il_v12": false, "ha_il_v6": false, "è_piccola": true, "molto_potente": true
+      }
+    },
+    {
+      "id": 21,
+      "nome": "Lancia Delta Integrale",
+      "immagine": "img/macchine/delta.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_rossa": true,
+        "è_una_supercar": false, "è_un_suv": false, "motore_anteriore": true, "motore_centrale": false, "trazione_integrale": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_200cv": true, "ha_più_di_500cv": false, "cambio_manuale": true,
+        "porte_standard": true, "cinque_porte": true, "è_cabrio": false, "è_storica": true, "è_berlina": true,
+        "marchio_lancia": true, "è_da_rally": true, "vincitrice_mondiale": true, "icona_rally": true, "ha_due_posti": false,
+        "ha_quattro_posti": true, "velocità_sotto_300kmh": true, "fari_tondi": true, "parafanghi_allargati": true, "cofano_bombato": true,
+        "ha_4_cilindri": true, "ha_il_v8": false, "ha_il_v12": false, "spoiler_regolabile": true, "suono_iconico": true
+      }
+    },
+    {
+      "id": 22,
+      "nome": "Lamborghini Miura",
+      "immagine": "img/macchine/miura.jpg",
+      "attributi": {
+        "è_italiana": true, "è_tedesca": false, "è_americana": false, "è_giapponese": false, "è_arancione": true,
+        "è_una_supercar": true, "è_un_suv": false, "motore_centrale": true, "motore_anteriore": false, "trazione_posteriore": true,
+        "ha_il_turbo": false, "è_ibrida": false, "ha_più_di_300cv": true, "ha_più_di_500cv": false, "cambio_manuale": true,
+        "porte_standard": true, "design_gandini": true, "è_cabrio": false, "è_storica": true, "prima_supercar": true,
+        "marchio_lamborghini": true, "fari_con_ciglia": true, "capolavoro": true, "prodotta_anni_60": true, "ha_due_posti": true,
+        "ha_quattro_posti": false, "velocità_sopra_280kmh": true, "bella": true, "bassa": true, "scarichi_posteriori": true,
+        "ha_il_v12": true, "ha_il_v8": false, "ha_il_v6": false, "motore_centrale_trasversale": true, "motore_aspirato": true
+      }
+    },
+    {
+      "id": 23,
+      "nome": "Toyota Supra MK4",
+      "immagine": "img/macchine/supra.jpg",
+      "attributi": {
+        "è_giapponese": true, "è_italiana": false, "è_tedesca": false, "è_americana": false, "è_arancione": true,
+        "è_una_supercar": false, "è_un_suv": false, "motore_anteriore": true, "motore_centrale": false, "trazione_posteriore": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_300cv": true, "ha_più_di_500cv": false, "cambio_manuale": true,
+        "porte_standard": true, "ha_ala_grande": true, "è_cabrio": false, "è_storica": true, "fast_and_furious": true,
+        "marchio_toyota": true, "motore_2jz": true, "molto_modificabile": true, "jdm": true, "ha_due_posti": false,
+        "ha_quattro_posti": true, "velocità_sotto_300kmh": true, "fari_allungati": true, "giappone_style": true, "leggendaria": true,
+        "ha_6_cilindri_linea": true, "ha_il_v8": false, "ha_il_v12": false, "suono_iconico": true, "giapponese": true
+      }
+    },
+    {
+      "id": 24,
+      "nome": "Mercedes G63 AMG",
+      "immagine": "img/macchine/g63.jpg",
+      "attributi": {
+        "è_tedesca": true, "è_italiana": false, "è_americana": false, "è_giapponese": false, "è_nera": true,
+        "è_una_supercar": false, "è_un_suv": true, "motore_anteriore": true, "motore_centrale": false, "trazione_integrale": true,
+        "ha_il_turbo": true, "è_ibrida": false, "ha_più_di_500cv": true, "ha_più_di_1000cv": false, "cambio_automatico": true,
+        "porte_standard": true, "forma_quadrata": true, "è_cabrio": false, "è_storica": false, "è_un_fuoristrada": true,
+        "marchio_mercedes": true, "ruota_di_scorta_dietro": true, "lusso": true, "icona_status": true, "ha_due_posti": false,
+        "ha_cinque_posti": true, "molto_alta": true, "pesante": true, "fari_led_tondi": true, "scarichi_laterali": true,
+        "ha_il_v8": true, "ha_il_v12": false, "ha_il_v6": false, "cinque_porte": true, "trazione_4x4": true
+      }
+    }
+    ]
+}
