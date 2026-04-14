@@ -1,0 +1,321 @@
+{
+  "categoria": "Griffin",
+  "configurazione": {
+    "totale_personaggi": 24,
+    "caratteristiche_per_personaggio": 35
+  },
+  "personaggi": [
+    {
+      "id": 1, "nome": "Peter Griffin", "immagine": "img/griffin/peter.jpg",
+      "attributi": {
+        "porta_occhiali": true, "è_sovrappeso": true, "ha_mento_doppio": true, "indossa_bianco": true, 
+        "pantaloni_verdi": true, "capelli_castani": true, "è_antropomorfo": false, "è_un_animale": false,
+        "lavora_birrificio": true, "ha_scarpe_nere": true, "ha_la_risata_strana": true, "usa_cintura": false,
+        "è_il_padre": true, "è_bambino": false, "è_anziano": false, "ha_baffi": false, "ha_barba": false,
+        "ha_cappello": false, "ha_naso_grosso": true, "è_cattivo": false, "indossa_occhiali_tondi": true,
+        "è_protagonista": true, "ha_voce_grave": true, "usa_cravatta": false, "ha_calvizie": false,
+        "è_alto": true, "ha_amici_al_bar": true, "ha_cane": true, "è_sposato": true, "ha_tre_figli": true,
+        "indossa_bottoni": true, "ha_mani_grandi": true, "ha_sopracciglia_sottili": true, "è_americano": true, "vive_a_quahog": true
+      }
+    },
+    {
+      "id": 2, "nome": "Lois Griffin", "immagine": "img/griffin/lois.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_sovrappeso": false, "ha_mento_doppio": false, "indossa_bianco": false, 
+        "pantaloni_verdi": false, "capelli_rossi": true, "è_antropomorfo": false, "è_un_animale": false,
+        "lavora_birrificio": false, "ha_scarpe_nere": false, "ha_la_risata_strana": false, "usa_cintura": false,
+        "è_la_madre": true, "è_bambino": false, "è_anziano": false, "ha_baffi": false, "ha_barba": false,
+        "ha_cappello": false, "ha_naso_grosso": false, "è_cattivo": false, "indossa_orecchini": true,
+        "è_donna": true, "ha_voce_nasale": true, "usa_collana": true, "indossa_verde": true,
+        "è_alta": true, "suona_piano": true, "ha_cane": true, "è_sposata": true, "ha_tre_figli": true,
+        "indossa_pantaloni_rosa": true, "ha_mani_piccole": true, "ha_trucco": true, "è_americana": true, "vive_a_quahog": true
+      }
+    },
+    {
+      "id": 3, "nome": "Stewie Griffin", "immagine": "img/griffin/stewie.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_sovrappeso": false, "ha_mento_doppio": false, "indossa_bianco": false, 
+        "pantaloni_verdi": false, "capelli_neri": true, "è_antropomorfo": false, "è_un_animale": false,
+        "lavora_birrificio": false, "ha_scarpe_nere": false, "ha_la_risata_strana": false, "usa_cintura": false,
+        "è_il_figlio": true, "è_bambino": true, "è_neonato": true, "ha_baffi": false, "ha_barba": false,
+        "ha_cappello": false, "ha_testa_a_pallone": true, "è_cattivo": true, "parla_inglese_british": true,
+        "è_genio": true, "ha_voce_acuta": true, "usa_armi": true, "indossa_rosso": true,
+        "è_basso": true, "ha_un_orsetto": true, "ha_cane_amico": true, "è_calvo": true, "ha_pochi_capelli": true,
+        "indossa_salopette": true, "ha_testa_ovale": true, "ha_occhi_grandi": true, "è_americano": true, "vive_a_quahog": true
+      }
+    },
+    {
+      "id": 4, "nome": "Brian Griffin", "immagine": "img/griffin/brian.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_sovrappeso": false, "ha_mento_doppio": false, "indossa_bianco": false, 
+        "pantaloni_verdi": false, "ha_pelliccia": true, "è_antropomorfo": true, "è_un_animale": true,
+        "è_cane": true, "cammina_due_zampe": true, "beve_martini": true, "scrive_libri": true,
+        "è_bianco": true, "ha_orecchie_lunghe": true, "ha_naso_nero": true, "ha_baffi": false, "ha_barba": false,
+        "ha_collare": true, "collare_rosso": true, "è_colto": true, "parla": true,
+        "è_basso": false, "ha_coda": true, "è_il_cane_famiglia": true, "non_ha_vestiti": true, "è_anziano": false,
+        "ha_occhi_neri": true, "ha_mani_zampe": true, "guida_auto": true, "è_americano": true, "vive_a_quahog": true,
+        "ha_sopracciglia": false, "ha_denti_bianchi": true, "è_ateo": true, "fuma": false, "beve": true
+      }
+    },
+    {
+      "id": 5, "nome": "Chris Griffin", "immagine": "img/griffin/chris.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_sovrappeso": true, "ha_mento_doppio": true, "indossa_bianco": false, 
+        "pantaloni_verdi": false, "capelli_biondi": true, "è_antropomorfo": false, "è_un_animale": false,
+        "indossa_cappello": true, "cappello_arancione": true, "ha_la_risata_strana": false, "ha_scimmia_armadio": true,
+        "è_il_figlio": true, "è_bambino": true, "è_adolescente": true, "ha_baffi": false, "ha_barba": false,
+        "indossa_blu": true, "ha_naso_grosso": true, "è_cattivo": false, "ha_voce_nasale": true,
+        "è_alto": true, "ha_capelli_lunghi": true, "ha_cane": true, "indossa_orecchini": false, "è_timido": true,
+        "ha_scarpe_nere": true, "ha_mani_grandi": true, "ha_occhi_tondi": true, "è_americano": true, "vive_a_quahog": true,
+        "indossa_tshirt": true, "ha_orecchie_piccole": true, "è_pigro": true, "mangia_molto": true, "ha_pantaloni_neri": true
+      }
+    },
+    {
+      "id": 6, "nome": "Meg Griffin", "immagine": "img/griffin/meg.jpg",
+      "attributi": {
+        "porta_occhiali": true, "è_sovrappeso": false, "ha_mento_doppio": false, "indossa_bianco": false, 
+        "pantaloni_verdi": false, "capelli_castani": true, "è_antropomorfo": false, "è_un_animale": false,
+        "indossa_cappello": true, "cappello_rosa": true, "è_emarginata": true, "ha_occhiali_neri": true,
+        "è_la_figlia": true, "è_bambino": true, "è_adolescente": true, "ha_baffi": false, "ha_barba": false,
+        "indossa_rosa": true, "ha_naso_piccolo": true, "è_cattiva": false, "ha_voce_normale": true,
+        "è_bassa": true, "ha_capelli_a_caschetto": true, "ha_cane": true, "indossa_jeans": true, "è_triste": true,
+        "ha_scarpe_bianche": true, "ha_mani_piccole": true, "ha_occhi_tondi": true, "è_americana": true, "vive_a_quahog": true,
+        "indossa_maglione": true, "ha_frangetta": true, "è_bullizzata": true, "ha_pantaloni_blu": true, "è_femmina": true
+      }
+    },
+    {
+      "id": 7, "nome": "Glenn Quagmire", "immagine": "img/griffin/quagmire.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_sovrappeso": false, "ha_mento_doppio": false, "indossa_bianco": false, 
+        "pantaloni_verdi": false, "capelli_neri": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_pilota": true, "ha_mento_pronunciato": true, "ha_sorriso_largo": true, "dice_giggity": true,
+        "è_amico_peter": true, "è_adulto": true, "è_anziano": false, "ha_baffi": false, "ha_barba": false,
+        "indossa_rosso": true, "ha_naso_grosso": true, "è_cattivo": false, "indossa_fiori": true,
+        "è_alto": false, "ha_uniforme": false, "indossa_scarpe_marroni": true, "indossa_jeans": true, "è_fissato_donne": true,
+        "ha_mani_sempre_in_movimento": true, "ha_occhi_neri": true, "è_americano": true, "vive_a_quahog": true,
+        "ha_maglia_rossa": true, "ha_pantaloni_blu": true, "ha_testa_grande": true, "ha_orecchie_piccole": true, "è_single": true
+      }
+    },
+    {
+      "id": 8, "nome": "Cleveland Brown", "immagine": "img/griffin/cleveland.jpg",
+      "attributi": {
+        "pelle_scura": true, "è_sovrappeso": true, "ha_baffi": true, "indossa_giallo": true, 
+        "pantaloni_blu": false, "capelli_neri": true, "è_antropomorfo": false, "è_un_animale": false,
+        "parla_lento": true, "ha_voce_calma": true, "è_amico_peter": true, "ha_uno_spin_off": true,
+        "è_adulto": true, "è_bambino": false, "è_anziano": false, "ha_barba": false, "porta_occhiali": false,
+        "ha_naso_largo": true, "è_cattivo": false, "ha_capelli_ricci": true, "è_calmo": true,
+        "è_alto": true, "ha_cravatta": false, "indossa_scarpe_nere": true, "indossa_jeans": false, "è_sposato": true,
+        "ha_mani_grandi": true, "ha_occhi_neri": true, "è_americano": true, "vive_a_quahog": true,
+        "ha_maglia_gialla": true, "ha_pantaloni_grigi": true, "ha_testa_rotonda": true, "ha_orecchie_piccole": true, "è_nero": true
+      }
+    },
+    {
+      "id": 9, "nome": "Joe Swanson", "immagine": "img/griffin/joe.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_molto_muscoloso": true, "ha_mento_quadrato": true, "indossa_grigio": true, 
+        "è_in_sedia_a_rotelle": true, "capelli_castani": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_poliziotto": true, "urla_sempre": true, "è_amico_peter": true, "ha_gambe_paralizzate": true,
+        "è_adulto": true, "è_bambino": false, "è_anziano": false, "ha_baffi": false, "ha_barba": false,
+        "indossa_uniforme": false, "ha_naso_normale": true, "è_cattivo": false, "ha_occhi_azzurri": false,
+        "è_molto_forte": true, "ha_braccia_grandi": true, "indossa_scarpe_nere": true, "indossa_pantaloncini": false, "è_sposato": true,
+        "ha_mani_forti": true, "ha_occhi_neri": true, "è_americano": true, "vive_a_quahog": true,
+        "ha_maglia_grigia": true, "ha_pantaloni_blu": true, "ha_testa_quadrata": true, "ha_orecchie_piccole": true, "è_disabile": true
+      }
+    },
+    {
+      "id": 10, "nome": "Herbert", "immagine": "img/griffin/herbert.jpg",
+      "attributi": {
+        "porta_occhiali": true, "è_molto_magro": true, "ha_rughe": true, "indossa_azzurro": true, 
+        "usa_deambulatore": true, "capelli_bianchi": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_pervertito": true, "fischia_mentre_parla": true, "ama_chris": true, "è_molto_vecchio": true,
+        "è_anziano": true, "è_bambino": false, "ha_baffi": false, "ha_barba": false, "ha_pochi_capelli": true,
+        "indossa_vestaglia": true, "ha_naso_aquilino": true, "è_cattivo": true, "ha_voce_tremante": true,
+        "è_alto": true, "indossa_pantofole": true, "ha_cane_vecchio": true, "indossa_occhiali_sottili": true, "è_single": true,
+        "ha_mani_tremanti": true, "ha_occhi_piccoli": true, "è_americano": true, "vive_a_quahog": true,
+        "ha_pigiama": true, "ha_testa_allungata": true, "ha_orecchie_grandi": true, "è_inquietante": true, "è_magro": true
+      }
+    },
+    {
+      "id": 11, "nome": "Adam West", "immagine": "img/griffin/adam_west.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_magro": false, "ha_rughe": false, "indossa_giacca": true, 
+        "è_il_sindaco": true, "capelli_grigi": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_pazzo": true, "ha_voce_autoritaria": true, "amico_di_nessuno": false, "è_anziano": true,
+        "indossa_cravatta": true, "ha_naso_normale": true, "è_cattivo": false, "ha_occhi_azzurri": false,
+        "è_alto": true, "indossa_scarpe_nere": true, "è_americano": true, "vive_a_quahog": true,
+        "ha_capelli_corti": true, "ha_testa_normale": true, "ha_orecchie_piccole": true, "ha_baffi": false, "ha_barba": false,
+        "indossa_blu": true, "pantaloni_grigi": true, "ha_mani_normali": true, "è_famoso": true, "è_maschio": true,
+        "usa_telefono": true, "ha_scrivania": true, "ha_segretaria": true, "fa_cose_strane": true, "è_morto": true
+      }
+    },
+    {
+      "id": 12, "nome": "Carter Pewterschmidt", "immagine": "img/griffin/carter.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_ricco": true, "ha_rughe": true, "indossa_giacca": true, 
+        "è_il_suocero": true, "capelli_grigi": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_arrogante": true, "ha_voce_rauca": true, "odia_peter": true, "è_anziano": true,
+        "indossa_cravatta": true, "ha_naso_grosso": true, "è_cattivo": true, "ha_occhi_neri": true,
+        "è_alto": true, "indossa_scarpe_marrone": true, "è_americano": true, "vive_a_quahog": false,
+        "ha_capelli_corti": true, "ha_testa_quadrata": true, "ha_orecchie_grandi": true, "ha_baffi": false, "ha_barba": false,
+        "indossa_azzurro": true, "pantaloni_marrone": true, "ha_mani_grandi": true, "è_imprenditore": true, "è_sposato": true,
+        "ha_figlia_lois": true, "è_miliardario": true, "ha_bastone": false, "indossa_camicia": true, "è_antipatico": true
+      }
+    },
+    {
+      "id": 13, "nome": "Mort Goldman", "immagine": "img/griffin/mort.jpg",
+      "attributi": {
+        "porta_occhiali": true, "è_molto_magro": true, "ha_naso_molto_grosso": true, "indossa_azzurro": false, 
+        "è_ebreo": true, "capelli_rossi": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_farmacista": true, "è_ipocondriaco": true, "ha_voce_acuta": true, "è_anziano": false,
+        "ha_baffi": false, "ha_barba": false, "ha_pochi_capelli": false, "ha_calvizie_frontale": true,
+        "indossa_maglione_giallo": true, "è_cattivo": false, "è_pauroso": true, "è_alto": true,
+        "indossa_pantaloni_marroni": true, "è_americano": true, "vive_a_quahog": true, "ha_occhiali_spessi": true,
+        "ha_mani_piccole": true, "ha_orecchie_grandi": true, "ha_testa_ovale": true, "è_vedovo": true, "ha_figlio_neil": true,
+        "è_maschio": true, "ha_denti_sporgenti": true, "parla_veloce": true, "è_ansioso": true, "è_amico_peter": false, "indossa_marrone": true
+      }
+    },
+    {
+      "id": 14, "nome": "Tricia Takanawa", "immagine": "img/griffin/tricia.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_magra": true, "ha_origini_asiatiche": true, "indossa_giallo": false, 
+        "è_giornalista": true, "capelli_neri": true, "è_antropomorfo": false, "è_un_animale": false,
+        "parla_in_modo_monotono": true, "ha_microfono": true, "lavora_in_tv": true, "è_donna": true,
+        "ha_capelli_a_caschetto": true, "ha_naso_piccolo": true, "è_cattiva": false, "è_professionale": true,
+        "è_bassa": true, "indossa_scarpe_nere": true, "indossa_vestito_rosa": true, "è_americana": true,
+        "vive_a_quahog": true, "ha_occhi_neri": true, "ha_mani_piccole": true, "ha_orecchie_piccole": true, "è_single": true,
+        "ha_trucco": true, "è_seria": true, "fa_servizi_strani": true, "ha_voce_stabile": true, "è_giovane": true,
+        "indossa_collana": false, "ha_pantaloni": false, "ha_gonna": true, "è_famosa": true, "ha_sopracciglia_sottili": true
+      }
+    },
+    {
+      "id": 15, "nome": "Tom Tucker", "immagine": "img/griffin/tom.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_alto": true, "ha_baffi": true, "indossa_completo": true, 
+        "è_giornalista": true, "capelli_castani": true, "è_antropomorfo": false, "è_un_animale": false,
+        "lavora_in_tv": true, "ha_voce_profonda": true, "è_adulto": true, "indossa_cravatta": true,
+        "ha_naso_normale": true, "è_cattivo": false, "è_vanitoso": true, "ha_capelli_curati": true,
+        "indossa_scarpe_nere": true, "è_americano": true, "vive_a_quahog": true, "ha_occhi_neri": true,
+        "ha_mani_grandi": true, "ha_orecchie_normali": true, "è_divorziato": true, "ha_figlio_con_faccia_rovesciata": true,
+        "è_maschio": true, "indossa_blu": true, "indossa_camicia_bianca": true, "è_famoso": true, "è_cinico": true,
+        "ha_sopracciglia_folte": true, "usa_gel": true, "ha_fossetta": false, "è_collega_dianne": true, "lavora_canale_5": true, "ha_trucco_scenico": true
+      }
+    },
+    {
+      "id": 16, "nome": "Death (La Morte)", "immagine": "img/griffin/death.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_uno_scheletro": true, "ha_falce": true, "indossa_nero": true, 
+        "è_soprannaturale": true, "non_ha_capelli": true, "è_antropomorfo": true, "è_un_animale": false,
+        "indossa_tunica": true, "indossa_cappuccio": true, "non_ha_pelle": true, "è_immortale": true,
+        "ha_voce_nasale": true, "non_ha_naso": true, "è_cattivo": false, "è_misterioso": true,
+        "è_alto": true, "non_ha_scarpe": true, "vive_ovunque": true, "ha_occhi_vuoti": true,
+        "ha_mani_ossee": true, "non_ha_orecchie": true, "è_single": true, "è_maschio": true,
+        "ha_amico_peter": true, "ha_madre": true, "è_pallido": true, "vola": false, "si_teletrasporta": true,
+        "è_magrissimo": true, "ha_ossa_bianche": true, "non_mangia": true, "non_dorme": true, "tocco_mortale": true, "è_ironico": true
+      }
+    },
+    {
+      "id": 17, "nome": "Bonnie Swanson", "immagine": "img/griffin/bonnie.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_magra": true, "ha_capelli_neri": true, "indossa_viola": true, 
+        "è_la_moglie_di_joe": true, "è_donna": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_stata_incinta_per_anni": true, "ha_voce_calma": true, "è_adulta": true, "ha_naso_piccolo": true,
+        "è_cattiva": false, "ha_occhi_neri": true, "è_bassa": false, "indossa_scarpe_nere": true,
+        "è_americana": true, "vive_a_quahog": true, "ha_mani_piccole": true, "ha_orecchie_piccole": true,
+        "è_sposata": true, "ha_figlia_susie": true, "ha_figlio_kevin": true, "indossa_trucco": true, "è_paziente": true,
+        "ha_capelli_lunghi": true, "indossa_gonna_viola": true, "ha_collana": false, "ha_sopracciglia_sottili": true,
+        "è_tranquilla": true, "ha_voce_dolce": true, "lavora": false, "è_amica_lois": true, "va_al_bar": false, "è_fedele": true
+      }
+    },
+    {
+      "id": 18, "nome": "Bruce", "immagine": "img/griffin/bruce.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_magro": true, "ha_baffi_sottili": true, "indossa_azzurro": true, 
+        "dice_oh_no": true, "capelli_neri": true, "è_antropomorfo": false, "è_un_animale": false,
+        "ha_molti_lavori": true, "ha_voce_effeminata": true, "è_adulto": true, "è_gay": true,
+        "ha_naso_normale": true, "è_cattivo": false, "è_gentile": true, "ha_occhi_neri": true,
+        "è_alto": true, "indossa_scarpe_nere": true, "indossa_jeans": true, "è_americano": true,
+        "vive_a_quahog": true, "ha_mani_lunghe": true, "ha_orecchie_piccole": true, "è_sposato_con_jeffrey": true,
+        "è_maschio": true, "indossa_camicia_a_quadri": true, "ha_sopracciglia_sottili": true, "è_calmo": true, "parla_lento": true,
+        "ha_testa_ovale": true, "è_amichevole": true, "fa_mille_mestieri": true, "ha_pelle_chiara": true, "è_divertente": true, "non_ha_barba": true
+      }
+    },
+    {
+      "id": 19, "nome": "Consuela", "immagine": "img/griffin/consuela.jpg",
+      "attributi": {
+        "porta_occhiali": true, "è_sovrappeso": true, "dice_no_no": true, "indossa_azzurro": true, 
+        "è_la_colf": true, "capelli_neri": true, "è_antropomorfo": false, "è_un_animale": false,
+        "ha_grembiule": true, "ha_voce_particolare": true, "è_adulta": true, "è_messicana": true,
+        "ha_naso_largo": true, "è_cattiva": false, "è_testarda": true, "ha_occhi_neri": true,
+        "è_bassa": true, "indossa_scarpe_bianche": true, "è_straniera": true, "vive_a_quahog": true,
+        "ha_mani_grandi": true, "ha_orecchie_piccole": true, "indossa_orecchini": true, "è_donna": true,
+        "ha_capelli_raccolti": true, "usa_prodotti_pulizia": true, "è_famosa_per_i_no": true, "ha_rossetto": true, "è_anziana": false,
+        "ha_pelle_scura": true, "indossa_pantaloni_bianchi": true, "ha_occhiali_grandi": true, "ha_sopracciglia_folte": true, "è_lenta": true, "usa_il_windex": true
+      }
+    },
+    {
+      "id": 20, "nome": "Dr. Hartman", "immagine": "img/griffin/hartman.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_alto": true, "ha_camice_bianco": true, "indossa_azzurro": true, 
+        "è_medico": true, "capelli_grigi": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_incompetente": true, "ha_voce_simile_a_carter": true, "è_adulto": true, "ha_stetoscopio": true,
+        "ha_naso_normale": true, "è_cattivo": false, "è_confuso": true, "ha_occhi_neri": true,
+        "indossa_scarpe_nere": true, "è_americano": true, "vive_a_quahog": true, "ha_mani_grandi": true,
+        "ha_orecchie_normali": true, "è_maschio": true, "indossa_cravatta": true, "lavora_in_ospedale": true,
+        "ha_capelli_corti": true, "ha_sopracciglia_grigie": true, "è_stravagante": true, "ha_pantaloni_blu": true, "è_professionista": false,
+        "ha_testa_allungata": true, "ha_sorriso_grande": true, "fa_battute_mediche": true, "è_amico_peter": false, "ha_pelle_chiara": true, "è_buffo": true
+      }
+    },
+    {
+      "id": 21, "nome": "Giant Chicken (Ernie)", "immagine": "img/griffin/chicken.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_un_pollo_gigante": true, "ha_piume_gialle": true, "indossa_niente": true, 
+        "è_nemico_di_peter": true, "non_ha_capelli": false, "è_antropomorfo": true, "è_un_animale": true,
+        "combatte_sempre": true, "non_parla": true, "è_grande": true, "è_uccello": true,
+        "ha_becco_arancione": true, "è_cattivo": true, "è_aggressivo": true, "ha_occhi_rossi": true,
+        "è_alto": true, "ha_zampe": true, "vive_a_quahog": true, "ha_ali": true,
+        "ha_mani_zampe": true, "ha_cresta": true, "è_maschio": true, "è_immortale": true,
+        "ha_iniziato_per_un_coupon": true, "è_giallo": true, "vola": false, "ha_coda_di_piume": true, "è_muscoloso": true,
+        "ha_pelle_nuda": false, "è_un_pollo": true, "fa_a_pugni": true, "non_usa_armi": false, "è_veloce": true, "ha_sguardo_fisso": true
+      }
+    },
+    {
+      "id": 22, "nome": "Jillian Russell", "immagine": "img/griffin/jillian.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_molto_stupida": true, "ha_capelli_biondi": true, "indossa_azzurro": false, 
+        "è_ex_di_brian": true, "è_donna": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_bella": true, "ha_voce_acuta": true, "è_giovane": true, "ha_naso_piccolo": true,
+        "è_cattiva": false, "è_ingenua": true, "ha_occhi_neri": true, "è_alta": true,
+        "indossa_vestito_arancione": true, "è_americana": true, "vive_a_quahog": true, "ha_mani_piccole": true,
+        "ha_orecchie_piccole": true, "è_single": true, "ha_trucco": true, "ha_capelli_lunghi": true, "indossa_stivali": true,
+        "è_simpatica": true, "ha_sopracciglia_sottili": true, "è_magra": true, "ha_pelle_chiara": true, "non_capisce_le_battute": true,
+        "è_modella": false, "ha_voce_dolce": true, "indossa_gonna": true, "ha_coda_di_cavallo": false, "è_alta": true
+      }
+    },
+    {
+      "id": 23, "nome": "Neil Goldman", "immagine": "img/griffin/neil.jpg",
+      "attributi": {
+        "porta_occhiali": true, "è_nerd": true, "ha_acne": true, "indossa_camicia": true, 
+        "è_innamorato_di_meg": true, "capelli_rossi_ricci": true, "è_antropomorfo": false, "è_un_animale": false,
+        "è_figlio_di_mort": true, "ha_voce_nasale": true, "è_adolescente": true, "ha_naso_grosso": true,
+        "è_cattivo": false, "è_intelligente": true, "ha_occhi_neri": true, "è_basso": true,
+        "indossa_pantaloni_blu": true, "è_americano": true, "vive_a_quahog": true, "ha_apparecchio_denti": true,
+        "ha_mani_piccole": true, "ha_orecchie_grandi": true, "è_maschio": true, "ha_capelli_ricci": true, "è_single": true,
+        "indossa_scarpe_nere": true, "ha_sopracciglia_folte": false, "è_magro": true, "ha_pelle_chiara": true, "lavora_giornale_scuola": true,
+        "è_invadente": true, "ha_denti_sporgenti": true, "indossa_cravatta": false, "ha_taschino": true, "è_buffo": true
+      }
+    },
+    {
+      "id": 24, "nome": "Jasper", "immagine": "img/griffin/jasper.jpg",
+      "attributi": {
+        "porta_occhiali": false, "è_un_cane": true, "ha_pelliccia": true, "indossa_bandana": true, 
+        "è_cugino_di_brian": true, "è_gay": true, "è_antropomorfo": true, "è_un_animale": true,
+        "cammina_due_zampe": true, "ha_voce_calma": true, "è_bianco": true, "è_adulto": true,
+        "ha_naso_nero": true, "è_cattivo": false, "è_raffinato": true, "ha_occhi_neri": true,
+        "è_alto": false, "ha_orecchie_lunghe": true, "vive_a_hollywood": true, "ha_coda": true,
+        "ha_mani_zampe": true, "è_maschio": true, "è_sposato_con_un_uomo": true, "parla": true, "è_colto": true,
+        "non_ha_vestiti": true, "ha_sopracciglia": false, "è_magro": true, "ha_pelle_chiara": false, "è_divertente": true,
+        "ha_denti_bianchi": true, "usa_profumo": true, "è_amico_brian": true, "ha_orecchie_morbide": true, "è_biondo": false
+      }
+    }
+  ]
+}

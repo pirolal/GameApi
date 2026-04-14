@@ -263,3 +263,41 @@ body.game-page .hint {
     font-size: 0.9rem;
     color: #475569;
 }
+
+/* La tessera intera: ora ha un'altezza fissa totale così sono tutte allineate */
+.character-card {
+    width: 130px !important;
+    height: 210px !important; /* Altezza totale della tessera obbligatoria */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* Il trucco: creiamo uno spazio quadrato fisso per l'immagine */
+.character-card img {
+    width: 110px !important;
+    height: 140px !important; /* Spazio verticale fisso per l'immagine */
+    
+    /* Questo impedisce il taglio e mette lo sfondo bianco dove serve */
+    object-fit: contain !important; 
+    background-color: white !important;
+    
+    margin-bottom: 8px !important;
+    flex-shrink: 0 !important; /* Impedisce all'immagine di rimpicciolirsi */
+}
+
+/* Il nome del personaggio: starà sempre alla stessa altezza */
+.character-card p, .character-card span {
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin: 0 !important;
+    word-wrap: break-word !important;
+    width: 100% !important;
+}

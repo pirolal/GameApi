@@ -1,0 +1,297 @@
+{
+  "categoria": "Animali",
+  "configurazione": {
+    "totale_personaggi": 24,
+    "caratteristiche_per_personaggio": 35
+  },
+  "personaggi": [
+    {
+      "id": 1, "nome": "Leone", "immagine": "img/animali/leone.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_africa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": true, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_zanne": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_veloce": true, "ha_orecchie_grandi": false, "ha_proboscide": false,
+        "è_marrone": true, "è_bianco": false, "è_nero": false, "è_verde": false, "è_giallo": true,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 2, "nome": "Tigre", "immagine": "img/animali/tigre.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_africa": false, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": false, "ha_strisce": true, "è_domestico": false,
+        "è_predatore": true, "ha_zanne": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_veloce": true, "ha_orecchie_grandi": false, "ha_proboscide": false,
+        "è_arancione": true, "è_bianco": false, "è_nero": true, "è_verde": false, "è_giallo": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": true, "è_sociale": false
+      }
+    },
+    {
+      "id": 3, "nome": "Elefante", "immagine": "img/animali/elefante.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": false, "ha_piume": false, "ha_squame": false,
+        "vive_in_africa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_zanne": true, "ha_artigli": false, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_lento": true, "ha_orecchie_grandi": true, "ha_proboscide": true,
+        "è_grigio": true, "è_bianco": false, "è_nero": false, "è_verde": false, "è_marrone": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 4, "nome": "Giraffa", "immagine": "img/animali/giraffa.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_africa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": true, "ha_coda": true, "ha_macchie": true, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_zanne": false, "ha_artigli": false, "ha_zoccoli": true, "ha_corna": true,
+        "è_grande": true, "è_piccolo": false, "è_alto": true, "ha_orecchie_grandi": false, "ha_collo_lungo": true,
+        "è_marrone": true, "è_bianco": false, "è_nero": false, "è_verde": false, "è_giallo": true,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 5, "nome": "Panda", "immagine": "img/animali/panda.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_asia": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": true, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_zanne": false, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "mangia_bambù": true, "ha_orecchie_grandi": false, "ha_cerchi_occhi": true,
+        "è_bianco": true, "è_nero": true, "è_grigio": false, "è_verde": false, "è_marrone": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": false
+      }
+    },
+    {
+      "id": 6, "nome": "Lupo", "immagine": "img/animali/lupo.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_europa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_zanne": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": false, "ulula": true, "ha_orecchie_grandi": false, "vive_in_branco": true,
+        "è_grigio": true, "è_bianco": false, "è_nero": false, "è_marrone": true, "è_giallo": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": true, "è_sociale": true
+      }
+    },
+    {
+      "id": 7, "nome": "Volpe", "immagine": "img/animali/volpe.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_bosco": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda_folta": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_zanne": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": true, "è_furba": true, "ha_orecchie_appuntite": true, "ha_muso_lungo": true,
+        "è_arancione": true, "è_bianco": true, "è_nero": false, "è_marrone": false, "è_rosso": true,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": true, "è_sociale": false
+      }
+    },
+    {
+      "id": 8, "nome": "Cane", "immagine": "img/animali/cane.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_casa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": true, "ha_strisce": false, "è_domestico": true,
+        "è_predatore": false, "ha_zanne": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": false, "abbaia": true, "ha_orecchie_basse": true, "è_fedele": true,
+        "è_marrone": true, "è_bianco": true, "è_nero": true, "è_grigio": false, "è_giallo": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 9, "nome": "Gatto", "immagine": "img/animali/gatto.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_casa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": true, "ha_strisce": true, "è_domestico": true,
+        "è_predatore": true, "ha_zanne": true, "ha_artigli_retrattili": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": true, "miagola": true, "ha_baffi_lunghi": true, "ha_fusa": true,
+        "è_grigio": true, "è_bianco": true, "è_nero": true, "è_arancione": true, "è_marrone": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": true, "è_sociale": false
+      }
+    },
+    {
+      "id": 10, "nome": "Aquila", "immagine": "img/animali/aquila.jpg",
+      "attributi": {
+        "è_mammifero": false, "è_carnivoro": true, "ha_pelo": false, "ha_piume": true, "ha_squame": false,
+        "vive_in_montagna": true, "vive_in_acqua": false, "vola": true, "ha_quattro_zampe": false, "ha_ali": true,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_becco_curvo": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": false, "ha_vista_acuta": true, "ha_orecchie_grandi": false, "depone_uova": true,
+        "è_marrone": true, "è_bianco": true, "è_nero": false, "è_giallo": true, "è_grigio": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": false
+      }
+    },
+    {
+      "id": 11, "nome": "Delfino", "immagine": "img/animali/delfino.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": false, "ha_piume": false, "ha_squame": false,
+        "vive_in_mare": true, "vive_in_acqua": true, "vola": false, "ha_quattro_zampe": false, "ha_ali": false,
+        "ha_pinne": true, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_denti": true, "ha_sfiatatoio": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": false, "è_intelligente": true, "ha_orecchie_grandi": false, "nuota": true,
+        "è_grigio": true, "è_azzurro": true, "è_bianco": true, "è_nero": false, "è_verde": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 12, "nome": "Koala", "immagine": "img/animali/koala.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_australia": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": false, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_denti": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": true, "mangia_eucalipto": true, "ha_orecchie_grandi": true, "è_lento": true,
+        "è_grigio": true, "è_bianco": true, "è_nero": false, "è_marrone": false, "è_naso_nero": true,
+        "ha_il_marsupio": true, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": true, "è_sociale": false
+      }
+    },
+    {
+      "id": 13, "nome": "Orso", "immagine": "img/animali/orso.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": true, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_montagna": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda_piccola": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_zanne": true, "ha_artigli_forti": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "mangia_miele": true, "ha_orecchie_piccole": true, "è_forte": true,
+        "è_marrone": true, "è_nero": true, "è_bianco": false, "è_grigio": false, "è_giallo": false,
+        "ha_il_marsupio": false, "va_in_letargo": true, "ha_il_guscio": false, "è_notturno": false, "è_sociale": false
+      }
+    },
+    {
+      "id": 14, "nome": "Zebra", "immagine": "img/animali/zebra.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_africa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": true, "ha_coda": true, "ha_macchie": false, "ha_strisce": true, "è_domestico": false,
+        "è_predatore": false, "ha_denti_piatti": true, "ha_artigli": false, "ha_zoccoli": true, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_veloce": true, "ha_orecchie_grandi": false, "sembra_un_cavallo": true,
+        "è_bianco": true, "è_nero": true, "è_grigio": false, "è_marrone": false, "è_giallo": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 15, "nome": "Ippopotamo", "immagine": "img/animali/ippopotamo.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": false, "ha_piume": false, "ha_squame": false,
+        "vive_in_africa": true, "vive_in_acqua": true, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_zanne_grandi": true, "ha_artigli": false, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_pesante": true, "ha_orecchie_piccole": true, "ha_bocca_enorme": true,
+        "è_grigio": true, "è_marrone": false, "è_nero": false, "è_bianco": false, "è_rosa": true,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 16, "nome": "Gorilla", "immagine": "img/animali/gorilla.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_africa": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": false, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_mani": true, "ha_artigli": false, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_forte": true, "ha_orecchie_piccole": true, "ha_pollice_opponibile": true,
+        "è_nero": true, "è_grigio": true, "è_marrone": false, "è_bianco": false, "è_giallo": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 17, "nome": "Canguro", "immagine": "img/animali/canguro.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_in_australia": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": false, "ha_ali": false,
+        "ha_criniera": false, "ha_coda_lunga": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_denti": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "salta": true, "ha_orecchie_grandi": true, "ha_zampe_posteriori_forti": true,
+        "è_marrone": true, "è_grigio": true, "è_rosso": false, "è_bianco": false, "è_nero": false,
+        "ha_il_marsupio": true, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 18, "nome": "Pinguino", "immagine": "img/animali/pinguino.jpg",
+      "attributi": {
+        "è_mammifero": false, "è_carnivoro": true, "ha_pelo": false, "ha_piume": true, "ha_squame": false,
+        "vive_al_freddo": true, "vive_in_acqua": true, "vola": false, "ha_quattro_zampe": false, "ha_ali": true,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_becco": true, "ha_artigli": false, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": false, "cammina_buffo": true, "ha_orecchie_piccole": true, "nuota": true,
+        "è_nero": true, "è_bianco": true, "è_giallo": true, "è_grigio": false, "è_azzurro": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 19, "nome": "Gufo", "immagine": "img/animali/gufo.jpg",
+      "attributi": {
+        "è_mammifero": false, "è_carnivoro": true, "ha_pelo": false, "ha_piume": true, "ha_squame": false,
+        "vive_nel_bosco": true, "vive_in_acqua": false, "vola": true, "ha_quattro_zampe": false, "ha_ali": true,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": true, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_becco": true, "ha_artigli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": true, "ha_occhi_grandi": true, "ruota_la_testa": true, "è_silenzioso": true,
+        "è_marrone": true, "è_grigio": true, "è_bianco": true, "è_nero": false, "è_giallo": true,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": true, "è_sociale": false
+      }
+    },
+    {
+      "id": 20, "nome": "Rana", "immagine": "img/animali/rana.jpg",
+      "attributi": {
+        "è_mammifero": false, "è_carnivoro": false, "ha_pelo": false, "ha_piume": false, "ha_squame": false,
+        "vive_nello_stagno": true, "vive_in_acqua": true, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": false, "ha_macchie": true, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_lingua_lunga": true, "ha_artigli": false, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": true, "salta": true, "ha_pelle_umida": true, "gracida": true,
+        "è_verde": true, "è_marrone": true, "è_giallo": false, "è_bianco": false, "è_nero": false,
+        "ha_il_marsupio": false, "va_in_letargo": true, "ha_il_guscio": false, "è_notturno": false, "è_sociale": false
+      }
+    },
+    {
+      "id": 21, "nome": "Squalo", "immagine": "img/animali/squalo.jpg",
+      "attributi": {
+        "è_mammifero": false, "è_carnivoro": true, "ha_pelo": false, "ha_piume": false, "ha_squame": true,
+        "vive_in_mare": true, "vive_in_acqua": true, "vola": false, "ha_quattro_zampe": false, "ha_ali": false,
+        "ha_pinne": true, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": true, "ha_denti_aguzzi": true, "ha_branchie": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_pericoloso": true, "nuota_sempre": true, "ha_scheletro_cartilagineo": true,
+        "è_grigio": true, "è_bianco": true, "è_azzurro": false, "è_nero": false, "è_verde": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": false
+      }
+    },
+    {
+      "id": 22, "nome": "Tartaruga", "immagine": "img/animali/tartaruga.jpg",
+      "attributi": {
+        "è_mammifero": false, "è_carnivoro": false, "ha_pelo": false, "ha_piume": false, "ha_squame": true,
+        "vive_in_terra": true, "vive_in_acqua": true, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda_piccola": true, "ha_macchie": true, "ha_strisce": false, "è_domestico": true,
+        "è_predatore": false, "ha_becco_corneo": true, "ha_artigli_piccoli": true, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": true, "è_molto_lenta": true, "ha_il_guscio": true, "è_longeva": true,
+        "è_verde": true, "è_marrone": true, "è_giallo": true, "è_bianco": false, "è_nero": false,
+        "ha_il_marsupio": false, "va_in_letargo": true, "ha_scheletro_esterno": true, "è_notturno": false, "è_sociale": false
+      }
+    },
+    {
+      "id": 23, "nome": "Scimmia", "immagine": "img/animali/scimmia.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_nella_giungla": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": false, "ha_coda": true, "ha_macchie": false, "ha_strisce": false, "è_domestico": false,
+        "è_predatore": false, "ha_mani": true, "ha_artigli": false, "ha_zoccoli": false, "ha_corna": false,
+        "è_grande": false, "è_piccolo": true, "si_arrampica": true, "mangia_banane": true, "ha_pollice_opponibile": true,
+        "è_marrone": true, "è_nero": true, "è_bianco": false, "è_grigio": false, "è_rosso": false,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    },
+    {
+      "id": 24, "nome": "Cavallo", "immagine": "img/animali/cavallo.jpg",
+      "attributi": {
+        "è_mammifero": true, "è_carnivoro": false, "ha_pelo": true, "ha_piume": false, "ha_squame": false,
+        "vive_nella_stalla": true, "vive_in_acqua": false, "vola": false, "ha_quattro_zampe": true, "ha_ali": false,
+        "ha_criniera": true, "ha_coda": true, "ha_macchie": true, "ha_strisce": false, "è_domestico": true,
+        "è_predatore": false, "ha_denti_grandi": true, "ha_artigli": false, "ha_zoccoli": true, "ha_corna": false,
+        "è_grande": true, "è_piccolo": false, "è_veloce": true, "si_può_cavalcare": true, "nitrisce": true,
+        "è_marrone": true, "è_bianco": true, "è_nero": true, "è_grigio": true, "è_beige": true,
+        "ha_il_marsupio": false, "va_in_letargo": false, "ha_il_guscio": false, "è_notturno": false, "è_sociale": true
+      }
+    }
+  ]
+}
