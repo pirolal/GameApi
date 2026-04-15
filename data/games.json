@@ -341,6 +341,11 @@
         "id": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
         "name": "ayman",
         "joinedAt": "2026-04-14T22:02:58.456Z"
+      },
+      {
+        "id": "97d85300-cdc3-44c4-8158-03426148224e",
+        "name": "meli",
+        "joinedAt": "2026-04-15T08:18:03.421Z"
       }
     ],
     "moves": [
@@ -848,11 +853,20 @@
           "playerName": "meli"
         },
         "timestamp": "2026-04-15T08:11:29.744Z"
+      },
+      {
+        "id": "4e5aef3e-c5c9-4c96-8cae-afba7dea5ded",
+        "playerId": "97d85300-cdc3-44c4-8158-03426148224e",
+        "data": {
+          "type": "start",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-15T08:18:07.047Z"
       }
     ],
     "status": "active",
     "createdAt": "2026-04-14T22:02:05.515Z",
-    "updatedAt": "2026-04-15T08:11:58.315Z"
+    "updatedAt": "2026-04-15T08:18:07.047Z"
   },
   {
     "id": "1ddaca9a-7124-455a-8826-e1012a3e2ddc",
@@ -1087,10 +1101,180 @@
           "type": "solo-reset"
         },
         "timestamp": "2026-04-15T08:13:11.215Z"
+      },
+      {
+        "id": "9f70ea88-42fd-4f13-a364-d3157d31a81c",
+        "playerId": "a225fa1f-fd4c-4bd6-9682-ce751b686636",
+        "data": {
+          "type": "start",
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-15T08:17:49.444Z"
       }
     ],
     "status": "active",
     "createdAt": "2026-04-15T08:12:07.062Z",
-    "updatedAt": "2026-04-15T08:13:11.215Z"
+    "updatedAt": "2026-04-15T08:17:49.444Z"
+  },
+  {
+    "id": "605e04de-ffdd-4488-890e-1f7fbd9fcfb2",
+    "name": "hh",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "name": "utente_phpmyadmin",
+        "joinedAt": "2026-04-15T09:35:00.517Z"
+      },
+      {
+        "id": "f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b",
+        "name": "BOT",
+        "joinedAt": "2026-04-15T09:36:05.876Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "14876046-53a4-4230-b7b7-f2088e776ace",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-15T09:35:00.609Z"
+      },
+      {
+        "id": "05819d9b-e8c0-45dd-a5e2-5b10f5580f99",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "category",
+          "value": "animali"
+        },
+        "timestamp": "2026-04-15T09:35:00.713Z"
+      },
+      {
+        "id": "8f238f9b-634c-4549-a3b3-6fe7ae8c4f2c",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+          "startedAt": "2026-04-15T09:35:01.691Z"
+        },
+        "timestamp": "2026-04-15T09:35:02.760Z"
+      },
+      {
+        "id": "af309295-e95f-473e-a160-3de62252b288",
+        "playerId": "f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b",
+        "data": {
+          "type": "bot-joined",
+          "reason": "solo-timeout",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-15T09:36:05.948Z"
+      },
+      {
+        "id": "4a4eae72-bb2f-48a6-b046-c0e91d19dc40",
+        "playerId": "f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b",
+        "data": {
+          "type": "start",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-15T09:36:06.053Z"
+      },
+      {
+        "id": "3e2d84ca-3ece-48ff-ba01-f0cd0c03d668",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-15T09:36:06.156Z"
+      },
+      {
+        "id": "8f44aef7-217d-41b2-89b5-dca9b595fb2b",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "start",
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-15T09:36:43.112Z"
+      },
+      {
+        "id": "b4168fab-d509-4fc0-82d6-39b3205c3f12",
+        "playerId": "f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-22",
+          "characterName": "Tartaruga",
+          "imageUrl": "img/animali/tartaruga.jpg",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-15T09:36:44.344Z"
+      },
+      {
+        "id": "d2750c3c-4130-47fa-934f-09a3b47bbfd9",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-6",
+          "characterName": "Lupo",
+          "imageUrl": "img/animali/lupo.jpg",
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-15T09:37:02.139Z"
+      },
+      {
+        "id": "00ec735c-27ba-4e93-8a30-15882b4c414b",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "question",
+          "questionId": "q-cbb7e591-e413-47a3-ac29-33c069eabbd8-1776245832749",
+          "text": "Ha il marsupio?",
+          "targetPlayerId": "f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b",
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-15T09:37:13.843Z"
+      },
+      {
+        "id": "8a2804c4-ccc6-4020-81a2-b059bcdba7fb",
+        "playerId": "f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b",
+        "data": {
+          "type": "answer",
+          "questionId": "q-cbb7e591-e413-47a3-ac29-33c069eabbd8-1776245832749",
+          "answer": false,
+          "answerText": "NO",
+          "validated": true,
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-15T09:37:14.357Z"
+      },
+      {
+        "id": "fde1c801-5cc1-4a76-9c68-490c2edb5c5f",
+        "playerId": "f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b",
+        "data": {
+          "type": "question",
+          "questionId": "q-f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b-1776245833875",
+          "text": "È un animale notturno?",
+          "targetPlayerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-15T09:37:14.948Z"
+      },
+      {
+        "id": "e7892757-3ca2-483f-ac48-d80fd24f08de",
+        "playerId": "cbb7e591-e413-47a3-ac29-33c069eabbd8",
+        "data": {
+          "type": "answer",
+          "questionId": "q-f2bd1a93-ae93-4c3d-b0b8-0ce71d59732b-1776245833875",
+          "answer": true,
+          "answerText": "SI",
+          "validated": true,
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-15T09:37:22.396Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-15T09:35:00.083Z",
+    "updatedAt": "2026-04-15T09:37:22.396Z"
   }
 ]
