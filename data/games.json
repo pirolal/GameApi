@@ -1,1 +1,1096 @@
-[]
+[
+  {
+    "id": "5b3776ee-6236-45cd-b51a-06168a3f896f",
+    "name": "partita1",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "name": "Luca",
+        "joinedAt": "2026-04-14T09:06:32.379Z"
+      },
+      {
+        "id": "fe8e0b6f-a913-41c8-a77c-e7a09dc8c5dd",
+        "name": "meli",
+        "joinedAt": "2026-04-14T20:57:10.876Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "781dbb27-4d78-4884-9893-ec791dca1ecb",
+        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-14T09:06:32.461Z"
+      },
+      {
+        "id": "6e491f0e-d9d4-40f6-b296-a1ec94da9d3f",
+        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "data": {
+          "type": "category",
+          "value": "simpson"
+        },
+        "timestamp": "2026-04-14T09:06:32.548Z"
+      },
+      {
+        "id": "c6dac724-684a-4ef0-beab-ab5ef14cd124",
+        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+          "startedAt": "2026-04-14T09:06:34.589Z"
+        },
+        "timestamp": "2026-04-14T09:06:34.420Z"
+      },
+      {
+        "id": "c0dc9b98-95df-4d38-a6af-9f2cf74caefd",
+        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-14T09:06:53.529Z"
+      },
+      {
+        "id": "c0afb46d-a832-4458-9cbe-f9e8e8050260",
+        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
+        "data": {
+          "type": "start",
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-04-14T09:06:57.303Z"
+      },
+      {
+        "id": "fc59ba89-230a-48f9-bd3c-5a9f16c56e41",
+        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "data": {
+          "type": "start",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-14T09:06:59.329Z"
+      },
+      {
+        "id": "0152a0f6-1f0c-4066-a353-d124afa4208f",
+        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-1",
+          "characterName": "Homer",
+          "imageUrl": "img/simpson/homer.jpg",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-14T09:07:04.287Z"
+      },
+      {
+        "id": "9821c2d6-d612-4ef2-869c-0fe07b927ebf",
+        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-2",
+          "characterName": "Marge",
+          "imageUrl": "img/simpson/marge.jpg",
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-04-14T09:07:06.232Z"
+      },
+      {
+        "id": "1807d8e0-5943-49e7-aa80-d39c6b551492",
+        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "data": {
+          "type": "question",
+          "questionId": "q-f8709db4-5dd8-4d84-b9f6-419db5a5c677-1776157656360",
+          "text": "Il personaggio ha la pelle gialla?",
+          "targetPlayerId": "5233c887-f480-4e18-8542-dac12bd167b7",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-14T09:07:36.181Z"
+      },
+      {
+        "id": "c2642c4a-1ee7-4573-bb23-be2c55c2e78d",
+        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
+        "data": {
+          "type": "answer",
+          "questionId": "q-f8709db4-5dd8-4d84-b9f6-419db5a5c677-1776157656360",
+          "answer": true,
+          "answerText": "SI",
+          "validated": true,
+          "playerName": "Marco"
+        },
+        "timestamp": "2026-04-14T09:07:38.310Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-14T09:06:32.207Z",
+    "updatedAt": "2026-04-14T20:57:10.876Z"
+  },
+  {
+    "id": "7f426bee-e1e5-41aa-80d2-c6bbb2075a36",
+    "name": "partita2",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
+        "name": "Da",
+        "joinedAt": "2026-04-14T09:10:55.624Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "f1a0c59e-354f-4c00-9238-5a54322faf74",
+        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-14T09:10:40.438Z"
+      },
+      {
+        "id": "1e50ad37-4bb0-477d-9e78-aca069b7a687",
+        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+        "data": {
+          "type": "category",
+          "value": "simpson"
+        },
+        "timestamp": "2026-04-14T09:10:40.518Z"
+      },
+      {
+        "id": "c1b41ec2-c99d-463a-ad20-79e693f37bd7",
+        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+          "startedAt": "2026-04-14T09:10:42.668Z"
+        },
+        "timestamp": "2026-04-14T09:10:42.508Z"
+      },
+      {
+        "id": "576acf77-0c78-4099-8b57-2959c5b45732",
+        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-14T09:10:56.491Z"
+      },
+      {
+        "id": "4b7cae27-76d2-4dfd-9da3-846f67021a59",
+        "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
+        "data": {
+          "type": "start",
+          "playerName": "Da"
+        },
+        "timestamp": "2026-04-14T09:10:58.773Z"
+      },
+      {
+        "id": "77710b4e-cd56-496c-afc4-91506b3ff213",
+        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+        "data": {
+          "type": "start",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-14T09:10:59.908Z"
+      },
+      {
+        "id": "ba03f42b-d528-4817-b153-86fc42328189",
+        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-3",
+          "characterName": "Bart",
+          "imageUrl": "img/simpson/bart.jpg",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-14T09:11:03.590Z"
+      },
+      {
+        "id": "4a1ba51b-8fec-40e4-a900-043ebfd6a85b",
+        "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-4",
+          "characterName": "Lisa",
+          "imageUrl": "img/simpson/lisa.jpg",
+          "playerName": "Da"
+        },
+        "timestamp": "2026-04-14T09:11:05.855Z"
+      },
+      {
+        "id": "15a17f3b-379d-46d9-8fc5-e062451765cf",
+        "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
+          "startedAt": "2026-04-14T09:13:05.144Z"
+        },
+        "timestamp": "2026-04-14T09:13:04.982Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-14T09:10:40.167Z",
+    "updatedAt": "2026-04-14T09:13:04.982Z"
+  },
+  {
+    "id": "ea578bd1-5e0a-4210-b4a9-f3f098caeb98",
+    "name": "partita3",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "f535bde3-51c4-48ad-bb82-af35690186bd",
+        "name": "Matteo",
+        "joinedAt": "2026-04-14T09:31:23.668Z"
+      },
+      {
+        "id": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
+        "name": "luca",
+        "joinedAt": "2026-04-14T09:31:33.404Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "1dd6de25-1439-43db-9f77-05c9140d11e6",
+        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-14T09:31:23.765Z"
+      },
+      {
+        "id": "f35273d0-2c20-4a82-a531-e487ec1504c1",
+        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
+        "data": {
+          "type": "category",
+          "value": "animali"
+        },
+        "timestamp": "2026-04-14T09:31:23.851Z"
+      },
+      {
+        "id": "8abd897b-93e4-4423-9dce-610134070c20",
+        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
+          "startedAt": "2026-04-14T09:31:25.823Z"
+        },
+        "timestamp": "2026-04-14T09:31:25.698Z"
+      },
+      {
+        "id": "f25abb5b-c30b-485d-9388-09370f35972a",
+        "playerId": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-14T09:31:34.963Z"
+      },
+      {
+        "id": "97824d46-a2e3-4122-9ad4-0aaddf623eef",
+        "playerId": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
+        "data": {
+          "type": "start",
+          "playerName": "luca"
+        },
+        "timestamp": "2026-04-14T09:31:36.633Z"
+      },
+      {
+        "id": "c8882c4d-be39-4161-8e63-1ff85435455c",
+        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
+        "data": {
+          "type": "start",
+          "playerName": "Matteo"
+        },
+        "timestamp": "2026-04-14T09:31:39.184Z"
+      },
+      {
+        "id": "57beebab-7a34-40bd-9622-e68a4ddce226",
+        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-5",
+          "characterName": "Panda",
+          "imageUrl": "img/animali/panda.jpg",
+          "playerName": "Matteo"
+        },
+        "timestamp": "2026-04-14T09:31:45.919Z"
+      },
+      {
+        "id": "ea58c5b0-46b7-4dc1-addc-5fc1d98f3931",
+        "playerId": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-6",
+          "characterName": "Lupo",
+          "imageUrl": "img/animali/lupo.jpg",
+          "playerName": "luca"
+        },
+        "timestamp": "2026-04-14T09:31:51.250Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-14T09:31:23.474Z",
+    "updatedAt": "2026-04-14T09:31:51.250Z"
+  },
+  {
+    "id": "206a2adb-27c8-4fa8-8120-9d2a8a3d17b9",
+    "name": "entra qui!!",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "name": "ayman",
+        "joinedAt": "2026-04-14T22:02:58.456Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "0e5029ac-4bbc-4b39-b795-12064e4f22e9",
+        "playerId": "e7b445c9-b096-4c21-8e5e-67db841e2cb8",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-14T22:02:05.666Z"
+      },
+      {
+        "id": "b2584f26-71b9-496c-b545-d52a66af9217",
+        "playerId": "e7b445c9-b096-4c21-8e5e-67db841e2cb8",
+        "data": {
+          "type": "category",
+          "value": "macchine"
+        },
+        "timestamp": "2026-04-14T22:02:05.732Z"
+      },
+      {
+        "id": "5209d16c-4c5f-4b5b-89a1-9285ee94f8a4",
+        "playerId": "e7b445c9-b096-4c21-8e5e-67db841e2cb8",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "e7b445c9-b096-4c21-8e5e-67db841e2cb8",
+          "startedAt": "2026-04-14T22:02:07.441Z"
+        },
+        "timestamp": "2026-04-14T22:02:07.701Z"
+      },
+      {
+        "id": "fdd8b449-9ac9-4744-882f-c19375a02fe7",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "startedAt": "2026-04-14T22:02:42.403Z"
+        },
+        "timestamp": "2026-04-14T22:02:42.662Z"
+      },
+      {
+        "id": "63174869-3007-4a97-8494-934b31c6a395",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "chat",
+          "text": "dimmi quando ci sei",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:02:53.248Z"
+      },
+      {
+        "id": "8affae9e-4751-47cf-b422-f936962fa765",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-14T22:02:59.899Z"
+      },
+      {
+        "id": "a8ffa017-79d2-4b0e-9098-7d546f0cd9af",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "chat",
+          "text": "OKAY",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:03:04.265Z"
+      },
+      {
+        "id": "caa0dcb0-96e7-4d77-9359-c3e67d468d7d",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "chat",
+          "text": "FUNZIONA",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:03:05.910Z"
+      },
+      {
+        "id": "27737a76-7b60-453a-9965-27860649bba6",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "chat",
+          "text": "sì",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:03:11.367Z"
+      },
+      {
+        "id": "6e47ec69-1984-474a-8d87-a10318aea90d",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "chat",
+          "text": "premi start partita",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:03:12.380Z"
+      },
+      {
+        "id": "6f11bd13-115f-4968-982c-d686a619251c",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "start",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:03:17.518Z"
+      },
+      {
+        "id": "d7029264-4f0f-4bd3-a8bd-50c1652bdf1a",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "start",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:03:17.561Z"
+      },
+      {
+        "id": "bd757186-7c40-42f4-a206-1abec9707c12",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-23",
+          "characterName": "Toyota Supra MK4",
+          "imageUrl": "img/macchine/supra.jpg",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:03:28.636Z"
+      },
+      {
+        "id": "cd77ef48-f13c-43c8-92c3-4704838e8243",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-20",
+          "characterName": "Shelby Cobra",
+          "imageUrl": "img/macchine/cobra.jpg",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:03:50.840Z"
+      },
+      {
+        "id": "988bc002-9f3f-40ce-a494-b11d5929d9e6",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "question",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204247277",
+          "text": "L'auto è di un marchio italiano?",
+          "targetPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:04:07.534Z"
+      },
+      {
+        "id": "14d99511-fc59-4f58-a80e-51956f6e515c",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "answer",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204247277",
+          "answer": false,
+          "answerText": "NO",
+          "validated": true,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:04:23.838Z"
+      },
+      {
+        "id": "f69e06ed-6e4b-48cd-bc4c-91f0ba1b7b24",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "question",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204290668",
+          "text": "L'auto è americana?",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:04:50.748Z"
+      },
+      {
+        "id": "1384ea9b-f055-438b-a234-af9630640795",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "answer",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204290668",
+          "answer": false,
+          "answerText": "NO",
+          "validated": true,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:04:54.610Z"
+      },
+      {
+        "id": "135e2ffc-bbcd-4b0c-90b8-f1dbb6667483",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "question",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204314267",
+          "text": "L'auto è di un marchio italiano?",
+          "targetPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:05:14.523Z"
+      },
+      {
+        "id": "74dac2d7-a3c7-4377-b3a5-cceb4d0a624b",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "answer",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204314267",
+          "answer": false,
+          "answerText": "NO",
+          "validated": true,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:05:24.239Z"
+      },
+      {
+        "id": "40fbf00d-1812-43a6-9cd1-07825f4ba560",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "question",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204339107",
+          "text": "È considerata una supercar?",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:05:39.198Z"
+      },
+      {
+        "id": "cc4867aa-3719-48f6-90d7-33ddd0ec3777",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "answer",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204339107",
+          "answer": false,
+          "answerText": "NO",
+          "validated": true,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:06:09.654Z"
+      },
+      {
+        "id": "02098541-a8fa-4d20-b644-97e83dedc44f",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "question",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204380358",
+          "text": "È di colore arancione?",
+          "targetPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:06:20.617Z"
+      },
+      {
+        "id": "4499d782-0628-450b-95d7-0dce1aeb5d04",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "answer",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204380358",
+          "answer": false,
+          "answerText": "NO",
+          "validated": false,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:06:35.792Z"
+      },
+      {
+        "id": "7f5086bc-7cf2-47f2-bcbb-4afcf996dd5d",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-24",
+          "guessedCharacterName": "Mercedes G63 AMG",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "correct": false,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:06:44.040Z"
+      },
+      {
+        "id": "709d54db-e2f0-4221-89f1-f154b9489345",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "question",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204424276",
+          "text": "Ha la trazione solo posteriore?",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:07:04.359Z"
+      },
+      {
+        "id": "4afcd8e2-3ee9-401b-b944-e926cfb7fbd8",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "answer",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204424276",
+          "answer": true,
+          "answerText": "SI",
+          "validated": true,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:07:24.907Z"
+      },
+      {
+        "id": "a08f7b77-915f-49c0-8e07-d4a7b980a923",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "question",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204490206",
+          "text": "La carrozzeria è nera?",
+          "targetPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:08:10.461Z"
+      },
+      {
+        "id": "8d21814a-0a3b-46d0-a597-574dc6e42e97",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "answer",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204490206",
+          "answer": false,
+          "answerText": "NO",
+          "validated": false,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:08:23.008Z"
+      },
+      {
+        "id": "12fe28b9-ff66-44a1-b0ba-fa2e20df0074",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "question",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204518045",
+          "text": "Le porte si aprono verso l'alto (farfalla/forbice)?",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:08:38.140Z"
+      },
+      {
+        "id": "292f2d57-ddd7-4cfc-9739-53117692628d",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "answer",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204518045",
+          "answer": false,
+          "answerText": "NO",
+          "validated": false,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:08:55.152Z"
+      },
+      {
+        "id": "6982e6eb-a06f-430c-b4b5-3895d1ff8ad8",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "question",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204566253",
+          "text": "È considerata una supercar?",
+          "targetPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:09:26.513Z"
+      },
+      {
+        "id": "c2493e18-2831-4fed-adc7-1adb2d486fad",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "answer",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204566253",
+          "answer": false,
+          "answerText": "NO",
+          "validated": true,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:09:32.800Z"
+      },
+      {
+        "id": "c9348e3c-2f4e-422a-9a28-9508a31f77ac",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "question",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204582594",
+          "text": "È un'auto storica/d'epoca?",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:09:42.649Z"
+      },
+      {
+        "id": "a4c25997-b2f8-4f63-bc64-a636e9631352",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "answer",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204582594",
+          "answer": true,
+          "answerText": "SI",
+          "validated": true,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:10:00.044Z"
+      },
+      {
+        "id": "9942eac8-4cb3-4f56-9ef3-fd3107823f1b",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "question",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204620481",
+          "text": "È un'auto storica/d'epoca?",
+          "targetPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:10:20.740Z"
+      },
+      {
+        "id": "d9664ece-8c40-4966-a302-419a853abeb0",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-20",
+          "guessedCharacterName": "Shelby Cobra",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "correct": false,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:10:20.909Z"
+      },
+      {
+        "id": "4645cb9a-cdce-437f-82c3-f149f3439f26",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "answer",
+          "questionId": "q-d2e08b89-dadf-487a-b59a-4c6bc9fd0a66-1776204620481",
+          "answer": true,
+          "answerText": "SI",
+          "validated": true,
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:10:39.999Z"
+      },
+      {
+        "id": "3b7efb16-a793-47e6-8ba8-ae0ae36b9b92",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "question",
+          "questionId": "q-4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe-1776204668798",
+          "text": "Ha solo due posti?",
+          "targetPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "playerName": "ayman"
+        },
+        "timestamp": "2026-04-14T22:11:08.869Z"
+      },
+      {
+        "id": "8532c2c6-d931-4de9-9a34-2a328f7e9a5d",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-20",
+          "guessedCharacterName": "Shelby Cobra",
+          "targetPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "correct": true,
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-14T22:11:10.943Z"
+      },
+      {
+        "id": "960dd79c-e4a4-4682-b86c-9150c778fd43",
+        "playerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+        "data": {
+          "type": "game-over",
+          "winnerPlayerId": "d2e08b89-dadf-487a-b59a-4c6bc9fd0a66",
+          "winnerName": "meli",
+          "loserPlayerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "loserName": "ayman",
+          "reason": "correct-guess"
+        },
+        "timestamp": "2026-04-14T22:11:10.985Z"
+      },
+      {
+        "id": "29057b6a-8742-4b74-b41b-76e7a6299574",
+        "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "4a4d67d1-a6bc-42dc-b8ba-cdfb05ed7bbe",
+          "startedAt": "2026-04-14T22:13:11.171Z"
+        },
+        "timestamp": "2026-04-14T22:13:11.250Z"
+      },
+      {
+        "id": "2454ea27-c229-452f-af90-c194d75942ac",
+        "playerId": "c4f35947-c58f-4eee-83ef-b3b119df41cb",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-15T08:11:25.838Z"
+      },
+      {
+        "id": "c4b0d6eb-3942-406a-b936-9afd9a959f0c",
+        "playerId": "c4f35947-c58f-4eee-83ef-b3b119df41cb",
+        "data": {
+          "type": "start",
+          "playerName": "meli"
+        },
+        "timestamp": "2026-04-15T08:11:29.744Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-14T22:02:05.515Z",
+    "updatedAt": "2026-04-15T08:11:58.315Z"
+  },
+  {
+    "id": "1ddaca9a-7124-455a-8826-e1012a3e2ddc",
+    "name": "FWF",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "name": "utente_phpmyadmin",
+        "joinedAt": "2026-04-14T22:58:37.372Z"
+      },
+      {
+        "id": "b8a484e9-37e3-429c-8fa4-d362f81534c3",
+        "name": "BOT",
+        "joinedAt": "2026-04-14T22:59:42.890Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "fb0d5725-99c2-4f01-8507-37868a481844",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-14T22:58:37.418Z"
+      },
+      {
+        "id": "46efc353-45ed-462d-b756-6f0b4909c581",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "category",
+          "value": "persone"
+        },
+        "timestamp": "2026-04-14T22:58:37.463Z"
+      },
+      {
+        "id": "cac82c75-c6ad-4b82-ab31-59bbe5417e3c",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+          "startedAt": "2026-04-14T22:58:39.198Z"
+        },
+        "timestamp": "2026-04-14T22:58:39.497Z"
+      },
+      {
+        "id": "a5967cce-68b7-4a7f-aacf-b33af0a780dd",
+        "playerId": "b8a484e9-37e3-429c-8fa4-d362f81534c3",
+        "data": {
+          "type": "bot-joined",
+          "reason": "solo-timeout",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-14T22:59:43.320Z"
+      },
+      {
+        "id": "e85f7264-60e0-475b-8293-679a22dc7d9f",
+        "playerId": "b8a484e9-37e3-429c-8fa4-d362f81534c3",
+        "data": {
+          "type": "start",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-14T22:59:43.382Z"
+      },
+      {
+        "id": "b9cbeb07-7702-40aa-b504-47b8d734b44a",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-14T22:59:43.747Z"
+      },
+      {
+        "id": "ef9e8695-4aee-45ca-ad70-0c8126824835",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "start",
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-14T23:00:23.754Z"
+      },
+      {
+        "id": "b41f9c8c-4e3a-4976-8818-9e7636c0de52",
+        "playerId": "b8a484e9-37e3-429c-8fa4-d362f81534c3",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-8",
+          "characterName": "Ragazza 8",
+          "imageUrl": "img/persone/8.jpg",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-14T23:00:24.717Z"
+      },
+      {
+        "id": "0f279c1d-a65d-4b6b-9f26-d6ecf10cef28",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "secret-choice",
+          "characterId": "char-6",
+          "characterName": "Ragazza 6",
+          "imageUrl": "img/persone/6.jpg",
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-14T23:01:17.665Z"
+      },
+      {
+        "id": "d217ee8f-ecf1-40d5-b006-e8349abbc190",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "question",
+          "questionId": "q-603ed16d-12ab-4e01-852c-ba72ab8de7b9-1776207682807",
+          "text": "È un maschio?",
+          "targetPlayerId": "b8a484e9-37e3-429c-8fa4-d362f81534c3",
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-14T23:01:23.143Z"
+      },
+      {
+        "id": "68a7bbcc-953b-4231-b1b8-0a98f32edc89",
+        "playerId": "b8a484e9-37e3-429c-8fa4-d362f81534c3",
+        "data": {
+          "type": "answer",
+          "questionId": "q-603ed16d-12ab-4e01-852c-ba72ab8de7b9-1776207682807",
+          "answer": false,
+          "answerText": "NO",
+          "validated": true,
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-14T23:01:23.208Z"
+      },
+      {
+        "id": "d3afc6f4-a683-454e-9151-a421d088ec21",
+        "playerId": "b8a484e9-37e3-429c-8fa4-d362f81534c3",
+        "data": {
+          "type": "question",
+          "questionId": "q-b8a484e9-37e3-429c-8fa4-d362f81534c3-1776207683253",
+          "text": "È giovane?",
+          "targetPlayerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-14T23:01:23.554Z"
+      },
+      {
+        "id": "cbe78664-3ee3-44f4-b91d-e2e7788c8e34",
+        "playerId": "603ed16d-12ab-4e01-852c-ba72ab8de7b9",
+        "data": {
+          "type": "answer",
+          "questionId": "q-b8a484e9-37e3-429c-8fa4-d362f81534c3-1776207683253",
+          "answer": true,
+          "answerText": "SI",
+          "validated": true,
+          "playerName": "utente_phpmyadmin"
+        },
+        "timestamp": "2026-04-14T23:01:26.740Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-14T22:58:37.275Z",
+    "updatedAt": "2026-04-14T23:01:26.740Z"
+  },
+  {
+    "id": "69ba1d69-c715-46f3-97fd-a9e6fcd626b0",
+    "name": "fff",
+    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
+    "players": [
+      {
+        "id": "a225fa1f-fd4c-4bd6-9682-ce751b686636",
+        "name": "utente_phpmyadmin",
+        "joinedAt": "2026-04-15T08:12:07.396Z"
+      },
+      {
+        "id": "0527be97-1b67-40bd-aa33-e351cfa2f563",
+        "name": "BOT",
+        "joinedAt": "2026-04-15T08:13:11.047Z"
+      }
+    ],
+    "moves": [
+      {
+        "id": "459c5f98-8af8-4224-80da-4d101b01bc1c",
+        "playerId": "a225fa1f-fd4c-4bd6-9682-ce751b686636",
+        "data": {
+          "type": "privacy",
+          "isPrivate": false,
+          "password": ""
+        },
+        "timestamp": "2026-04-15T08:12:07.515Z"
+      },
+      {
+        "id": "a4b50195-ecb4-4662-8145-5a46ea794130",
+        "playerId": "a225fa1f-fd4c-4bd6-9682-ce751b686636",
+        "data": {
+          "type": "category",
+          "value": "animali"
+        },
+        "timestamp": "2026-04-15T08:12:07.603Z"
+      },
+      {
+        "id": "8076584c-93e0-42c7-90e3-96160f37a2b3",
+        "playerId": "a225fa1f-fd4c-4bd6-9682-ce751b686636",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "a225fa1f-fd4c-4bd6-9682-ce751b686636",
+          "startedAt": "2026-04-15T08:12:09.732Z"
+        },
+        "timestamp": "2026-04-15T08:12:10.776Z"
+      },
+      {
+        "id": "ff151ce6-1c3a-4390-8066-2239fec2ea30",
+        "playerId": "0527be97-1b67-40bd-aa33-e351cfa2f563",
+        "data": {
+          "type": "bot-joined",
+          "reason": "solo-timeout",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-15T08:13:11.108Z"
+      },
+      {
+        "id": "792f0f3b-beee-4ffa-bbb2-98281eb1be28",
+        "playerId": "0527be97-1b67-40bd-aa33-e351cfa2f563",
+        "data": {
+          "type": "start",
+          "playerName": "BOT"
+        },
+        "timestamp": "2026-04-15T08:13:11.161Z"
+      },
+      {
+        "id": "fb810375-f8be-4656-8a87-50f95a442af8",
+        "playerId": "a225fa1f-fd4c-4bd6-9682-ce751b686636",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-15T08:13:11.215Z"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2026-04-15T08:12:07.062Z",
+    "updatedAt": "2026-04-15T08:13:11.215Z"
+  }
+]

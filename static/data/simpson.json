@@ -1,0 +1,336 @@
+{
+  "categoria": "Simpson",
+  "configurazione": {
+    "totale_personaggi": 24,
+    "caratteristiche_per_personaggio": 35
+  },
+  "domande": [
+    { "testo": "Il personaggio ha la pelle gialla?", "attributo": "pelle_gialla" },
+    { "testo": "Il personaggio ha i capelli?", "attributo": "ha_capelli" },
+    { "testo": "Ha i capelli blu?", "attributo": "capelli_blu" },
+    { "testo": "Ha i capelli neri?", "attributo": "capelli_neri" },
+    { "testo": "Ha i capelli grigi?", "attributo": "capelli_grigi" },
+    { "testo": "Ha la barba?", "attributo": "ha_barba" },
+    { "testo": "Ha i baffi?", "attributo": "ha_baffi" },
+    { "testo": "Porta gli occhiali?", "attributo": "porta_occhiali" },
+    { "testo": "Porta gli orecchini?", "attributo": "ha_orecchini" },
+    { "testo": "Porta una collana?", "attributo": "ha_collana" },
+    { "testo": "Indossa un cappello?", "attributo": "indossa_cappello" },
+    { "testo": "Indossa qualcosa di bianco?", "attributo": "indossa_bianco" },
+    { "testo": "Indossa qualcosa di rosa?", "attributo": "indossa_rosa" },
+    { "testo": "Indossa qualcosa di verde?", "attributo": "indossa_verde" },
+    { "testo": "Indossa qualcosa di blu?", "attributo": "indossa_blu" },
+    { "testo": "Indossa qualcosa di rosso?", "attributo": "indossa_rosso" },
+    { "testo": "Indossa pantaloni lunghi?", "attributo": "pantaloni_lunghi" },
+    { "testo": "Ha le scarpe nere?", "attributo": "ha_scarpe_nere" },
+    { "testo": "Fa parte della famiglia Simpson?", "attributo": "fa_parte_famiglia" },
+    { "testo": "Lavora alla centrale nucleare?", "attributo": "lavora_centrale" },
+    { "testo": "Va a scuola?", "attributo": "va_a_scuola" },
+    { "testo": "È un bambino?", "attributo": "è_bambino" },
+    { "testo": "È una persona anziana?", "attributo": "è_anziano" },
+    { "testo": "È una donna?", "attributo": "è_donna" },
+    { "testo": "È in sovrappeso?", "attributo": "è_sovrappeso" },
+    { "testo": "Beve birra?", "attributo": "beve_birra" },
+    { "testo": "Mangia spesso donut (ciambelle)?", "attributo": "mangia_donut" },
+    { "testo": "Ha degli animali?", "attributo": "ha_animali" },
+    { "testo": "Suona uno strumento musicale?", "attributo": "suona_strumento" },
+    { "testo": "È un personaggio 'cattivo' o antagonista?", "attributo": "è_cattivo" },
+    { "testo": "Ha solo tre capelli (o capelli molto radi)?", "attributo": "ha_tre_capelli" },
+    { "testo": "Usa la cravatta?", "attributo": "usa_cravatta" },
+    { "testo": "È un poliziotto?", "attributo": "è_poliziotto" },
+    { "testo": "Ha una voce roca?", "attributo": "ha_voce_roca" },
+    { "testo": "Vive in Evergreen Terrace?", "attributo": "vive_evergreen_terrace" }
+  ],
+
+  "personaggi": [
+    {
+      "id": 1, "nome": "Homer", "immagine": "img/simpson/homer.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": false, "capelli_blu": false, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": true, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": true, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": true, "lavora_centrale": true,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": true,
+        "beve_birra": true, "mangia_donut": true, "ha_animali": true, "suona_strumento": false, "è_cattivo": false,
+        "ha_tre_capelli": true, "usa_cravatta": false, "è_poliziotto": false, "ha_voce_roca": true, "vive_evergreen_terrace": true
+      }
+    },
+    {
+      "id": 2, "nome": "Marge", "immagine": "img/simpson/marge.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": true, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": true,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": true, "indossa_blu": false,
+        "indossa_rosso": true, "pantaloni_lunghi": false, "ha_scarpe_nere": false, "fa_parte_famiglia": true, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": true, "è_sovrappeso": false,
+        "beve_birra": false, "mangia_donut": false, "ha_animali": true, "suona_strumento": false, "è_cattivo": false,
+        "capelli_alti": true, "usa_cravatta": false, "è_casalinga": true, "ha_voce_roca": true, "vive_evergreen_terrace": true
+      }
+    },
+    {
+      "id": 3, "nome": "Bart", "immagine": "img/simpson/bart.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": false, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": true, "pantaloni_lunghi": false, "ha_scarpe_nere": false, "fa_parte_famiglia": true, "lavora_centrale": false,
+        "va_a_scuola": true, "è_bambino": true, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "beve_birra": false, "mangia_donut": false, "ha_animali": true, "suona_strumento": false, "è_cattivo": false,
+        "usa_skate": true, "usa_fionda": true, "ha_capelli_a_punte": true, "ha_voce_roca": false, "vive_evergreen_terrace": true
+      }
+    },
+    {
+      "id": 4, "nome": "Lisa", "immagine": "img/simpson/lisa.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": false, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": true,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": false,
+        "indossa_rosso": true, "pantaloni_lunghi": false, "ha_scarpe_nere": false, "fa_parte_famiglia": true, "lavora_centrale": false,
+        "va_a_scuola": true, "è_bambino": true, "è_anziano": false, "è_donna": true, "è_sovrappeso": false,
+        "beve_birra": false, "mangia_donut": false, "ha_animali": true, "suona_strumento": true, "è_cattivo": false,
+        "è_vegetariana": true, "legge_libri": true, "ha_capelli_a_stella": true, "suona_sax": true, "vive_evergreen_terrace": true
+      }
+    },
+    {
+      "id": 5, "nome": "Maggie", "immagine": "img/simpson/maggie.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": false, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": false, "fa_parte_famiglia": true, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": true, "è_anziano": false, "è_donna": true, "è_sovrappeso": false,
+        "beve_birra": false, "usa_ciuccio": true, "parla": false, "suona_strumento": false, "è_cattivo": false,
+        "ha_fiocco_testa": true, "gattona": true, "ha_capelli_a_stella": true, "è_neonata": true, "vive_evergreen_terrace": true
+      }
+    },
+    {
+      "id": 6, "nome": "Ned Flanders", "immagine": "img/simpson/ned.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": false, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": true, "porta_occhiali": true, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": true, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "è_religioso": true, "è_mancino": true, "ha_maglione": true, "vive_vicino_homer": true, "è_cattivo": false,
+        "porta_cintura": true, "ha_capelli_castani": true, "usa_occhiali_tondi": true, "ha_il_pizzo": false, "è_vedovo": true
+      }
+    },
+    {
+      "id": 7, "nome": "Mr. Burns", "immagine": "img/simpson/burns.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": false, "capelli_neri": false, "capelli_grigi": true,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": true, "indossa_rosa": false, "indossa_verde": true, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": true,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": true, "è_donna": false, "è_sovrappeso": false,
+        "è_ricco": true, "è_il_capo": true, "ha_naso_aquilino": true, "ha_macchie_vecchiaia": true, "è_cattivo": true,
+        "usa_cravatta": true, "ha_smalto": false, "è_molto_debole": true, "ha_denti_sporgenti": false, "vive_villa": true
+      }
+    },
+    {
+      "id": 8, "nome": "Moe Szyslak", "immagine": "img/simpson/moe.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": false, "capelli_neri": true, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "lavora_bar": true, "ha_grembiule": true, "è_triste": true, "ha_naso_grosso": true, "è_cattivo": false,
+        "usa_papillon": true, "ha_capelli_ricci": true, "ha_denti_brutti": true, "è_barista": true, "ha_fucile": true
+      }
+    },
+    {
+      "id": 9, "nome": "Barney Gumble", "immagine": "img/simpson/barney.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": false, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": true,
+        "beve_molto": true, "ha_ruttato": true, "ha_capelli_castani": true, "frequenta_moe": true, "è_cattivo": false,
+        "indossa_marrone": true, "ha_occhi_socchiusi": true, "è_amico_homer": true, "pilota_elicotteri": true, "usa_canottiera": false
+      }
+    },
+    {
+      "id": 10, "nome": "Krusty il Clown", "immagine": "img/simpson/krusty.jpg",
+      "attributi": {
+        "pelle_gialla": false, "pelle_bianca": true, "ha_capelli": true, "capelli_verdi": true, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": true, "indossa_verde": false, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": false, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": true,
+        "lavora_tv": true, "è_ebreo": true, "ha_naso_rosso": true, "usa_papillon": true, "è_cattivo": false,
+        "ha_scarpe_giganti": true, "fuma": true, "ha_trucco": true, "indossa_guanti": true, "ha_tre_capelli_verdi": true
+      }
+    },
+    {
+      "id": 11, "nome": "Milhouse Van Houten", "immagine": "img/simpson/milhouse.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": true, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": true, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": false,
+        "indossa_rosso": true, "pantaloni_lunghi": false, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": true, "è_bambino": true, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "amico_bart": true, "ha_naso_grosso": true, "usa_occhiali_rossi": true, "è_sfortunato": true, "è_cattivo": false,
+        "indossa_viola": true, "ha_sopracciglia_grosse": true, "ha_occhi_piccoli": true, "ama_lisa": true, "ha_pantaloni_rossi": true
+      }
+    },
+    {
+      "id": 12, "nome": "Apu Nahasapeemapetilon", "immagine": "img/simpson/apu.jpg",
+      "attributi": {
+        "pelle_scura": true, "ha_capelli": true, "capelli_neri": true, "capelli_blu": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": true, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "lavora_market": true, "è_indiano": true, "ha_molti_figli": true, "frequenta_homer": true, "è_cattivo": false,
+        "ha_maglia_gialla": true, "indossa_giacca": true, "ha_ciuffo": true, "è_vegetariano": true, "lavora_kwiki_mart": true
+      }
+    },
+    {
+      "id": 13, "nome": "Chief Wiggum", "immagine": "img/simpson/wiggum.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_blu": true, "capelli_neri": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": true, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": true,
+        "è_poliziotto": true, "ha_distintivo": true, "mangia_ciambelle": true, "ha_pistola": true, "è_cattivo": false,
+        "ha_naso_a_patata": true, "usa_divisa": true, "è_il_capo_polizia": true, "ha_figlio_ralph": true, "ha_voce_nasale": true
+      }
+    },
+    {
+      "id": 14, "nome": "Ralph Wiggum", "immagine": "img/simpson/ralph.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_neri": true, "capelli_blu": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": true, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": true, "è_bambino": true, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "è_strano": true, "mangia_colla": true, "amico_lisa": true, "ha_capelli_fini": true, "è_cattivo": false,
+        "indossa_cintura": true, "ha_guance_rosse": false, "ha_occhi_tondi": true, "è_figlio_poliziotto": true, "dice_cose_senza_senso": true
+      }
+    },
+    {
+      "id": 15, "nome": "Seymour Skinner", "immagine": "img/simpson/skinner.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_grigi": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": true, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "è_preside": true, "vive_con_mamma": true, "è_ex_militare": true, "ha_vestito_blu": true, "è_cattivo": false,
+        "usa_cravatta": true, "ha_capelli_ordinati": true, "ha_mento_pronunciato": true, "odia_bart": true, "ha_maglia_rossa": false
+      }
+    },
+    {
+      "id": 16, "nome": "Edna Krabappel", "immagine": "img/simpson/edna.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_castani": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": true, "ha_collana": true,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": true, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": false, "ha_scarpe_nere": false, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": true, "è_bambino": false, "è_anziano": false, "è_donna": true, "è_sovrappeso": false,
+        "è_maestra": true, "fuma": true, "ha_gonna": true, "ha_capelli_a_caschetto": true, "è_cattivo": false,
+        "ha_occhi_stanchi": true, "indossa_cardigan": true, "ha_sorriso_cinico": true, "ama_skinner": true, "ha_voce_roca": true
+      }
+    },
+    {
+      "id": 17, "nome": "Sideshow Bob", "immagine": "img/simpson/bob.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_rossi": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": true, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": false, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "è_criminale": true, "ha_piedi_enormi": true, "odia_bart": true, "ha_capelli_a_palma": true, "è_cattivo": true,
+        "è_acculturato": true, "ha_tatuaggi": true, "indossa_azzurro": true, "è_ex_aiutante_krusty": true, "è_evaso": true
+      }
+    },
+    {
+      "id": 18, "nome": "Waylon Smithers", "immagine": "img/simpson/smithers.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_grigi": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": true, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": true, "indossa_rosa": false, "indossa_verde": true, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": true,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "ama_burns": true, "colleziona_barbie": true, "è_assistente": true, "ha_giacca_verde": true, "è_cattivo": false,
+        "usa_papillon": true, "ha_capelli_corti": true, "ha_naso_piccolo": true, "è_leale": true, "lavora_ufficio": true
+      }
+    },
+    {
+      "id": 19, "nome": "Nelson Muntz", "immagine": "img/simpson/nelson.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_castani": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": false, "ha_scarpe_nere": false, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": true, "è_bambino": true, "è_anziano": false, "è_donna": false, "è_sovrappeso": false,
+        "è_bullo": true, "ride_ah_ah": true, "indossa_gilet": true, "ha_denti_mancanti": true, "è_cattivo": false,
+        "ha_maglia_arancione": true, "ha_scarpe_blu": true, "ha_capelli_spettinati": true, "è_povero": true, "picchia_bambini": true
+      }
+    },
+    {
+      "id": 20, "nome": "Grandpa Abe Simpson", "immagine": "img/simpson/abe.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": false, "capelli_grigi": false, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": true, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": true, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": false, "fa_parte_famiglia": true, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": true, "è_donna": false, "è_sovrappeso": false,
+        "vive_ospizio": true, "racconta_storie_lunghe": true, "ha_rughe": true, "è_padre_homer": true, "è_cattivo": false,
+        "indossa_marrone": true, "ha_naso_grosso": true, "ha_pochi_denti": true, "ha_sonno": true, "è_smemorato": true
+      }
+    },
+    {
+      "id": 21, "nome": "Patty Bouvier", "immagine": "img/simpson/patty.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_grigi": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": true, "ha_collana": true,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": true, "indossa_verde": false, "indossa_blu": false,
+        "indossa_rosso": false, "pantaloni_lunghi": false, "ha_scarpe_nere": false, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": true, "è_sovrappeso": false,
+        "fuma": true, "odia_homer": true, "ha_gemella": true, "lavora_motorizzazione": true, "è_cattivo": false,
+        "ha_capelli_ricci": true, "indossa_vestito_rosa": true, "ha_orecchini_triangolari": true, "ha_voce_molto_roca": true, "ha_scarpe_rosa": true
+      }
+    },
+    {
+      "id": 22, "nome": "Selma Bouvier", "immagine": "img/simpson/selma.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_grigi": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": true, "ha_collana": true,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": false, "ha_scarpe_nere": false, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": true, "è_sovrappeso": false,
+        "fuma": true, "odia_homer": true, "ha_gemella": true, "lavora_motorizzazione": true, "è_cattivo": false,
+        "ha_capelli_ricci": true, "indossa_vestito_blu": true, "ha_orecchini_tondi": true, "ha_voce_molto_roca": true, "ha_iguana": true
+      }
+    },
+    {
+      "id": 23, "nome": "Fat Tony", "immagine": "img/simpson/fat_tony.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_neri": true, "capelli_blu": false, "capelli_grigi": false,
+        "ha_barba": false, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": true, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": true, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": true,
+        "è_mafioso": true, "ha_scorta": true, "è_italoamericano": true, "ha_sopracciglia_folte": true, "è_cattivo": true,
+        "indossa_tuta": true, "ha_anello_oro": true, "ha_voce_grave": true, "fuma_sigaro": true, "è_pericoloso": true
+      }
+    },
+    {
+      "id": 24, "nome": "Comic Book Guy", "immagine": "img/simpson/comic_book_guy.jpg",
+      "attributi": {
+        "pelle_gialla": true, "ha_capelli": true, "capelli_castani": true, "capelli_neri": false, "capelli_blu": false,
+        "ha_barba": true, "ha_baffi": false, "porta_occhiali": false, "ha_orecchini": false, "ha_collana": false,
+        "indossa_cappello": false, "indossa_bianco": false, "indossa_rosa": false, "indossa_verde": false, "indossa_blu": true,
+        "indossa_rosso": false, "pantaloni_lunghi": false, "ha_scarpe_nere": true, "fa_parte_famiglia": false, "lavora_centrale": false,
+        "va_a_scuola": false, "è_bambino": false, "è_anziano": false, "è_donna": false, "è_sovrappeso": true,
+        "vende_fumetti": true, "ha_codino": true, "è_nerd": true, "ha_maglia_blu": true, "è_cattivo": false,
+        "ha_pantaloncini": true, "usa_internet": true, "ha_doppio_mento": true, "è_sarcastico": true, "ama_star_wars": true
+      }
+    }
+  ]
+}
+

@@ -42,9 +42,16 @@
                     <h2 class="h5">Fase 1: scegli il personaggio</h2>
                     <p id="selectionStatus" class="mb-3 text-muted">Scegli la tua immagine segreta cliccando una carta.</p>
 
-                    <h2 class="h5">Fase 2: domande</h2>
-                    <input id="questionInput" type="text" class="form-control mb-2" placeholder="Es. Ha i capelli biondi?">
-                    <button id="saveQuestion" class="btn btn-primary w-100">Invia domanda</button>
+                    <h2 class="h5">Fase 2: domande a turni</h2>
+                    <select id="questionSelect" class="form-select mb-2"></select>
+                    <button id="saveQuestion" class="btn btn-primary w-100">Fai domanda</button>
+                    <div id="answerPanel" class="mt-2 hide">
+                        <p id="pendingQuestionText" class="mb-2 small"></p>
+                        <div class="d-flex gap-2">
+                            <button id="answerYesBtn" class="btn btn-success w-100">Rispondi SI</button>
+                            <button id="answerNoBtn" class="btn btn-danger w-100">Rispondi NO</button>
+                        </div>
+                    </div>
                     <p id="questionView" class="mt-2 mb-2 text-muted">Nessuna domanda ancora</p>
                     <div id="questionList" class="question-list"></div>
 
@@ -68,7 +75,7 @@
 
     <script>
         const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
-        const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
+        const BASE_URL = "";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const BOT_NAME = "BOT";
         const SOLO_WAIT_MS = 60 * 1000;
@@ -85,7 +92,7 @@
         const sessionData = readActiveSession();
         const gameId = params.get("gameId") || sessionData.gameId || "";
         const gameName = params.get("gameName") || sessionData.gameName || "Partita";
-        const gameCategory = sessionData.gameCategory || "persone";
+        const gameCategory = String(sessionData.gameCategory || "persone").toLowerCase();
         const playerId = params.get("playerId") || sessionData.playerId || "";
         if (window.location.search) {
             window.history.replaceState({}, document.title, window.location.pathname);
@@ -93,10 +100,14 @@
 
         const boardEl = document.getElementById("board");
         const playersListEl = document.getElementById("playersList");
-        const questionInput = document.getElementById("questionInput");
+        const questionSelect = document.getElementById("questionSelect");
         const questionView = document.getElementById("questionView");
         const questionList = document.getElementById("questionList");
         const saveQuestion = document.getElementById("saveQuestion");
+        const answerPanel = document.getElementById("answerPanel");
+        const pendingQuestionText = document.getElementById("pendingQuestionText");
+        const answerYesBtn = document.getElementById("answerYesBtn");
+        const answerNoBtn = document.getElementById("answerNoBtn");
         const selectionStatus = document.getElementById("selectionStatus");
         const gameInfo = document.getElementById("gameInfo");
         const homeBtn = document.getElementById("homeBtn");
@@ -107,40 +118,151 @@
         const resultText = document.getElementById("resultText");
         const restartBtn = document.getElementById("restartBtn");
 
-        const categoryCharacters = {
-            simpson: [
-                "Homer", "Marge", "Bart", "Lisa", "Maggie", "Ned",
-                "Milhouse", "Krusty", "Apu", "Burns", "Moe", "Skinner"
-            ],
-            persone: [
-                "Anna", "Bruno", "Carla", "Diego", "Elisa", "Fabio",
-                "Giada", "Hassan", "Irene", "Jacopo", "Katia", "Luca"
-            ],
-            griffin: [
-                "Peter", "Lois", "Stewie", "Brian", "Chris", "Meg",
-                "Quagmire", "Joe", "Cleveland", "Herbert", "Bonnie", "Consuela"
-            ],
-            animali: [
-                "Leone", "Tigre", "Elefante", "Giraffa", "Panda", "Lupo",
-                "Volpe", "Cane", "Gatto", "Aquila", "Delfino", "Koala"
-            ],
-            macchine: [
-                "Ferrari", "Lambo", "Porsche", "Tesla", "Fiat", "BMW",
-                "Audi", "Jeep", "Mini", "Maserati", "Volvo", "Toyota"
-            ]
-        };
+        let categoryData = null;
+        let characterCards = [];
 
-        const characters = categoryCharacters[gameCategory] || categoryCharacters.persone;
+        async function loadCategoryData(category) {
+            if (categoryData) {
+                return categoryData;
+            }
 
-        const characterCards = characters.map((name, index) => ({
-            id: `char-${index + 1}`,
-            name,
-            imageUrl: `https://picsum.photos/seed/${encodeURIComponent(`${gameId || "fallback"}-${name}`)}/240/240`
-        }));
+            const response = await fetch(`data/${category}.json`, {
+                method: "GET",
+                redirect: "follow"
+            });
+            const raw = await response.text();
+            if (!response.ok) {
+                throw new Error("Errore caricamento dati categoria");
+            }
+
+            if (!raw.trim()) {
+                throw new Error("Dati categoria vuoti");
+            }
+
+            const result = JSON.parse(raw);
+            if (!response.ok) {
+                throw new Error(result.error || "Errore caricamento dati categoria");
+            }
+
+            categoryData = result;
+            return categoryData;
+        }
+
+        function getCharacterImageUrl(name) {
+            const match = categoryData?.personaggi?.find((item) => item.nome === name);
+            if (match?.immagine) {
+                return match.immagine;
+            }
+            return `https://picsum.photos/seed/${encodeURIComponent(`${gameId || "fallback"}-${name}`)}/240/240`;
+        }
+
+        function buildCharacterCards() {
+            characterCards = (categoryData?.personaggi || []).map((personaggio, index) => ({
+                id: `char-${index + 1}`,
+                name: personaggio.nome,
+                imageUrl: personaggio.immagine || getCharacterImageUrl(personaggio.nome)
+            }));
+        }
+
+        function questionsForCategory() {
+            return (categoryData?.domande || []).map((item) => item.testo);
+        }
+
+        function getCharacterById(characterId) {
+            return characterCards.find((c) => c.id === characterId) || null;
+        }
+
+        function computeExpectedAnswerForCategory(characterName, questionText) {
+            const question = categoryData?.domande?.find((item) => item.testo === questionText);
+            if (!question) {
+                return null;
+            }
+            const characterData = categoryData?.personaggi?.find((item) => item.nome === characterName);
+            if (!characterData || typeof characterData.attributi?.[question.attributo] !== "boolean") {
+                return null;
+            }
+            return characterData.attributi[question.attributo];
+        }
+
+        function getExpectedAnswerForPlayer(questionText, targetPlayerId, choiceMap) {
+            if (!categoryData?.domande?.length || !categoryData?.personaggi?.length) {
+                return null;
+            }
+
+            const targetCharacterId = choiceMap[targetPlayerId] || "";
+            const targetCharacter = getCharacterById(targetCharacterId);
+            if (!targetCharacter) {
+                return null;
+            }
+            return computeExpectedAnswerForCategory(targetCharacter.name, questionText);
+        }
 
         let playersCache = [];
         let mySelectedCharacterId = "";
         let latestMovesCache = [];
+
+        function getOpponentPlayerId(players, currentPlayerId) {
+            const opponent = players.find((p) => p.id !== currentPlayerId);
+            return opponent ? opponent.id : "";
+        }
+
+        function getQuestionMoves(moves) {
+            return moves.filter((m) => m.data && m.data.type === "question");
+        }
+
+        function getAnswerMoves(moves) {
+            return moves.filter((m) => m.data && m.data.type === "answer");
+        }
+
+        function getLatestQuestionWithoutAnswer(moves) {
+            const questions = getQuestionMoves(moves);
+            const answers = getAnswerMoves(moves);
+            for (let i = questions.length - 1; i >= 0; i -= 1) {
+                const q = questions[i];
+                const answered = answers.some((a) => a.data.questionId === q.data.questionId);
+                if (!answered) {
+                    return q;
+                }
+            }
+            return null;
+        }
+
+        function getTurnState(moves, players) {
+            if (players.length < 2) {
+                return { canAskPlayerId: "", pendingQuestion: null };
+            }
+
+            const questions = getQuestionMoves(moves);
+            const answers = getAnswerMoves(moves);
+            const pendingQuestion = getLatestQuestionWithoutAnswer(moves);
+            if (pendingQuestion) {
+                return {
+                    canAskPlayerId: "",
+                    pendingQuestion
+                };
+            }
+
+            if (questions.length === 0) {
+                return {
+                    canAskPlayerId: players[0].id,
+                    pendingQuestion: null
+                };
+            }
+
+            const lastQuestion = questions[questions.length - 1];
+            const lastAnswer = answers.filter((a) => a.data.questionId === lastQuestion.data.questionId).pop() || null;
+            if (!lastAnswer) {
+                return {
+                    canAskPlayerId: "",
+                    pendingQuestion: lastQuestion
+                };
+            }
+
+            return {
+                canAskPlayerId: lastQuestion.data.targetPlayerId || "",
+                pendingQuestion: null
+            };
+        }
 
         function isBotPlayer(player) {
             return Boolean(player && typeof player.name === "string" && player.name.toUpperCase().startsWith(BOT_NAME));
@@ -414,31 +536,73 @@
                 selectionStatus.innerText = "Entrambi pronti. Ora fatevi le domande.";
             }
 
-            questionInput.disabled = !allReady;
-            saveQuestion.disabled = !allReady;
+            const turnState = getTurnState(moves, players);
+            const myPendingQuestion = turnState.pendingQuestion && turnState.pendingQuestion.data.targetPlayerId === playerId
+                ? turnState.pendingQuestion
+                : null;
+
+            const canAsk = allReady && turnState.canAskPlayerId === playerId;
+            const canAnswer = allReady && Boolean(myPendingQuestion);
+
+            questionSelect.disabled = !canAsk;
+            saveQuestion.disabled = !canAsk;
             guessSelect.disabled = !allReady;
             guessBtn.disabled = !allReady;
+
+            if (canAnswer) {
+                answerPanel.classList.remove("hide");
+                pendingQuestionText.innerText = `Domanda ricevuta: ${myPendingQuestion.data.text}`;
+                answerYesBtn.disabled = false;
+                answerNoBtn.disabled = false;
+            } else {
+                answerPanel.classList.add("hide");
+                pendingQuestionText.innerText = "";
+                answerYesBtn.disabled = true;
+                answerNoBtn.disabled = true;
+            }
+
+            if (!allReady) {
+                questionView.innerText = "Le domande si attivano quando entrambi hanno scelto la carta.";
+            } else if (canAsk) {
+                questionView.innerText = "E' il tuo turno: scegli una domanda preimpostata.";
+            } else if (canAnswer) {
+                questionView.innerText = "Rispondi alla domanda ricevuta per continuare il turno.";
+            } else if (turnState.pendingQuestion) {
+                questionView.innerText = "In attesa che l'avversario risponda alla domanda in corso.";
+            } else {
+                const asker = players.find((p) => p.id === turnState.canAskPlayerId);
+                questionView.innerText = `Turno di ${asker ? asker.name : "altro giocatore"}: attendi la prossima domanda.`;
+            }
         }
 
         function renderQuestions(moves) {
-            const questionMoves = moves.filter((m) => m.data && m.data.type === "question");
+            const questionMoves = getQuestionMoves(moves);
+            const answerMoves = getAnswerMoves(moves);
             const guessMoves = moves.filter((m) => m.data && m.data.type === "guess");
             questionList.innerHTML = "";
 
             if (questionMoves.length === 0) {
-                questionView.innerText = "Nessuna domanda ancora";
                 questionList.innerHTML = "<p class='text-muted mb-0'>Le domande appariranno qui in tempo reale.</p>";
             } else {
                 questionMoves.forEach((m) => {
                     const item = document.createElement("div");
                     item.className = "question-item";
                     const who = m.data.playerName || "Giocatore";
-                    item.innerHTML = `<strong>${who}</strong>: ${m.data.text || ""}`;
+                    const targetName = playersCache.find((p) => p.id === m.data.targetPlayerId)?.name || "avversario";
+                    item.innerHTML = `<strong>${who}</strong> chiede a <strong>${targetName}</strong>: ${m.data.text || ""}`;
                     questionList.appendChild(item);
-                });
 
-                const lastQuestion = questionMoves[questionMoves.length - 1];
-                questionView.innerText = `Ultima domanda: ${lastQuestion.data.text || ""}`;
+                    const answer = answerMoves.find((a) => a.data.questionId === m.data.questionId);
+                    const answerItem = document.createElement("div");
+                    answerItem.className = "question-item";
+                    if (answer) {
+                        const answerWho = answer.data.playerName || "Giocatore";
+                        answerItem.innerHTML = `<strong>${answerWho}</strong> risponde: ${answer.data.answerText || "-"}`;
+                    } else {
+                        answerItem.innerHTML = "<em class='text-muted'>In attesa di risposta...</em>";
+                    }
+                    questionList.appendChild(answerItem);
+                });
             }
 
             guessMoves.forEach((m) => {
@@ -480,24 +644,52 @@
                 return;
             }
 
-            const botQuestionMoves = moves.filter((m) => m.playerId === botPlayer.id && m.data && m.data.type === "question");
-            const lastBotQuestionMs = botQuestionMoves.length > 0
-                ? new Date(botQuestionMoves[botQuestionMoves.length - 1].timestamp).getTime()
-                : 0;
+            const turnState = getTurnState(moves, players);
+            const pendingQuestion = turnState.pendingQuestion;
 
-            if (Date.now() - lastBotQuestionMs > 15000) {
-                const botQuestions = [
-                    "Ha gli occhiali?",
-                    "Ha i capelli scuri?",
-                    "E' un personaggio con cappello?",
-                    "Sembra sorridente?"
-                ];
-                const randomQuestion = botQuestions[Math.floor(Math.random() * botQuestions.length)];
-                await postMoveAsPlayer(botPlayer.id, {
-                    type: "question",
-                    text: randomQuestion,
-                    playerName: BOT_NAME
-                });
+            if (pendingQuestion && pendingQuestion.data.targetPlayerId === botPlayer.id) {
+                const botAnswerMoves = getAnswerMoves(moves).filter((m) => m.playerId === botPlayer.id);
+                const lastBotAnswerMs = botAnswerMoves.length > 0
+                    ? new Date(botAnswerMoves[botAnswerMoves.length - 1].timestamp).getTime()
+                    : 0;
+                if (Date.now() - lastBotAnswerMs > 2500) {
+                    const latestChoiceByPlayerBot = getLatestChoiceMap(moves);
+                    const expectedAnswer = getExpectedAnswerForPlayer(
+                        pendingQuestion.data.text,
+                        botPlayer.id,
+                        latestChoiceByPlayerBot
+                    );
+                    const yes = typeof expectedAnswer === "boolean" ? expectedAnswer : (Math.random() >= 0.5);
+                    await postMoveAsPlayer(botPlayer.id, {
+                        type: "answer",
+                        questionId: pendingQuestion.data.questionId,
+                        answer: yes,
+                        answerText: yes ? "SI" : "NO",
+                        validated: typeof expectedAnswer === "boolean",
+                        playerName: BOT_NAME
+                    });
+                }
+                return;
+            }
+
+            if (turnState.canAskPlayerId === botPlayer.id) {
+                const botQuestionMoves = getQuestionMoves(moves).filter((m) => m.playerId === botPlayer.id);
+                const lastBotQuestionMs = botQuestionMoves.length > 0
+                    ? new Date(botQuestionMoves[botQuestionMoves.length - 1].timestamp).getTime()
+                    : 0;
+
+                if (Date.now() - lastBotQuestionMs > 3000) {
+                    const botQuestions = questionsForCategory(gameCategory);
+                    const randomQuestion = botQuestions[Math.floor(Math.random() * botQuestions.length)];
+                    const targetPlayerId = players.find((p) => p.id !== botPlayer.id)?.id || "";
+                    await postMoveAsPlayer(botPlayer.id, {
+                        type: "question",
+                        questionId: `q-${botPlayer.id}-${Date.now()}`,
+                        text: randomQuestion,
+                        targetPlayerId,
+                        playerName: BOT_NAME
+                    });
+                }
             }
         }
 
@@ -520,8 +712,10 @@
             }
 
             resultBanner.classList.remove("hide");
-            questionInput.disabled = true;
+            questionSelect.disabled = true;
             saveQuestion.disabled = true;
+            answerYesBtn.disabled = true;
+            answerNoBtn.disabled = true;
             guessSelect.disabled = true;
             guessBtn.disabled = true;
             return true;
@@ -548,18 +742,70 @@
         }
 
         async function submitQuestion() {
-            const value = questionInput.value.trim();
+            const value = questionSelect.value;
             if (!value) {
+                return;
+            }
+
+            const turnState = getTurnState(latestMovesCache, playersCache);
+            if (turnState.pendingQuestion) {
+                alert("Attendi la risposta alla domanda precedente.");
+                return;
+            }
+            if (turnState.canAskPlayerId !== playerId) {
+                alert("Non e' il tuo turno per fare una domanda.");
+                return;
+            }
+
+            const targetPlayerId = getOpponentPlayerId(playersCache, playerId);
+            if (!targetPlayerId) {
                 return;
             }
 
             try {
                 await postMove({
                     type: "question",
+                    questionId: `q-${playerId}-${Date.now()}`,
                     text: value,
+                    targetPlayerId,
                     playerName: playersCache.find((p) => p.id === playerId)?.name || "Giocatore"
                 });
-                questionInput.value = "";
+                await refreshGameState();
+            } catch (error) {
+                console.error(error);
+                alert(error.message);
+            }
+        }
+
+        async function submitAnswer(answerValue) {
+            const pendingQuestion = getLatestQuestionWithoutAnswer(latestMovesCache);
+            if (!pendingQuestion || pendingQuestion.data.targetPlayerId !== playerId) {
+                alert("Non hai domande in attesa a cui rispondere.");
+                return;
+            }
+
+            const latestChoiceByPlayer = getLatestChoiceMap(latestMovesCache);
+            const expectedAnswer = getExpectedAnswerForPlayer(
+                pendingQuestion.data.text,
+                playerId,
+                latestChoiceByPlayer
+            );
+            const requestedAnswer = Boolean(answerValue);
+            const finalAnswer = typeof expectedAnswer === "boolean" ? expectedAnswer : requestedAnswer;
+
+            if (typeof expectedAnswer === "boolean" && requestedAnswer !== expectedAnswer) {
+                alert("Risposta non coerente con il personaggio segreto: invio automatico della risposta corretta.");
+            }
+
+            try {
+                await postMove({
+                    type: "answer",
+                    questionId: pendingQuestion.data.questionId,
+                    answer: finalAnswer,
+                    answerText: finalAnswer ? "SI" : "NO",
+                    validated: typeof expectedAnswer === "boolean",
+                    playerName: playersCache.find((p) => p.id === playerId)?.name || "Giocatore"
+                });
                 await refreshGameState();
             } catch (error) {
                 console.error(error);
@@ -642,14 +888,36 @@
         }
 
         async function init() {
+            try {
+                await loadCategoryData(gameCategory);
+            } catch (error) {
+                alert(`Errore caricamento categoria ${gameCategory}: ${error.message}`);
+                return;
+            }
+
+            buildCharacterCards();
+            if (characterCards.length === 0) {
+                alert(`Nessun personaggio trovato per la categoria ${gameCategory}.`);
+                return;
+            }
             gameInfo.innerText = `${gameName} (${gameCategory})${gameId ? ` - ID: ${gameId}` : ""}`;
+            const presetQuestions = questionsForCategory();
+            if (presetQuestions.length === 0) {
+                alert(`Nessuna domanda trovata per la categoria ${gameCategory}.`);
+                return;
+            }
+            questionSelect.innerHTML = presetQuestions.map((q) => `<option value="${q}">${q}</option>`).join("");
             renderBoard();
             guessSelect.innerHTML = characterCards.map((c) => `<option value="${c.id}">${c.name}</option>`).join("");
-            questionInput.disabled = true;
+            questionSelect.disabled = true;
             saveQuestion.disabled = true;
+            answerYesBtn.disabled = true;
+            answerNoBtn.disabled = true;
             guessSelect.disabled = true;
             guessBtn.disabled = true;
             saveQuestion.addEventListener("click", submitQuestion);
+            answerYesBtn.addEventListener("click", () => submitAnswer(true));
+            answerNoBtn.addEventListener("click", () => submitAnswer(false));
             guessBtn.addEventListener("click", submitGuess);
 
             try {

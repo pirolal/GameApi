@@ -1,0 +1,383 @@
+{
+	"categoria": "Persone",
+	"configurazione": {
+		"totale_personaggi": 24,
+		"caratteristiche_per_personaggio": 35
+	},
+	"domande": [
+    { "testo": "È un maschio?", "attributo": "è_maschio" },
+    { "testo": "È una femmina?", "attributo": "è_femmina" },
+    { "testo": "Porta gli occhiali?", "attributo": "ha_occhiali" },
+    { "testo": "Indossa un cappello?", "attributo": "ha_cappello" },
+    { "testo": "Ha la barba?", "attributo": "ha_barba" },
+    { "testo": "Ha i capelli corti?", "attributo": "ha_capelli_corti" },
+    { "testo": "Ha i capelli lunghi?", "attributo": "ha_capelli_lunghi" },
+    { "testo": "Ha i capelli scuri?", "attributo": "ha_capelli_scuri" },
+    { "testo": "Ha i capelli chiari?", "attributo": "ha_capelli_chiari" },
+    { "testo": "Ha i capelli ricci?", "attributo": "ha_capelli_ricci" },
+    { "testo": "Ha i capelli lisci?", "attributo": "ha_capelli_lisci" },
+    { "testo": "Ha gli occhi chiari?", "attributo": "ha_occhi_chiari" },
+    { "testo": "Ha gli occhi scuri?", "attributo": "ha_occhi_scuri" },
+    { "testo": "Indossa una felpa?", "attributo": "indossa_felpa" },
+    { "testo": "Indossa una t-shirt?", "attributo": "indossa_tshirt" },
+    { "testo": "Indossa una camicia?", "attributo": "indossa_camicia" },
+    { "testo": "Indossa una giacca?", "attributo": "indossa_giacca" },
+    { "testo": "Porta orecchini?", "attributo": "ha_orecchini" },
+    { "testo": "Ha dei piercing?", "attributo": "ha_piercing" },
+    { "testo": "Sta sorridendo?", "attributo": "sorride" },
+    { "testo": "Ha un'espressione seria?", "attributo": "espressione_seria" },
+    { "testo": "Ha la frangia?", "attributo": "ha_la_frangia" },
+    { "testo": "Ha la pelle chiara?", "attributo": "ha_pelle_chiara" },
+    { "testo": "Ha la pelle scura?", "attributo": "ha_pelle_scura" },
+    { "testo": "Ha le lentiggini?", "attributo": "ha_le_lentiggini" },
+    { "testo": "Ha le labbra carnose?", "attributo": "ha_le_labbra_carnose" },
+    { "testo": "Ha il naso piccolo?", "attributo": "ha_il_naso_piccolo" },
+    { "testo": "Guarda direttamente in camera?", "attributo": "guarda_in_camera" },
+    { "testo": "È in posa frontale?", "attributo": "posa_frontale" },
+    { "testo": "Ha le sopracciglia folte?", "attributo": "ha_le_sopracciglia_folte" },
+    { "testo": "Indossa dei gioielli (collane/anelli)?", "attributo": "indossa_trucco" },
+    { "testo": "Ha uno stile sportivo?", "attributo": "stile_sportivo" },
+    { "testo": "Ha uno stile elegante?", "attributo": "stile_elegante" },
+    { "testo": "È un adulto?", "attributo": "adulto" },
+    { "testo": "È giovane?", "attributo": "giovane" }
+	],
+
+	"personaggi": [		
+    {
+      "id": 1,
+      "nome": "Ragazzo 1",
+      "immagine": "img/persone/1.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": true, "ha_barba": false,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": true, "indossa_tshirt": false, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_piccolo": false,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_le_sopracciglia_folte": true, "ha_il_viso_tondo": true, "ha_il_viso_allungato": false,
+        "indossa_catene": false, "stile_sportivo": true, "stile_elegante": false, "ha_un_neo": false, "giovane": true
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Ragazza 2",
+      "immagine": "img/persone/2.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": true, "indossa_tshirt": false, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_le_sopracciglia_curate": true, "ha_il_viso_ovale": true, "ha_capelli_lisci": true,
+        "indossa_trucco": true, "stile_sportivo": true, "stile_elegante": false, "ha_lo_sguardo_intenso": true, "giovane": true
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Ragazzo 3",
+      "immagine": "img/persone/3.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": false, "ha_la_pelle_scura": true, "ha_le_lentiggini": false, "ha_le_labbra_sottili": false, "ha_il_naso_regolare": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_le_sopracciglia_folte": true, "ha_il_viso_squadrato": true, "ha_capelli_rasati": false,
+        "indossa_orologio": false, "stile_sportivo": true, "stile_elegante": false, "ha_capelli_ordinati": true, "giovane": true
+      }
+    },
+    {
+      "id": 4,
+      "nome": "Ragazza 4",
+      "immagine": "img/persone/4.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": false, "ha_capelli_chiari": true, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": true, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_chiare": true, "ha_il_viso_dolce": true, "ha_capelli_mossi": true,
+        "indossa_trucco": true, "stile_casual": true, "stile_elegante": false, "mostra_i_denti": true, "giovane": true
+      }
+    },
+    {
+      "id": 5,
+      "nome": "Ragazzo 5",
+      "immagine": "img/persone/5.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": true, "ha_cappello": false, "ha_barba": true,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": false, "indossa_camicia": true,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_grande": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_le_sopracciglia_scure": true, "ha_il_viso_allungato": true, "porta_la_cravatta": false,
+        "indossa_giacca": true, "stile_casual": false, "stile_elegante": true, "ha_capelli_pettinati": true, "adulto": true
+      }
+    },
+    {
+      "id": 6,
+      "nome": "Ragazza 6",
+      "immagine": "img/persone/6.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": true, "sorride": false, "espressione_seria": true, "ha_la_frangia": true,
+        "ha_la_pelle_chiara": false, "ha_la_pelle_scura": true, "ha_le_lentiggini": false, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": false, "posa_di_profilo": true, "ha_sopracciglia_sottili": true, "ha_il_viso_definito": true, "ha_capelli_lisci": true,
+        "indossa_trucco_pesante": false, "stile_urban": true, "stile_elegante": false, "ha_lo_sguardo_altrove": true, "giovane": true
+      }
+    },
+    {
+      "id": 7,
+      "nome": "Ragazzo 7",
+      "immagine": "img/persone/7.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": true,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": false, "ha_il_naso_regolare": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_folte": true, "ha_il_viso_tondo": true, "ha_capelli_voluminosi": true,
+        "indossa_collane": true, "stile_sportivo": true, "stile_elegante": false, "mostra_i_denti": true, "giovane": true
+      }
+    },
+    {
+      "id": 8,
+      "nome": "Ragazza 8",
+      "immagine": "img/persone/8.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": true, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": false, "ha_capelli_chiari": true, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_felpa": true, "indossa_tshirt": false, "indossa_camicia": false,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": true, "ha_le_labbra_sottili": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_chiare": true, "ha_il_viso_ovale": true, "ha_capelli_a_caschetto": true,
+        "indossa_trucco": false, "stile_casual": true, "stile_elegante": false, "indossa_felpa_colorata": true, "giovane": true
+      }
+    },
+    {
+      "id": 9,
+      "nome": "Ragazzo 9",
+      "immagine": "img/persone/9.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": false, "ha_barba": true,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_giacca": true, "indossa_tshirt": false, "indossa_camicia": true,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": false, "ha_la_pelle_scura": true, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_importante": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_scure": true, "ha_il_viso_squadrato": true, "ha_capelli_brizzolati": false,
+        "indossa_cravatta": true, "stile_formale": true, "stile_elegante": true, "ha_la_barba_curata": true, "adulto": true
+      }
+    },
+    {
+      "id": 10,
+      "nome": "Ragazza 10",
+      "immagine": "img/persone/10.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": false, "ha_capelli_chiari": true, "ha_capelli_ricci": true,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_vestito": true, "indossa_tshirt": false, "indossa_camicia": false,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": false, "posa_di_tre_quarti": true, "ha_sopracciglia_definite": true, "ha_il_viso_dolce": true, "ha_capelli_lunghissimi": true,
+        "indossa_collana": true, "stile_romantico": true, "stile_elegante": true, "ha_capelli_biondi": true, "giovane": true
+      }
+    },
+    {
+      "id": 11,
+      "nome": "Ragazza 11",
+      "immagine": "img/persone/11.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_curate": true, "ha_il_viso_ovale": true, "ha_capelli_mossi": true,
+        "indossa_trucco": true, "stile_casual": true, "stile_elegante": false, "mostra_i_denti": true, "giovane": true
+      }
+    },
+    {
+      "id": 12,
+      "nome": "Ragazzo 12",
+      "immagine": "img/persone/12.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": false, "ha_barba": true,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_regolare": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_folte": true, "ha_il_viso_squadrato": true, "ha_la_barba_corta": true,
+        "indossa_orologio": false, "stile_urban": true, "stile_elegante": false, "ha_capelli_ordinati": true, "giovane": true
+      }
+    },
+    {
+      "id": 13,
+      "nome": "Ragazza 13",
+      "immagine": "img/persone/13.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": false, "ha_capelli_chiari": true, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_felpa": false, "indossa_tshirt": false, "indossa_top": true,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": true, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_chiare": true, "ha_il_viso_dolce": true, "ha_capelli_lisci": true,
+        "indossa_trucco_leggero": true, "stile_estivo": true, "stile_elegante": false, "ha_lo_sguardo_fisso": true, "giovane": true
+      }
+    },
+    {
+      "id": 14,
+      "nome": "Ragazzo 14",
+      "immagine": "img/persone/14.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": true, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": true, "indossa_tshirt": false, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_regolare": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_scure": true, "ha_il_viso_tondo": true, "ha_montatura_nera": true,
+        "indossa_zaino": false, "stile_casual": true, "stile_elegante": false, "mostra_i_denti": true, "giovane": true
+      }
+    },
+    {
+      "id": 15,
+      "nome": "Ragazza 15",
+      "immagine": "img/persone/15.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": true,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": false, "ha_la_pelle_scura": true, "ha_le_lentiggini": false, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_folte": true, "ha_il_viso_ovale": true, "ha_capelli_voluminosi": true,
+        "indossa_trucco": true, "stile_casual": true, "stile_elegante": false, "mostra_i_denti": true, "giovane": true
+      }
+    },
+    {
+      "id": 16,
+      "nome": "Ragazzo 16",
+      "immagine": "img/persone/16.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": true, "ha_barba": true,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_grande": true,
+        "guarda_in_camera": false, "posa_di_profilo": true, "ha_sopracciglia_scure": true, "ha_il_viso_allungato": true, "ha_la_barba_folta": true,
+        "indossa_cuffie": false, "stile_urban": true, "stile_elegante": false, "ha_lo_sguardo_basso": true, "giovane": true
+      }
+    },
+    {
+      "id": 17,
+      "nome": "Ragazza 17",
+      "immagine": "img/persone/17.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": true, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": false, "indossa_camicia": true,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": true,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_sottili": true, "ha_il_viso_tondo": true, "ha_capelli_a_caschetto": true,
+        "indossa_trucco": true, "stile_formale": true, "stile_elegante": true, "mostra_i_denti": true, "adulto": true
+      }
+    },
+    {
+      "id": 18,
+      "nome": "Ragazzo 18",
+      "immagine": "img/persone/18.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": false, "ha_capelli_chiari": true, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": true, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": true, "ha_le_labbra_sottili": true, "ha_il_naso_regolare": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_chiare": true, "ha_il_viso_ovale": true, "ha_capelli_lisci": true,
+        "indossa_collana": true, "stile_rock": true, "stile_elegante": false, "ha_lo_sguardo_intenso": true, "giovane": true
+      }
+    },
+    {
+      "id": 19,
+      "nome": "Ragazza 19",
+      "immagine": "img/persone/19.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": true, "indossa_tshirt": false, "indossa_camicia": false,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": false, "ha_la_pelle_scura": true, "ha_le_lentiggini": false, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_definite": true, "ha_il_viso_ovale": true, "ha_capelli_lisci": true,
+        "indossa_trucco_pesante": true, "stile_urban": true, "stile_elegante": false, "ha_lo_sguardo_di_sfida": true, "giovane": true
+      }
+    },
+    {
+      "id": 20,
+      "nome": "Ragazzo 20",
+      "immagine": "img/persone/20.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": false, "ha_barba": true,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": false, "ha_capelli_chiari": true, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_felpa": false, "indossa_tshirt": false, "indossa_camicia": true,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_la_pelle_scura": false, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_regolare": true,
+        "guarda_in_camera": true, "posa_frontale": true, "ha_sopracciglia_chiare": true, "ha_il_viso_allungato": true, "ha_la_barba_curata": true,
+        "indossa_maglione": true, "stile_casual": true, "stile_elegante": true, "mostra_i_denti": true, "adulto": true
+      }
+    }, 
+    {
+      "id": 21,
+      "nome": "Ragazzo 21",
+      "immagine": "img/persone/21.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": false, "ha_cappello": false, "ha_barba": true,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_regolare": true, "guarda_in_camera": true,
+        "posa_frontale": true, "ha_sopracciglia_folte": true, "ha_il_viso_squadrato": true, "ha_la_barba_corta": true, "indossa_canotta": false,
+        "stile_urban": true, "stile_sportivo": true, "stile_elegante": false, "ha_capelli_ordinati": true, "aspetto_curato": true
+      }
+    },
+    {
+      "id": 22,
+      "nome": "Ragazza 22",
+      "immagine": "img/persone/22.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": false, "ha_capelli_chiari": true, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": true, "ha_occhi_scuri": false, "indossa_felpa": false, "indossa_tshirt": false, "indossa_top": true,
+        "ha_orecchini": true, "ha_piercing": false, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_le_lentiggini": true, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true, "guarda_in_camera": true,
+        "posa_frontale": true, "ha_sopracciglia_chiare": true, "ha_il_viso_dolce": true, "ha_capelli_lisci": true, "indossa_trucco": true,
+        "stile_casual": true, "stile_estivo": true, "stile_elegante": false, "mostra_i_denti": true, "ha_capelli_biondi": true
+      }
+    },
+    {
+      "id": 23,
+      "nome": "Ragazzo 23",
+      "immagine": "img/persone/23.jpg",
+      "attributi": {
+        "è_maschio": true, "è_femmina": false, "ha_occhiali": true, "ha_cappello": false, "ha_barba": false,
+        "ha_capelli_corti": true, "ha_capelli_lunghi": false, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": false,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": true, "indossa_tshirt": false, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": false, "sorride": false, "espressione_seria": true, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_le_lentiggini": false, "ha_le_labbra_sottili": true, "ha_il_naso_regolare": true, "guarda_in_camera": true,
+        "posa_frontale": true, "ha_sopracciglia_scure": true, "ha_il_viso_tondo": true, "ha_montatura_sottile": true, "indossa_cappuccio": false,
+        "stile_casual": true, "stile_sportivo": true, "stile_elegante": false, "ha_capelli_spettinati": true, "ha_lo_sguardo_serio": true
+      }
+    },
+    {
+      "id": 24,
+      "nome": "Ragazza 24",
+      "immagine": "img/persone/24.jpg",
+      "attributi": {
+        "è_maschio": false, "è_femmina": true, "ha_occhiali": false, "ha_cappello": true, "ha_barba": false,
+        "ha_capelli_corti": false, "ha_capelli_lunghi": true, "ha_capelli_scuri": true, "ha_capelli_chiari": false, "ha_capelli_ricci": true,
+        "ha_occhi_chiari": false, "ha_occhi_scuri": true, "indossa_felpa": false, "indossa_tshirt": true, "indossa_camicia": false,
+        "ha_orecchini": false, "ha_piercing": true, "sorride": true, "espressione_seria": false, "ha_la_frangia": false,
+        "ha_la_pelle_chiara": true, "ha_le_lentiggini": false, "ha_le_labbra_carnose": true, "ha_il_naso_piccolo": true, "guarda_in_camera": true,
+        "posa_frontale": true, "ha_sopracciglia_folte": true, "ha_il_viso_ovale": true, "ha_capelli_voluminosi": true, "indossa_berretto": true,
+        "stile_urban": true, "stile_casual": true, "stile_elegante": false, "mostra_i_denti": false, "ha_lo_sguardo_allegro": true
+      }
+    }
+]
+}
