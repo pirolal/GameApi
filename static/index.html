@@ -84,12 +84,13 @@
         </div>
     </main>
 
+    <script src="dialog.js"></script>
     <script>
         const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
         const BASE_URL = "";
         const STORAGE_KEY = "guesswho_game_meta";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
-        const EMPTY_GAME_DELETE_MS = 2 * 60 * 1000;
+        const EMPTY_GAME_DELETE_MS = 1 * 60 * 1000;
         const CATEGORIES = ["simpson", "persone", "griffin", "animali", "macchine"];
 
         const partiteEl = document.getElementById("partite");
@@ -284,7 +285,7 @@
                 });
             } catch (error) {
                 console.error(error);
-                alert(error.message);
+                await showAppAlert(error.message, { title: "Errore" });
             }
         }
 
@@ -297,22 +298,22 @@
             const categoria = normalizeCategory(categorySelect.value);
 
             if (!nomePartita) {
-                alert("Inserisci il nome della partita.");
+                await showAppAlert("Inserisci il nome della partita.", { title: "Campo richiesto" });
                 return;
             }
 
             if (!nomePrimoGiocatore) {
-                alert("Inserisci il nome del primo giocatore.");
+                await showAppAlert("Inserisci il nome del primo giocatore.", { title: "Campo richiesto" });
                 return;
             }
 
             if (privata && password.length < 3) {
-                alert("La password deve avere almeno 3 caratteri.");
+                await showAppAlert("La password deve avere almeno 3 caratteri.", { title: "Password non valida" });
                 return;
             }
 
             if (!CATEGORIES.includes(categoria)) {
-                alert("Categoria non valida.");
+                await showAppAlert("Categoria non valida.", { title: "Errore" });
                 return;
             }
 
@@ -345,23 +346,41 @@
                 await fetchGames();
             } catch (error) {
                 console.error(error);
-                alert(error.message);
+                await showAppAlert(error.message, { title: "Errore" });
             }
         }
 
         async function aggiungiGiocatore(gameId, gameName, metadata, presetPlayerName) {
             if (metadata && metadata.isPrivate) {
-                const pass = prompt(`Partita privata: inserisci password per ${gameName}`);
+                const pass = await showAppPrompt(
+                    `Partita privata: inserisci password per ${gameName}`,
+                    {
+                        title: "Accesso partita privata",
+                        confirmText: "Entra",
+                        cancelText: "Annulla",
+                        inputType: "password",
+                        placeholder: "Password"
+                    }
+                );
                 if (pass === null) {
                     return;
                 }
                 if (pass !== metadata.password) {
-                    alert("Password non corretta.");
+                    await showAppAlert("Password non corretta.", { title: "Accesso negato" });
                     return;
                 }
             }
 
-            const nomeGiocatore = (presetPlayerName || prompt(`Nome giocatore da aggiungere a ${gameName}:`) || "").trim();
+            const promptedName = presetPlayerName || await showAppPrompt(
+                `Nome giocatore da aggiungere a ${gameName}:`,
+                {
+                    title: "Nuovo giocatore",
+                    confirmText: "Aggiungi",
+                    cancelText: "Annulla",
+                    placeholder: "Es. Luca"
+                }
+            );
+            const nomeGiocatore = (promptedName || "").trim();
             if (!nomeGiocatore) {
                 return;
             }
@@ -377,13 +396,13 @@
                     throw new Error(checkResult.error || "Errore nel controllo giocatori");
                 }
                 if (checkResult.count >= 2) {
-                    alert("Questa partita e' gia piena (max 2 giocatori).");
+                    await showAppAlert("Questa partita e' gia piena (max 2 giocatori).", { title: "Partita piena" });
                     await fetchGames();
                     return;
                 }
             } catch (error) {
                 console.error(error);
-                alert(error.message);
+                await showAppAlert(error.message, { title: "Errore" });
                 return;
             }
 
@@ -407,7 +426,7 @@
                     await publishCategorySettings(gameId, risultato.player.id, metadata);
                 }
 
-                alert(`Giocatore aggiunto: ${risultato.player.name}`);
+                await showAppAlert(`Giocatore aggiunto: ${risultato.player.name}`, { title: "Operazione completata" });
                 sessionStorage.setItem(ACTIVE_SESSION_KEY, JSON.stringify({
                     gameId,
                     gameName,
@@ -420,7 +439,7 @@
                 window.location.href = target;
             } catch (error) {
                 console.error(error);
-                alert(error.message);
+                await showAppAlert(error.message, { title: "Errore" });
             }
         }
 

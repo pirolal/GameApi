@@ -1,195 +1,111 @@
 [
   {
-    "id": "5b3776ee-6236-45cd-b51a-06168a3f896f",
+    "id": "66408f36-9c51-4b61-a1db-b79d525d07b9",
     "name": "partita1",
     "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
     "players": [
       {
-        "id": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "id": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
         "name": "Luca",
-        "joinedAt": "2026-04-14T09:06:32.379Z"
+        "joinedAt": "2026-04-24T20:32:51.145Z"
+      },
+      {
+        "id": "2fe9ec63-dede-4a0a-913b-a04fe42be01b",
+        "name": "marco",
+        "joinedAt": "2026-04-24T20:34:29.175Z"
       }
     ],
     "moves": [
       {
-        "id": "781dbb27-4d78-4884-9893-ec791dca1ecb",
-        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "id": "59c7dcab-7810-479e-a70a-8da3a5a80474",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
         "data": {
           "type": "privacy",
           "isPrivate": false,
           "password": ""
         },
-        "timestamp": "2026-04-14T09:06:32.461Z"
+        "timestamp": "2026-04-24T20:32:51.200Z"
       },
       {
-        "id": "6e491f0e-d9d4-40f6-b296-a1ec94da9d3f",
-        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "id": "c97efdfe-12c1-4009-9b19-53be5fdf837c",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
         "data": {
           "type": "category",
           "value": "simpson"
         },
-        "timestamp": "2026-04-14T09:06:32.548Z"
+        "timestamp": "2026-04-24T20:32:51.262Z"
       },
       {
-        "id": "c6dac724-684a-4ef0-beab-ab5ef14cd124",
-        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "id": "f7ad4491-4ae4-4e5d-b2c6-4ca0d465f0aa",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
         "data": {
           "type": "solo-timer",
-          "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
-          "startedAt": "2026-04-14T09:06:34.589Z"
+          "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+          "startedAt": "2026-04-24T20:32:52.878Z"
         },
-        "timestamp": "2026-04-14T09:06:34.420Z"
+        "timestamp": "2026-04-24T20:32:52.961Z"
       },
       {
-        "id": "c0dc9b98-95df-4d38-a6af-9f2cf74caefd",
-        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
+        "id": "d45987ba-8e43-4b0b-a079-a94fccc7aa38",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
         "data": {
           "type": "solo-reset"
         },
-        "timestamp": "2026-04-14T09:06:53.529Z"
+        "timestamp": "2026-04-24T20:32:59.973Z"
       },
       {
-        "id": "c0afb46d-a832-4458-9cbe-f9e8e8050260",
-        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
+        "id": "2fb4ed6b-0eb2-4f05-95e6-5a56955b64bc",
+        "playerId": "2e3643c9-7986-4b2b-9dc4-0ff02ccf8fc3",
         "data": {
-          "type": "start",
-          "playerName": "Marco"
+          "type": "chat",
+          "text": "ciao",
+          "playerName": "marci"
         },
-        "timestamp": "2026-04-14T09:06:57.303Z"
+        "timestamp": "2026-04-24T20:33:04.680Z"
       },
       {
-        "id": "fc59ba89-230a-48f9-bd3c-5a9f16c56e41",
-        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "id": "14f63d96-40fa-4c45-aa93-2cabaf42e480",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+        "data": {
+          "type": "chat",
+          "text": "ciuao",
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-24T20:33:10.214Z"
+      },
+      {
+        "id": "06c6a4ea-ae17-4882-a171-4c2d2aeaf2d9",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
         "data": {
           "type": "start",
           "playerName": "Luca"
         },
-        "timestamp": "2026-04-14T09:06:59.329Z"
+        "timestamp": "2026-04-24T20:33:12.123Z"
       },
       {
-        "id": "0152a0f6-1f0c-4066-a353-d124afa4208f",
-        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
+        "id": "412171ff-4b4d-4cc5-b61e-10bad4bff375",
+        "playerId": "2e3643c9-7986-4b2b-9dc4-0ff02ccf8fc3",
+        "data": {
+          "type": "start",
+          "playerName": "marci"
+        },
+        "timestamp": "2026-04-24T20:33:14.482Z"
+      },
+      {
+        "id": "ff1e9afb-3cd3-46fc-9dbb-1f7bd3a31bf7",
+        "playerId": "2e3643c9-7986-4b2b-9dc4-0ff02ccf8fc3",
         "data": {
           "type": "secret-choice",
-          "characterId": "char-1",
-          "characterName": "Homer",
-          "imageUrl": "img/simpson/homer.jpg",
-          "playerName": "Luca"
+          "characterId": "char-4",
+          "characterName": "Lisa",
+          "imageUrl": "img/simpson/lisa.jpg",
+          "playerName": "marci"
         },
-        "timestamp": "2026-04-14T09:07:04.287Z"
+        "timestamp": "2026-04-24T20:33:20.348Z"
       },
       {
-        "id": "9821c2d6-d612-4ef2-869c-0fe07b927ebf",
-        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
-        "data": {
-          "type": "secret-choice",
-          "characterId": "char-2",
-          "characterName": "Marge",
-          "imageUrl": "img/simpson/marge.jpg",
-          "playerName": "Marco"
-        },
-        "timestamp": "2026-04-14T09:07:06.232Z"
-      },
-      {
-        "id": "1807d8e0-5943-49e7-aa80-d39c6b551492",
-        "playerId": "f8709db4-5dd8-4d84-b9f6-419db5a5c677",
-        "data": {
-          "type": "question",
-          "questionId": "q-f8709db4-5dd8-4d84-b9f6-419db5a5c677-1776157656360",
-          "text": "Il personaggio ha la pelle gialla?",
-          "targetPlayerId": "5233c887-f480-4e18-8542-dac12bd167b7",
-          "playerName": "Luca"
-        },
-        "timestamp": "2026-04-14T09:07:36.181Z"
-      },
-      {
-        "id": "c2642c4a-1ee7-4573-bb23-be2c55c2e78d",
-        "playerId": "5233c887-f480-4e18-8542-dac12bd167b7",
-        "data": {
-          "type": "answer",
-          "questionId": "q-f8709db4-5dd8-4d84-b9f6-419db5a5c677-1776157656360",
-          "answer": true,
-          "answerText": "SI",
-          "validated": true,
-          "playerName": "Marco"
-        },
-        "timestamp": "2026-04-14T09:07:38.310Z"
-      }
-    ],
-    "status": "active",
-    "createdAt": "2026-04-14T09:06:32.207Z",
-    "updatedAt": "2026-04-14T09:27:19.856Z"
-  },
-  {
-    "id": "7f426bee-e1e5-41aa-80d2-c6bbb2075a36",
-    "name": "partita2",
-    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
-    "players": [
-      {
-        "id": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
-        "name": "Da",
-        "joinedAt": "2026-04-14T09:10:55.624Z"
-      }
-    ],
-    "moves": [
-      {
-        "id": "f1a0c59e-354f-4c00-9238-5a54322faf74",
-        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
-        "data": {
-          "type": "privacy",
-          "isPrivate": false,
-          "password": ""
-        },
-        "timestamp": "2026-04-14T09:10:40.438Z"
-      },
-      {
-        "id": "1e50ad37-4bb0-477d-9e78-aca069b7a687",
-        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
-        "data": {
-          "type": "category",
-          "value": "simpson"
-        },
-        "timestamp": "2026-04-14T09:10:40.518Z"
-      },
-      {
-        "id": "c1b41ec2-c99d-463a-ad20-79e693f37bd7",
-        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
-        "data": {
-          "type": "solo-timer",
-          "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
-          "startedAt": "2026-04-14T09:10:42.668Z"
-        },
-        "timestamp": "2026-04-14T09:10:42.508Z"
-      },
-      {
-        "id": "576acf77-0c78-4099-8b57-2959c5b45732",
-        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
-        "data": {
-          "type": "solo-reset"
-        },
-        "timestamp": "2026-04-14T09:10:56.491Z"
-      },
-      {
-        "id": "4b7cae27-76d2-4dfd-9da3-846f67021a59",
-        "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
-        "data": {
-          "type": "start",
-          "playerName": "Da"
-        },
-        "timestamp": "2026-04-14T09:10:58.773Z"
-      },
-      {
-        "id": "77710b4e-cd56-496c-afc4-91506b3ff213",
-        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
-        "data": {
-          "type": "start",
-          "playerName": "Luca"
-        },
-        "timestamp": "2026-04-14T09:10:59.908Z"
-      },
-      {
-        "id": "ba03f42b-d528-4817-b153-86fc42328189",
-        "playerId": "b3f20b78-99c6-42bc-a187-4146ed7f5b38",
+        "id": "07ae9bae-7dd0-4bc8-84c4-34e67cac7e36",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
         "data": {
           "type": "secret-choice",
           "characterId": "char-3",
@@ -197,134 +113,76 @@
           "imageUrl": "img/simpson/bart.jpg",
           "playerName": "Luca"
         },
-        "timestamp": "2026-04-14T09:11:03.590Z"
+        "timestamp": "2026-04-24T20:33:27.950Z"
       },
       {
-        "id": "4a1ba51b-8fec-40e4-a900-043ebfd6a85b",
-        "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
+        "id": "326d2fdc-2447-48b7-b489-831e16f9e457",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+        "data": {
+          "type": "guess",
+          "guessedCharacterId": "char-4",
+          "guessedCharacterName": "Lisa",
+          "targetPlayerId": "2e3643c9-7986-4b2b-9dc4-0ff02ccf8fc3",
+          "correct": true,
+          "playerName": "Luca"
+        },
+        "timestamp": "2026-04-24T20:33:33.005Z"
+      },
+      {
+        "id": "ba06002f-6b83-44c3-ae40-a7eec276fcd9",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+        "data": {
+          "type": "game-over",
+          "winnerPlayerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+          "winnerName": "Luca",
+          "loserPlayerId": "2e3643c9-7986-4b2b-9dc4-0ff02ccf8fc3",
+          "loserName": "marci",
+          "reason": "correct-guess"
+        },
+        "timestamp": "2026-04-24T20:33:33.046Z"
+      },
+      {
+        "id": "9fdfed8c-87fe-4f13-8eef-b43592c61d28",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+        "data": {
+          "type": "solo-timer",
+          "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+          "startedAt": "2026-04-24T20:34:16.159Z"
+        },
+        "timestamp": "2026-04-24T20:34:16.236Z"
+      },
+      {
+        "id": "c61b5d4e-a3c9-4da1-b298-b2bb4d2b94a4",
+        "playerId": "888c83a1-2319-40f0-8df7-614f4b3ba84b",
+        "data": {
+          "type": "solo-reset"
+        },
+        "timestamp": "2026-04-24T20:34:30.680Z"
+      },
+      {
+        "id": "f86607ff-5808-4e28-a95d-255a1b1d6b14",
+        "playerId": "2fe9ec63-dede-4a0a-913b-a04fe42be01b",
+        "data": {
+          "type": "start",
+          "playerName": "marco"
+        },
+        "timestamp": "2026-04-24T20:34:32.570Z"
+      },
+      {
+        "id": "d1d1a5b6-a40a-4818-bae4-eba1f0ffb8c6",
+        "playerId": "2fe9ec63-dede-4a0a-913b-a04fe42be01b",
         "data": {
           "type": "secret-choice",
           "characterId": "char-4",
           "characterName": "Lisa",
           "imageUrl": "img/simpson/lisa.jpg",
-          "playerName": "Da"
+          "playerName": "marco"
         },
-        "timestamp": "2026-04-14T09:11:05.855Z"
-      },
-      {
-        "id": "15a17f3b-379d-46d9-8fc5-e062451765cf",
-        "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
-        "data": {
-          "type": "solo-timer",
-          "playerId": "69c731d1-70a1-45f0-81cb-f7d1e7a703e0",
-          "startedAt": "2026-04-14T09:13:05.144Z"
-        },
-        "timestamp": "2026-04-14T09:13:04.982Z"
+        "timestamp": "2026-04-24T20:34:35.545Z"
       }
     ],
     "status": "active",
-    "createdAt": "2026-04-14T09:10:40.167Z",
-    "updatedAt": "2026-04-14T09:13:04.982Z"
-  },
-  {
-    "id": "ea578bd1-5e0a-4210-b4a9-f3f098caeb98",
-    "name": "partita3",
-    "ownerId": "7608dfe5-9145-4f2c-a314-ebcf8e349d8a",
-    "players": [
-      {
-        "id": "f535bde3-51c4-48ad-bb82-af35690186bd",
-        "name": "Matteo",
-        "joinedAt": "2026-04-14T09:31:23.668Z"
-      },
-      {
-        "id": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
-        "name": "luca",
-        "joinedAt": "2026-04-14T09:31:33.404Z"
-      }
-    ],
-    "moves": [
-      {
-        "id": "1dd6de25-1439-43db-9f77-05c9140d11e6",
-        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
-        "data": {
-          "type": "privacy",
-          "isPrivate": false,
-          "password": ""
-        },
-        "timestamp": "2026-04-14T09:31:23.765Z"
-      },
-      {
-        "id": "f35273d0-2c20-4a82-a531-e487ec1504c1",
-        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
-        "data": {
-          "type": "category",
-          "value": "animali"
-        },
-        "timestamp": "2026-04-14T09:31:23.851Z"
-      },
-      {
-        "id": "8abd897b-93e4-4423-9dce-610134070c20",
-        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
-        "data": {
-          "type": "solo-timer",
-          "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
-          "startedAt": "2026-04-14T09:31:25.823Z"
-        },
-        "timestamp": "2026-04-14T09:31:25.698Z"
-      },
-      {
-        "id": "f25abb5b-c30b-485d-9388-09370f35972a",
-        "playerId": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
-        "data": {
-          "type": "solo-reset"
-        },
-        "timestamp": "2026-04-14T09:31:34.963Z"
-      },
-      {
-        "id": "97824d46-a2e3-4122-9ad4-0aaddf623eef",
-        "playerId": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
-        "data": {
-          "type": "start",
-          "playerName": "luca"
-        },
-        "timestamp": "2026-04-14T09:31:36.633Z"
-      },
-      {
-        "id": "c8882c4d-be39-4161-8e63-1ff85435455c",
-        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
-        "data": {
-          "type": "start",
-          "playerName": "Matteo"
-        },
-        "timestamp": "2026-04-14T09:31:39.184Z"
-      },
-      {
-        "id": "57beebab-7a34-40bd-9622-e68a4ddce226",
-        "playerId": "f535bde3-51c4-48ad-bb82-af35690186bd",
-        "data": {
-          "type": "secret-choice",
-          "characterId": "char-5",
-          "characterName": "Panda",
-          "imageUrl": "img/animali/panda.jpg",
-          "playerName": "Matteo"
-        },
-        "timestamp": "2026-04-14T09:31:45.919Z"
-      },
-      {
-        "id": "ea58c5b0-46b7-4dc1-addc-5fc1d98f3931",
-        "playerId": "971934ec-ff8e-4e1a-bf6d-30ce36fea41a",
-        "data": {
-          "type": "secret-choice",
-          "characterId": "char-6",
-          "characterName": "Lupo",
-          "imageUrl": "img/animali/lupo.jpg",
-          "playerName": "luca"
-        },
-        "timestamp": "2026-04-14T09:31:51.250Z"
-      }
-    ],
-    "status": "active",
-    "createdAt": "2026-04-14T09:31:23.474Z",
-    "updatedAt": "2026-04-14T09:31:51.250Z"
+    "createdAt": "2026-04-24T20:32:51.045Z",
+    "updatedAt": "2026-04-24T20:34:35.545Z"
   }
 ]

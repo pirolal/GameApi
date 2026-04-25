@@ -46,6 +46,7 @@
         </div>
     </main>
 
+    <script src="dialog.js"></script>
     <script>
         const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
         const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
@@ -72,11 +73,13 @@
         const gameCategory = sessionData.gameCategory || "persone";
         let playerId = params.get("playerId") || sessionData.playerId || "";
         let playerName = params.get("playerName") || sessionData.playerName || "";
+        const returnFromGame = params.get("returnFromGame") === "true";
         if (window.location.search) {
             window.history.replaceState({}, document.title, window.location.pathname);
         }
         let gameAlreadyOpened = false;
         let startRequested = false;
+        const lobbyOpenedAtMs = Date.now();
 
         const gameTitle = document.getElementById("gameTitle");
         const playersList = document.getElementById("playersList");
@@ -191,9 +194,9 @@
             await postMove({ type: "solo-reset" });
         }
 
-        function requireGameId() {
+        async function requireGameId() {
             if (!gameId) {
-                alert("Game ID mancante. Apri la lobby dalla home.");
+                await showAppAlert("Game ID mancante. Apri la lobby dalla home.", { title: "Partita non trovata" });
                 window.location.href = "index.html";
                 return false;
             }
@@ -254,6 +257,28 @@
             window.location.href = target;
         }
 
+        async function ensureRoundResetMove(moves) {
+            if (!returnFromGame) {
+                return;
+            }
+
+            const resetAlreadySent = moves.some((m) => {
+                if (!m.data || m.data.type !== "round-reset") {
+                    return false;
+                }
+                const moveTime = new Date(m.timestamp || 0).getTime();
+                return Number.isFinite(moveTime) && moveTime >= lobbyOpenedAtMs;
+            });
+
+            if (!resetAlreadySent) {
+                await postMove({
+                    type: "round-reset",
+                    reason: "rematch",
+                    startedAt: new Date().toISOString()
+                });
+            }
+        }
+
         function appendMessage(msg, sideInfo) {
             const line = document.createElement("div");
             line.className = "chat-message";
@@ -294,7 +319,7 @@
             }
 
             if (playerId && !result.players.some((p) => p.id === playerId)) {
-                alert("Non fai piu parte della partita.");
+                await showAppAlert("Non fai piu parte della partita.", { title: "Accesso rimosso" });
                 sessionStorage.removeItem(ACTIVE_SESSION_KEY);
                 window.location.href = "index.html";
                 return [];
@@ -327,7 +352,17 @@
 
             const chatMoves = result.moves.filter((m) => m.data && m.data.type === "chat");
             const startMoves = result.moves.filter((m) => m.data && m.data.type === "start");
-            const startedPlayerIds = new Set(startMoves.map((m) => m.playerId));
+            const startedPlayerIds = new Set(
+                startMoves
+                    .filter((m) => {
+                        if (!returnFromGame) {
+                            return true;
+                        }
+                        const moveTime = new Date(m.timestamp || 0).getTime();
+                        return Number.isFinite(moveTime) && moveTime >= lobbyOpenedAtMs;
+                    })
+                    .map((m) => m.playerId)
+            );
 
             chatBox.innerHTML = "";
             chatMoves.forEach((m) => {
@@ -343,6 +378,7 @@
             if (canStart) {
                 const allStarted = players.every((p) => startedPlayerIds.has(p.id));
                 if (allStarted && !gameAlreadyOpened) {
+                    await ensureRoundResetMove(result.moves || []);
                     openGameWindow();
                     return;
                 }
@@ -436,10 +472,12 @@
         startBtn.addEventListener("click", startGame);
         homeLink.addEventListener("click", leaveToHome);
 
-        if (requireGameId()) {
-            refreshLobby();
-            setInterval(refreshLobby, 3500);
-        }
+        (async () => {
+            if (await requireGameId()) {
+                refreshLobby();
+                setInterval(refreshLobby, 3500);
+            }
+        })();
     </script>
 </body>
 </html>
