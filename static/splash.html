@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="stile.css" />
 </head>
 <body class="splash-page">
+    <!-- Schermata lobby singola partita: giocatori in attesa e chat -->
     <main class="container py-4 py-md-5">
+        <!-- Header con nome partita e link di ritorno alla home -->
         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
             <div>
                 <h1 class="title h2 mb-1">Sala di Attesa</h1>
@@ -23,8 +25,10 @@
             <a id="homeLink" href="index.html" class="btn btn-outline-dark">Torna alla home</a>
         </div>
 
+    <!-- Layout a due colonne: stato giocatori e chat di gruppo -->
         <div class="row g-4">
             <section class="col-lg-4">
+        <!-- Pannello stato partita: elenco giocatori e pulsante start -->
                 <div class="glass p-3 p-md-4 h-100">
                     <h2 class="h5">Giocatori</h2>
                     <ul id="playersList" class="list-group mb-3"></ul>
@@ -34,6 +38,7 @@
             </section>
 
             <section class="col-lg-8">
+                <!-- Pannello chat: storico messaggi e invio nuovi messaggi -->
                 <div class="glass p-3 p-md-4 h-100 d-flex flex-column">
                     <h2 class="h5">Chat di gruppo</h2>
                     <div id="chatBox" class="chat-box mb-3"></div>
@@ -46,10 +51,15 @@
         </div>
     </main>
 
+    <!-- Dialog personalizzati (alert, confirm, prompt) -->
     <script src="dialog.js"></script>
+    <!-- Logica client della splash/lobby partita -->
     <script>
-        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
-        const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
+        // Configurazione pagina lobby di una specifica partita.
+        //const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        //const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
+        const API_KEY = "aad21851-d11f-4bd0-ab19-5d1a52ae8dd585af34615bf747bca1a2b4709d7fc4a2";
+        const BASE_URL = "https://fluffy-sniffle-x9r9jvjx76g36jxr-3000.app.github.dev";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const BOT_NAME = "BOT";
         const SOLO_WAIT_MS = 60 * 1000;
@@ -90,6 +100,7 @@
         const chatInput = document.getElementById("chatInput");
         const homeLink = document.getElementById("homeLink");
 
+        // Costruisce header standard per richieste GET/POST.
         function headers(isJson) {
             const h = new Headers();
             h.append("X-API-Key", API_KEY);
@@ -103,6 +114,7 @@
             return Boolean(player && typeof player.name === "string" && player.name.toUpperCase().startsWith(BOT_NAME));
         }
 
+        // Invia una mossa a nome di un player specifico (usato anche dal bot).
         async function postMoveAsPlayer(customPlayerId, data) {
             const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
                 method: "POST",
@@ -141,6 +153,7 @@
             });
         }
 
+        /** Se nella partita è rimasto solo un bot, la elimino per evitare di lasciare partite fantasma in attesa di un secondo giocatore. */
         async function tryDeleteGameIfOnlyBot(players) {
             if (players.length === 1 && isBotPlayer(players[0])) {
                 try {
@@ -159,6 +172,7 @@
             return false;
         }
 
+        // Gestisce il caso giocatore solo: timer e inserimento automatico bot.
         async function ensureBotForSoloPlayer(players, moves) {
             const timerMoves = moves.filter((m) => m.data && m.data.type === "solo-timer");
             const resetMoves = moves.filter((m) => m.data && m.data.type === "solo-reset");
@@ -184,10 +198,11 @@
             }
 
             const startedAt = new Date(latestTimer.data.startedAt || latestTimer.timestamp).getTime();
+            /** Se il timer è attivo ma non è ancora scaduto, aspetto senza fare nulla. Solo quando scade, inserisco il bot e avvio la partita. */
             if (Date.now() - startedAt < SOLO_WAIT_MS) {
                 return;
             }
-
+            /** Il timer è scaduto: inserisco il bot, faccio partire la partita e resetto il timer per eventuali futuri casi di abbandono. */
             const bot = await addBotToGame();
             await postMoveAsPlayer(bot.id, { type: "bot-joined", reason: "solo-timeout", playerName: BOT_NAME });
             await postMoveAsPlayer(bot.id, { type: "start", playerName: BOT_NAME });
@@ -203,6 +218,7 @@
             return true;
         }
 
+        // Uscita controllata: rimuove player e prova a ripulire la partita se necessario.
         async function leaveCurrentGame() {
             if (!gameId || !playerId) {
                 return;
@@ -257,6 +273,7 @@
             window.location.href = target;
         }
 
+        // Se si torna da una partita conclusa, registra il reset del round.
         async function ensureRoundResetMove(moves) {
             if (!returnFromGame) {
                 return;
@@ -286,6 +303,7 @@
             chatBox.appendChild(line);
         }
 
+        // Carica e renderizza giocatori della lobby.
         async function loadPlayers() {
             const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
                 method: "GET",
@@ -337,6 +355,7 @@
             return result.players;
         }
 
+        // Carica chat/segnali di start e aggiorna lo stato dei pulsanti.
         async function loadChatAndSignals(players) {
             const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
                 method: "GET",
@@ -398,6 +417,7 @@
 
         }
 
+        // Wrapper per inviare una mossa usando il player corrente.
         async function postMove(data) {
             const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
                 method: "POST",
@@ -414,6 +434,7 @@
             }
         }
 
+        // Invia messaggio chat e ricarica lo stato lobby.
         async function sendChat(event) {
             event.preventDefault();
             const text = chatInput.value.trim();
@@ -430,6 +451,7 @@
             await loadChatAndSignals(players);
         }
 
+        // Registra la richiesta di start del giocatore corrente.
         async function startGame() {
             if (startRequested) {
                 return;
@@ -448,6 +470,7 @@
             await loadChatAndSignals(players);
         }
 
+        // Refresh periodico della lobby.
         async function refreshLobby() {
             try {
                 const players = await loadPlayers();
@@ -457,6 +480,7 @@
             }
         }
 
+        // Inizializzazione stato UI + listener + polling.
         gameTitle.innerText = `${gameName} (${gameCategory}) - ID: ${gameId || "N/A"}`;
         if (gameId) {
             saveActiveSession({

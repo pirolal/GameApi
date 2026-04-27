@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="stile.css" />
 </head>
 <body class="lobby-page">
+    <!-- Contenuto principale della lobby: elenco partite e creazione nuova partita -->
     <main class="container py-4 py-md-5">
+        <!-- Intestazione pagina con titolo e azione di refresh -->
         <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-3">
             <div>
                 <h1 class="title-font mb-1">Indovina Chi</h1>
@@ -23,8 +25,10 @@
             <button id="refreshBtn" class="btn btn-outline-dark">Aggiorna partite</button>
         </div>
 
+    <!-- Layout a due colonne: partite disponibili + form di creazione -->
         <div class="row g-4">
             <section class="col-lg-7">
+        <!-- Colonna sinistra: lista partite filtrata per slot disponibili -->
                 <div class="board-panel p-3 p-md-4 h-100">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h2 class="h4 mb-0">Partite disponibili</h2>
@@ -37,6 +41,7 @@
             </section>
 
             <section class="col-lg-5">
+                <!-- Colonna destra: form per creare una nuova partita -->
                 <div class="board-panel p-3 p-md-4">
                     <h2 class="h4 mb-3">Crea partita</h2>
                     <form id="createForm" class="d-grid gap-3">
@@ -84,10 +89,14 @@
         </div>
     </main>
 
+    <!-- Dialog personalizzati (alert, confirm, prompt) -->
     <script src="dialog.js"></script>
+    <!-- Logica client della lobby -->
     <script>
-        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
-        const BASE_URL = "";
+        // Configurazione base e chiavi usate da storage/API.
+        const API_KEY = "aad21851-d11f-4bd0-ab19-5d1a52ae8dd585af34615bf747bca1a2b4709d7fc4a2";
+        //const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        const BASE_URL = "https://fluffy-sniffle-x9r9jvjx76g36jxr-3000.app.github.dev";
         const STORAGE_KEY = "guesswho_game_meta";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const EMPTY_GAME_DELETE_MS = 1 * 60 * 1000;
@@ -104,6 +113,7 @@
         const passwordInput = document.getElementById("passwordInput");
         const categorySelect = document.getElementById("categorySelect");
 
+        // Costruisce gli header HTTP comuni per tutte le chiamate.
         function headers(isJson) {
             const h = new Headers();
             h.append("X-API-Key", API_KEY);
@@ -125,6 +135,7 @@
             localStorage.setItem(STORAGE_KEY, JSON.stringify(meta));
         }
 
+        // Mostra/nasconde il campo password in base al tipo partita.
         function togglePasswordInput() {
             const isPrivate = privateGameEl.checked;
             passwordContainer.classList.toggle("hide", !isPrivate);
@@ -142,6 +153,7 @@
             return normalizeCategory(category).charAt(0).toUpperCase() + normalizeCategory(category).slice(1);
         }
 
+        // Legge dalle mosse remote privacy/categoria della partita.
         async function getRemoteGameSettings(gameId) {
             try {
                 const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
@@ -208,6 +220,7 @@
             });
         }
 
+        // Carica partite disponibili, pulisce quelle vuote troppo vecchie e aggiorna la UI lobby.
         async function fetchGames() {
             partiteEl.innerHTML = "";
             vuotoEl.classList.add("hide");
@@ -231,8 +244,11 @@
                 for (const game of risultato.games) {
                     if (game.players.length === 0) {
                         const updatedAtMs = new Date(game.updatedAt || game.createdAt || now).getTime();
+
+                        /** Se la partita è vuota da troppo tempo, la elimino per evitare di mostrare partite abbandonate. */
                         if (now - updatedAtMs >= EMPTY_GAME_DELETE_MS) {
                             try {
+                                /** Nota: questa operazione richiede che la partita sia effettivamente vuota, altrimenti il server restituirà un errore e non la eliminerà. */
                                 await fetch(`${BASE_URL}/games/${game.id}`, {
                                     method: "DELETE",
                                     headers: headers(false),
@@ -289,6 +305,7 @@
             }
         }
 
+        // Valida il form e crea una nuova partita.
         async function creaPartita(event) {
             event.preventDefault();
             const nomePartita = document.getElementById("inputNome").value.trim();
@@ -350,6 +367,7 @@
             }
         }
 
+        // Gestisce l'ingresso di un giocatore (controlli privacy, nome e posti disponibili).
         async function aggiungiGiocatore(gameId, gameName, metadata, presetPlayerName) {
             if (metadata && metadata.isPrivate) {
                 const pass = await showAppPrompt(
@@ -443,6 +461,7 @@
             }
         }
 
+        // Eventi UI e bootstrap iniziale della pagina.
         privateGameEl.addEventListener("change", togglePasswordInput);
         publicGameEl.addEventListener("change", togglePasswordInput);
         createForm.addEventListener("reset", () => {
@@ -453,6 +472,7 @@
 
         togglePasswordInput();
         fetchGames();
+        /** Aggiorna la lista partite ogni 10 secondi per mantenere la lobby sincronizzata con eventuali cambiamenti remoti. */
         setInterval(fetchGames, 10000);
     </script>
 </body>

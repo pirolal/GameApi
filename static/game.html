@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="stile.css" />
 </head>
 <body class="game-page">
+    <!-- Schermata partita: tabellone, azioni di gioco e stato giocatori -->
     <main class="container py-4 py-md-5">
+        <!-- Header partita con navigazione verso lobby/home -->
         <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
             <div>
                 <h1 class="title h2 mb-1">Partita in Corso</h1>
@@ -26,8 +28,10 @@
             </div>
         </div>
 
+    <!-- Layout a due colonne: tabellone personaggi + controlli partita -->
         <div class="row g-4">
             <section class="col-lg-8">
+        <!-- Colonna sinistra: griglia carte personaggi -->
                 <div class="panel p-3 p-md-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h2 class="h5 mb-0">Tabellone personaggi</h2>
@@ -38,6 +42,7 @@
             </section>
 
             <section class="col-lg-4">
+                <!-- Colonna destra: fasi di gioco (domande, risposta, tentativo) -->
                 <div class="panel p-3 p-md-4 mb-3">
                     <h2 class="h5">Fase 1: scegli il personaggio</h2>
                     <p id="selectionStatus" class="mb-3 text-muted">Scegli la tua immagine segreta cliccando una carta.</p>
@@ -66,6 +71,7 @@
                     </div>
                 </div>
                 <div class="panel p-3 p-md-4">
+                    <!-- Lista giocatori presenti nella partita -->
                     <h2 class="h5">Giocatori</h2>
                     <ul id="playersList" class="list-group"></ul>
                 </div>
@@ -73,10 +79,17 @@
         </div>
     </main>
 
+    <!-- Dialog personalizzati (alert, confirm, prompt) -->
     <script src="dialog.js"></script>
+    <!-- Logica client della partita -->
     <script>
-        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
-        const BASE_URL = "";
+        // Configurazione runtime della schermata partita.
+        //const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        //const BASE_URL = "";
+
+        const API_KEY = "aad21851-d11f-4bd0-ab19-5d1a52ae8dd585af34615bf747bca1a2b4709d7fc4a2";
+        const BASE_URL = "https://fluffy-sniffle-x9r9jvjx76g36jxr-3000.app.github.dev";
+
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const BOT_NAME = "BOT";
         const SOLO_WAIT_MS = 60 * 1000;
@@ -122,6 +135,7 @@
         let categoryData = null;
         let characterCards = [];
 
+        // Carica i dati JSON della categoria selezionata (personaggi + domande).
         async function loadCategoryData(category) {
             if (categoryData) {
                 return categoryData;
@@ -165,6 +179,7 @@
             }));
         }
 
+        // Ritorna l'elenco domande disponibili per la categoria attiva.
         function questionsForCategory() {
             return (categoryData?.domande || []).map((item) => item.testo);
         }
@@ -198,6 +213,7 @@
             return computeExpectedAnswerForCategory(targetCharacter.name, questionText);
         }
 
+        // Deduce il candidato migliore del bot in base a domande/risposte gia fatte.
         function getBotGuessCandidate(botPlayerId, targetPlayerId, moves) {
             if (!targetPlayerId || !categoryData?.domande?.length || !categoryData?.personaggi?.length) {
                 return null;
@@ -247,6 +263,7 @@
         let mySelectedCharacterId = "";
         let latestMovesCache = [];
 
+        // Utility per leggere il turno e le mosse rilevanti del round corrente.
         function getOpponentPlayerId(players, currentPlayerId) {
             const opponent = players.find((p) => p.id !== currentPlayerId);
             return opponent ? opponent.id : "";
@@ -326,6 +343,7 @@
             };
         }
 
+        // Helper API e gestione uscita partita.
         function isBotPlayer(player) {
             return Boolean(player && typeof player.name === "string" && player.name.toUpperCase().startsWith(BOT_NAME));
         }
@@ -369,6 +387,7 @@
             return result.player;
         }
 
+        // Se rimane solo il bot, elimina partita e riporta alla home.
         async function tryDeleteGameIfOnlyBot(players) {
             if (players.length === 1 && isBotPlayer(players[0])) {
                 try {
@@ -411,6 +430,7 @@
             window.location.href = `splash.html?gameId=${gameId}&returnFromGame=true`;
         }
 
+        // Rendering tabellone carte personaggi.
         function renderBoard() {
             boardEl.innerHTML = "";
             characterCards.forEach((character) => {
@@ -472,6 +492,7 @@
             return result.players;
         }
 
+        // API mosse: lettura stato e invio nuove azioni.
         async function getMoves() {
             const response = await fetch(`${BASE_URL}/games/${gameId}/moves`, {
                 method: "GET",
@@ -524,6 +545,7 @@
             }
         }
 
+        // Logica bot per avvio automatico quando il giocatore resta solo.
         async function ensureBotForSoloPlayer(players, moves) {
             if (await tryDeleteGameIfOnlyBot(players)) {
                 return;
@@ -570,6 +592,7 @@
             return map;
         }
 
+        // Aggiorna controlli UI in base a scelta personaggio e turno corrente.
         function updateSelectionUi(moves, players) {
             const choiceMoves = moves.filter((m) => m.data && m.data.type === "secret-choice");
             const latestChoiceByPlayer = {};
@@ -677,6 +700,7 @@
             questionList.scrollTop = questionList.scrollHeight;
         }
 
+        // Gestione comportamento bot durante il gioco (risposte, domande, tentativi).
         async function ensureBotParticipation(players, moves) {
             const botPlayer = players.find(isBotPlayer);
             if (!botPlayer) {
@@ -819,6 +843,7 @@
             return true;
         }
 
+        // Azioni giocatore: scelta carta, domanda, risposta e tentativo finale.
         async function chooseSecretCharacter(character) {
             if (mySelectedCharacterId) {
                 return;
@@ -959,6 +984,7 @@
             }
         }
 
+        // Ciclo principale: ricarica stato remoto e aggiorna tutta la UI.
         async function refreshGameState() {
             let players = await loadPlayers();
             if (players.length === 0) {
@@ -1027,7 +1053,8 @@
                 console.error(error);
             }
         }
-
+        
+        // Listener globali e avvio iniziale pagina.
         homeBtn.addEventListener("click", leaveToHome);
         restartBtn.addEventListener("click", restartToLobby);
         init();

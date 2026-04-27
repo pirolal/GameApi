@@ -1,4 +1,11 @@
+/**
+ * modulo per la gestione di dialoghi personalizzati (alert, confirm, prompt) con supporto per input e accessibilità
+ */
 (function () {
+    /**
+     * Funzione di utilità per eseguire l'escape dei caratteri HTML in modo da prevenire vulnerabilità XSS 
+     * lo scopo è garantire che una stringa potenzialmente pericolosa venga visualizzata come testo normale invece di essere interpretata come codice HTML
+     */
     function escapeHtml(value) {
         return String(value)
             .replace(/&/g, "&amp;")
@@ -8,6 +15,9 @@
             .replace(/'/g, "&#39;");
     }
 
+    /**
+     * Funzione principale per creare e gestire un dialogo personalizzato
+     */
     function createDialog(options) {
         const {
             title = "Messaggio",
@@ -43,12 +53,18 @@
             const cancelBtn = backdrop.querySelector(".app-dialog-cancel");
             const inputEl = backdrop.querySelector(".app-dialog-input");
 
+            /**
+                * Funzione per chiudere il dialogo e risolvere la Promise con il risultato
+             */
             function close(result) {
                 document.removeEventListener("keydown", onKeyDown);
                 backdrop.remove();
                 resolve(result);
             }
 
+            /**
+                * Gestore per la pressione dei tasti, permette di chiudere il dialogo con Escape o confermare con Enter
+             */
             function onKeyDown(event) {
                 if (event.key === "Escape" && showCancel) {
                     close({ confirmed: false, value: null });
@@ -87,6 +103,9 @@
         });
     }
 
+    /**
+     * Funzioni di utilità per mostrare dialoghi di tipo alert, confirm e prompt con opzioni personalizzabili
+     */
     window.showAppAlert = function (message, options) {
         return createDialog({
             title: (options && options.title) || "Attenzione",
@@ -96,6 +115,10 @@
         });
     };
 
+    /**
+        * Funzione per mostrare un dialogo di conferma con messaggio e opzioni personalizzabili, 
+        * restituisce un contenitore che si risolve con true se l'utente conferma, false se annulla
+     */
     window.showAppConfirm = function (message, options) {
         return createDialog({
             title: (options && options.title) || "Conferma",
@@ -120,3 +143,4 @@
         }).then((result) => (result.confirmed ? result.value : null));
     };
 })();
+
