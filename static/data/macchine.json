@@ -359,3 +359,9 @@
     }
     ]
 }
+
+
+// togliere il bottone torna alla lobby
+// diminuire il numero di richieste, vengono eseguite troppe richieste.
+// gestione del bot in caso di uscita dal gioco da parte di un giocatore
+// gestione del bot in caso di chiusura della pagina da parte di un giocatore

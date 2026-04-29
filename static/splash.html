@@ -56,10 +56,10 @@
     <!-- Logica client della splash/lobby partita -->
     <script>
         // Configurazione pagina lobby di una specifica partita.
-        //const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
-        //const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
-        const API_KEY = "aad21851-d11f-4bd0-ab19-5d1a52ae8dd585af34615bf747bca1a2b4709d7fc4a2";
-        const BASE_URL = "https://fluffy-sniffle-x9r9jvjx76g36jxr-3000.app.github.dev";
+        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        const BASE_URL = "https://expert-space-spoon-4j5rj5jjq7g6c5544-3000.app.github.dev";
+        //const API_KEY = "aad21851-d11f-4bd0-ab19-5d1a52ae8dd585af34615bf747bca1a2b4709d7fc4a2";
+        //const BASE_URL = "https://fluffy-sniffle-x9r9jvjx76g36jxr-3000.app.github.dev";
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const BOT_NAME = "BOT";
         const SOLO_WAIT_MS = 60 * 1000;
@@ -153,6 +153,19 @@
             });
         }
 
+        async function getPlayersSnapshot() {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                method: "GET",
+                headers: headers(false),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                return [];
+            }
+            return result.players || [];
+        }
+
         /** Se nella partita è rimasto solo un bot, la elimino per evitare di lasciare partite fantasma in attesa di un secondo giocatore. */
         async function tryDeleteGameIfOnlyBot(players) {
             if (players.length === 1 && isBotPlayer(players[0])) {
@@ -224,6 +237,11 @@
                 return;
             }
 
+            const playersBeforeLeave = await getPlayersSnapshot();
+            const wasOneHumanOneBot = playersBeforeLeave.length === 2
+                && playersBeforeLeave.some((p) => p.id === playerId)
+                && playersBeforeLeave.some(isBotPlayer);
+
             try {
                 await fetch(`${BASE_URL}/games/${gameId}/players/${playerId}`, {
                     method: "DELETE",
@@ -232,6 +250,18 @@
                 });
             } catch (error) {
                 console.error(error);
+            }
+
+            if (wasOneHumanOneBot) {
+                try {
+                    await fetch(`${BASE_URL}/games/${gameId}`, {
+                        method: "DELETE",
+                        headers: headers(false),
+                        redirect: "follow"
+                    });
+                } catch (error) {
+                    console.error(error);
+                }
             }
 
             try {

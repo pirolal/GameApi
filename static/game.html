@@ -84,11 +84,11 @@
     <!-- Logica client della partita -->
     <script>
         // Configurazione runtime della schermata partita.
-        //const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
-        //const BASE_URL = "";
+        const API_KEY = "2a6b126a-b0e9-4af0-a164-55f023d4d99c7f310849919647d5952eecd649e731cc";
+        const BASE_URL = "";
 
-        const API_KEY = "aad21851-d11f-4bd0-ab19-5d1a52ae8dd585af34615bf747bca1a2b4709d7fc4a2";
-        const BASE_URL = "https://fluffy-sniffle-x9r9jvjx76g36jxr-3000.app.github.dev";
+        //const API_KEY = "aad21851-d11f-4bd0-ab19-5d1a52ae8dd585af34615bf747bca1a2b4709d7fc4a2";
+        //const BASE_URL = "https://fluffy-sniffle-x9r9jvjx76g36jxr-3000.app.github.dev";
 
         const ACTIVE_SESSION_KEY = "guesswho_active_session";
         const BOT_NAME = "BOT";
@@ -213,18 +213,19 @@
             return computeExpectedAnswerForCategory(targetCharacter.name, questionText);
         }
 
-        // Deduce il candidato migliore del bot in base a domande/risposte gia fatte.
-        function getBotGuessCandidate(botPlayerId, targetPlayerId, moves) {
+        // Ricostruisce conoscenza del bot (candidati rimasti + domande gia usate).
+        function getBotKnowledge(botPlayerId, targetPlayerId, moves) {
             if (!targetPlayerId || !categoryData?.domande?.length || !categoryData?.personaggi?.length) {
-                return null;
+                return {
+                    candidates: [],
+                    askedQuestions: new Set()
+                };
             }
 
             const questionsByBot = getQuestionMoves(moves).filter(
                 (m) => m.playerId === botPlayerId && m.data.targetPlayerId === targetPlayerId
             );
-            if (questionsByBot.length === 0) {
-                return null;
-            }
+            const askedQuestions = new Set(questionsByBot.map((m) => m.data?.text).filter(Boolean));
 
             const latestAnswerByQuestionId = {};
             getAnswerMoves(moves).forEach((answerMove) => {
@@ -251,6 +252,56 @@
                 });
             });
 
+            return {
+                candidates,
+                askedQuestions
+            };
+        }
+
+        function pickBestBotQuestion(candidates, askedQuestions) {
+            const questions = categoryData?.domande || [];
+            let bestQuestion = null;
+            let bestScore = Number.POSITIVE_INFINITY;
+
+            questions.forEach((question) => {
+                if (!question?.testo || !question?.attributo || askedQuestions.has(question.testo)) {
+                    return;
+                }
+
+                let yesCount = 0;
+                let noCount = 0;
+                candidates.forEach((character) => {
+                    const value = character.attributi?.[question.attributo];
+                    if (value === true) {
+                        yesCount += 1;
+                    } else if (value === false) {
+                        noCount += 1;
+                    }
+                });
+
+                // Scarto domande che non riducono i candidati.
+                if (yesCount === 0 || noCount === 0) {
+                    return;
+                }
+
+                const splitScore = Math.abs(yesCount - noCount);
+                if (splitScore < bestScore) {
+                    bestScore = splitScore;
+                    bestQuestion = question.testo;
+                }
+            });
+
+            if (bestQuestion) {
+                return bestQuestion;
+            }
+
+            const fallback = questions.find((question) => question?.testo && !askedQuestions.has(question.testo));
+            return fallback ? fallback.testo : null;
+        }
+
+        // Se il bot ha ridotto a un solo candidato, ritorna la carta da tentare.
+        function getBotGuessCandidate(botPlayerId, targetPlayerId, moves) {
+            const { candidates } = getBotKnowledge(botPlayerId, targetPlayerId, moves);
             if (candidates.length !== 1) {
                 return null;
             }
@@ -387,6 +438,19 @@
             return result.player;
         }
 
+        async function getPlayersSnapshot() {
+            const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
+                method: "GET",
+                headers: headers(),
+                redirect: "follow"
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                return [];
+            }
+            return result.players || [];
+        }
+
         // Se rimane solo il bot, elimina partita e riporta alla home.
         async function tryDeleteGameIfOnlyBot(players) {
             if (players.length === 1 && isBotPlayer(players[0])) {
@@ -408,7 +472,26 @@
 
         async function leaveToHome(event) {
             event.preventDefault();
+
+            const playersBeforeLeave = await getPlayersSnapshot();
+            const wasOneHumanOneBot = playersBeforeLeave.length === 2
+                && playersBeforeLeave.some((p) => p.id === playerId)
+                && playersBeforeLeave.some(isBotPlayer);
+
             await removeCurrentPlayer();
+
+            if (wasOneHumanOneBot) {
+                try {
+                    await fetch(`${BASE_URL}/games/${gameId}`, {
+                        method: "DELETE",
+                        headers: headers(),
+                        redirect: "follow"
+                    });
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
             try {
                 const response = await fetch(`${BASE_URL}/games/${gameId}/players`, {
                     method: "GET",
@@ -765,17 +848,38 @@
                 const lastBotGuessMs = botGuessMoves.length > 0
                     ? new Date(botGuessMoves[botGuessMoves.length - 1].timestamp).getTime()
                     : 0;
+                const { candidates, askedQuestions } = getBotKnowledge(botPlayer.id, targetPlayer?.id || "", moves);
                 const candidateCard = getBotGuessCandidate(botPlayer.id, targetPlayer?.id || "", moves);
+                const guessedIds = new Set(botGuessMoves.map((m) => m.data?.guessedCharacterId).filter(Boolean));
+                const candidateCards = candidates
+                    .map((candidate) => characterCards.find((card) => card.name === candidate.nome))
+                    .filter(Boolean)
+                    .filter((card) => !guessedIds.has(card.id));
+                const nextQuestionText = pickBestBotQuestion(candidates, askedQuestions);
+                const hasPerfectDeduction = Boolean(candidateCard);
+                const noMoreUsefulQuestions = !nextQuestionText;
 
-                if (candidateCard && Date.now() - lastBotGuessMs > 2500) {
-                    const alreadyTried = botGuessMoves.some((m) => m.data.guessedCharacterId === candidateCard.id);
-                    if (!alreadyTried && targetPlayer) {
-                        const correct = latestChoiceByPlayer[targetPlayer.id] === candidateCard.id;
+                const shouldGuessNow = Boolean(
+                    targetPlayer
+                    && candidateCards.length > 0
+                    && (
+                        hasPerfectDeduction
+                        || noMoreUsefulQuestions
+                    )
+                    && Date.now() - lastBotGuessMs > 2500
+                );
+
+                if (shouldGuessNow) {
+                    const guessCard = hasPerfectDeduction
+                        ? candidateCard
+                        : candidateCards[Math.floor(Math.random() * candidateCards.length)];
+                    if (guessCard && targetPlayer) {
+                        const correct = latestChoiceByPlayer[targetPlayer.id] === guessCard.id;
 
                         await postMoveAsPlayer(botPlayer.id, {
                             type: "guess",
-                            guessedCharacterId: candidateCard.id,
-                            guessedCharacterName: candidateCard.name,
+                            guessedCharacterId: guessCard.id,
+                            guessedCharacterName: guessCard.name,
                             targetPlayerId: targetPlayer.id,
                             correct,
                             playerName: BOT_NAME
@@ -800,14 +904,12 @@
                     ? new Date(botQuestionMoves[botQuestionMoves.length - 1].timestamp).getTime()
                     : 0;
 
-                if (Date.now() - lastBotQuestionMs > 3000) {
-                    const botQuestions = questionsForCategory(gameCategory);
-                    const randomQuestion = botQuestions[Math.floor(Math.random() * botQuestions.length)];
+                if (Date.now() - lastBotQuestionMs > 3000 && nextQuestionText) {
                     const targetPlayerId = players.find((p) => p.id !== botPlayer.id)?.id || "";
                     await postMoveAsPlayer(botPlayer.id, {
                         type: "question",
                         questionId: `q-${botPlayer.id}-${Date.now()}`,
-                        text: randomQuestion,
+                        text: nextQuestionText,
                         targetPlayerId,
                         playerName: BOT_NAME
                     });
